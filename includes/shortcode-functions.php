@@ -28,14 +28,15 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         $att = shortcode_atts( array(
             'post_type' => 'page',
             'posts_per_page' => -1,
-            'col' => 3,
+            'col' => 3
         ), $atts );
         
         $html = '<div id="gridbox" class="row">';
         $args = array(
                 'post_type' => esc_attr($att['post_type']),
                 'post_parent' => 0,
-                'posts_per_page' => esc_attr($att['posts_per_page'])
+                'posts_per_page' => esc_attr($att['posts_per_page']),
+                'orderby' => 'date'
         );
         
         $postsgrid = get_posts( $args );
