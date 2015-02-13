@@ -12,3 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Include functions */
 require_once( dirname(__FILE__) . '/includes/shortcode-functions.php'); // Main shortcode functions
+
+//Register Image sizes
+add_image_size('thumb-col-3', 390, 999, false);
+add_image_size('thumb-col-1', 488, 999, false);

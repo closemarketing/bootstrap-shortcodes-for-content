@@ -28,7 +28,8 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         $att = shortcode_atts( array(
             'post_type' => 'page',
             'posts_per_page' => -1,
-            'col' => 3
+            'col' => 3,
+            'date' => false
         ), $atts );
         
         $html = '<div id="gridbox" class="row">';
@@ -44,10 +45,20 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         //print_r($postsgrid);
         
         foreach ( $postsgrid as $postg ) :
-            $html .= '<div class="col-sm-'.$colw.'">';
-            $html .= '<a href="'.get_the_permalink($postg->ID).'">'.get_the_title($postg->ID).'</a>';
-            $html .= get_the_post_thumbnail($postg->ID);
-            $html .= '</div>';
+            $html .= '<div class="gridbox-container col-sm-'.$colw.'">';
+            $html .= '<div class="gridbox-thumbnail">';
+            $html .= '<a href="'.get_the_permalink($postg->ID).'">';
+            $html .= get_the_post_thumbnail($postg->ID, 'thumb-col-'.$col);
+            $html .= '</a>';
+            $html .= '<div class="captiongrid">';
+            $html .= '<h2 class="titlegrid">';
+            if(esc_attr($att['date'])) { 
+                $html .= '<span class="postdate">';
+                $html .= get_the_date('d/m', $postg->ID);
+                $html .= '</span>  ';
+            }
+            $html .= '<a href="'.get_the_permalink($postg->ID).'">'.get_the_title($postg->ID).'</a></h2>';
+            $html .= '</div> </div> </div>';
         endforeach; 
         $html .= '</div>';
 
@@ -55,70 +66,3 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
 	}
 	add_shortcode( 'gridbox', 'btsc_gridbox_shortcode' );
 }
-
-/*
-    <div id="portfolio-filter-content">
-        <?php
-
-        if(is_tax()) { $args=array('post_type'=>'proyectos','posts_per_page' => -1,'tipoviaje' => $term_name); } else
-                     { $args=array('post_type'=>'proyectos','posts_per_page' => -1); }
-
-        query_posts ($args);
-
-        //start loop
-        while (have_posts()) : the_post();
-
-            //get terms
-            $terms = get_the_terms( get_the_ID(), 'tipoviaje' );
-            $terms_list = get_the_term_list( get_the_ID(), 'tipoviaje' );
-
-            //get meta
-            $portfolio_entry_custom_url = get_post_meta($post->ID, 'wpex_portfolio_entry_custom_url', true);
-            $portfolio_entry_img_swap = get_post_meta($post->ID, 'wpex_portfolio_entry_img_swap', true);
-
-            //get featured images
-            $thumb = get_post_thumbnail_id();
-            $img_url = wp_get_attachment_url($thumb,'full'); //get full URL to image
-
-            //crop images
-            $featured_image = aq_resize( $img_url, 390, 300, true ); //resize & crop the image
-
-            //set entry url to lightbox
-            $portfolio_entry_url = get_permalink($post->ID); 
-
-            //set overlay icon
-            $overlay_icon = 'picture'; 
-
-            //show entry only if it has a featured image ?>
-            <div class="portfolio-entry grid-4 <?php if($terms) foreach ($terms as $term) echo $term->slug .' '; ?>">
-                <div class="portfolio-entry-inner">
-                    <div class="portfolio-entry-thumbnail">
-                        <a href="<?php echo $portfolio_entry_url; ?>" title="<?php the_title(); ?>" class="portfolio-entry-img-link" >
-                            <img src="<?php echo $featured_image; ?>" alt="<?php the_title(); ?>" class="portfolio-entry-img" />
-                            <div class="overlay-icon"><span class="wpex-icon-<?php echo $overlay_icon; ?>"></span></div>
-                        </a><!-- /portfolio-entry-img-link -->
-
-                    </div><!-- /portfolio-entry-img -->
-                    <div class="portfolio-entry-description">
-                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-
-                            <div class="portfolio-entry-excerpt">
-                                <?php
-                                !empty($post->post_excerpt) ? $excerpt = get_the_excerpt() : $excerpt = wp_trim_words(get_the_content(), 30);
-                                echo $excerpt; ?>
-                            </div><!-- .portfolio-entry-excerpt -->
-
-
-                    </div><!-- .portfolio-entry-description -->
-
-                </div><!-- /portfolio-entry-inner -->
-            </div><!-- /portfolio-entry -->
-            <?php 
-        //end loop	
-        endwhile;
-
-        //reset the WP query
-        wp_reset_query(); ?>
-    </div><!-- /portfolio-content -->
-</div><!-- /portfolio-wrap -->
-        
