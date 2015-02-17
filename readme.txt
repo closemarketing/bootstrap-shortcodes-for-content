@@ -12,21 +12,8 @@ This WordPress plugin extends shortcodes to use in Bootstrap themes.
 == Description ==
 This plugin give you a bunch of shortcodes that allows you to draw content using Bootstrap CSS and HTML. 
 
-
-
-> This plugin requires the <a href="http://www.closemarketing.es/likes/gravityforms/">Gravity Forms plugin</a>. <strong>Don't use Gravity Forms? <a href="http://www.closemarketing.es/likes/gravityforms/">Buy the plugin</a></strong> and start using this revolutionary plugin!
-
-The [Gravity Forms](http://www.closemarketing.es/likes/gravityforms/) developers don't focus on translating
-their plugin. Instead they concentrate on the core functionalities of the plugin itself.
-Therefore there are regular updates of the Gravity Forms plugin. However, after each
-automatic update, the manually placed Spanish translations are deleted. This plugin fixes
-that issue for all the Spanish WordPress and Gravity Forms users!
-
-Do you want to contribute to this translation? I’ve made a Glotpress Project in order to share it:
-[Translation for Gravity Forms](http://www.closemarketing.es/traducciones/projects/gravityforms-main-es)
-
-
-> Este plugin requiere de <a href="http://www.closemarketing.es/likes/gravityforms/">Gravity Forms plugin</a>. <strong>¿No utilizas Gravity Forms? <a href="http://www.closemarketing.es/likes/gravityforms/">Compra este plugin</a></strong> y empieza con los formularios en tu página wordpress de una manera revolucionaria!
+Shortcodes:
+[gridbox] - Allows you to show a grid with post types related.
 
 Made by [Closemarketing](https://www.closemarketing.es/) 
 
