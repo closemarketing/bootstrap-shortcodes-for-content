@@ -13,7 +13,7 @@
 
 /*
  * Allow shortcodes in widgets
- * @since v1.0
+ * @since v0.1
  */
 add_filter('widget_text', 'do_shortcode');
 
@@ -69,7 +69,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
 
 /*
  * Image Post Slider
- * @since v1.0
+ * @since v0.2
  */
 if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	function btsc_imagepostslider_shortcode($atts, $content = null) {
@@ -113,6 +113,6 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             
         return $html;
         }
-
+    }
 	add_shortcode( 'imagepostslider', 'btsc_imagepostslider_shortcode' );
 }
