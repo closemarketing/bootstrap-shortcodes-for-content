@@ -55,7 +55,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             $html .= '<div class="gridbox-container col-sm-'.$colw.' col-xs-12">';
             $html .= '<div class="gridbox-thumbnail">';
             $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
-            $html .= get_the_post_thumbnail($postsgrid->post->ID, 'thumb-col-'.$colw);
+            $html .= get_the_post_thumbnail($postsgrid->post->ID, 'thumb-col-'.$att['col']);
             $html .= '</a>';
             $html .= '<div class="captiongrid">';
             $html .= '<h2 class="titlegrid">';
