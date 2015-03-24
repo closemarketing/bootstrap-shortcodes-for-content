@@ -29,7 +29,8 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             'post_type' => 'page',
             'posts_per_page' => -1,
             'col' => 3,
-            'date' => false
+            'date' => false,
+            'tax' => ''
         ), $atts );
         
         $html = '<div id="gridbox" class="row">';
@@ -43,6 +44,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         $postsgrid = get_posts( $args );
         $colw = 12/ esc_attr($att['col']);
         //print_r($postsgrid);
+    
         
         foreach ( $postsgrid as $postg ) :
             $html .= '<div class="gridbox-container col-sm-'.$colw.'">';
@@ -51,6 +53,20 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             $html .= get_the_post_thumbnail($postg->ID, 'thumb-col-'.$col);
             $html .= '</a>';
             $html .= '<div class="captiongrid">';
+            if(esc_attr($att['tax'])) { 
+                $terms = get_the_terms( $postg->ID, esc_attr($att['tax']) );
+                if ( $terms && ! is_wp_error( $terms ) ) : 
+                $tax_links = array();
+                    foreach ( $terms as $term ) {
+                        $tax_links[] = $term->name;
+                    }
+                $tax_text = join( ", ", $tax_links );
+                endif;
+
+                $html .= '<span class="taxonomy">';
+                $html .= $tax_text;
+                $html .= '</span>  ';
+            }
             $html .= '<h2 class="titlegrid">';
             if(esc_attr($att['date'])) { 
                 $html .= '<span class="postdate">';
