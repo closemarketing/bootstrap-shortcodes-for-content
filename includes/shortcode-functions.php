@@ -34,23 +34,30 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         ), $atts );
         
         $html = '<div id="gridbox" class="row">';
+        
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        
+        //$html .= esc_attr($att['posts_per_page']). " ". $paged;
+        
         $args = array(
                 'post_type' => esc_attr($att['post_type']),
                 'post_parent' => 0,
                 'posts_per_page' => esc_attr($att['posts_per_page']),
-                'orderby' => 'date'
+                'orderby' => 'date',
+                'paged' => $paged
         );
         
-        $postsgrid = get_posts( $args );
-        $colw = 12/ esc_attr($att['col']);
+        $postsgrid = new WP_Query( $args );
+        $colw = 12/ $att['col'];
         //print_r($postsgrid);
     
         
-        foreach ( $postsgrid as $postg ) :
-            $html .= '<div class="gridbox-container col-sm-'.$colw.'">';
+        if ( $postsgrid->have_posts() ) :
+        while ( $postsgrid->have_posts() ) : $postsgrid->the_post(); 
+            $html .= '<div class="gridbox-container col-sm-'.$colw.' col-xs-12">';
             $html .= '<div class="gridbox-thumbnail">';
-            $html .= '<a href="'.get_the_permalink($postg->ID).'">';
-            $html .= get_the_post_thumbnail($postg->ID, 'thumb-col-'.$col);
+            $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
+            $html .= get_the_post_thumbnail($postsgrid->post->ID, 'thumb-col-'.$att['col']);
             $html .= '</a>';
             $html .= '<div class="captiongrid">';
             if(esc_attr($att['tax'])) { 
@@ -70,12 +77,17 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             $html .= '<h2 class="titlegrid">';
             if(esc_attr($att['date'])) { 
                 $html .= '<span class="postdate">';
-                $html .= get_the_date('d/m', $postg->ID);
+                $html .= get_the_date('d/m', $postsgrid->post->ID);
                 $html .= '</span>  ';
             }
-            $html .= '<a href="'.get_the_permalink($postg->ID).'">'.get_the_title($postg->ID).'</a></h2>';
+            $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">'.get_the_title($postsgrid->post->ID).'</a></h2>';
             $html .= '</div> </div> </div>';
-        endforeach; 
+        endwhile; 
+        wp_reset_postdata();
+        $html .= get_next_posts_link( 'Older Entries', $postsgrid->post->max_num_pages );
+        $html .= get_previous_posts_link( 'Next Entries &raquo;' );
+
+        endif;
         $html .= '</div>';
 
         return $html;
