@@ -144,3 +144,146 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
     }
 	add_shortcode( 'imagepostslider', 'btsc_imagepostslider_shortcode' );
 }
+
+/*
+ * Grid Taxonomy Box
+ * @since v1.1
+ */
+if( !function_exists('btsc_gridtaxbox_shortcode') ) {
+	function btsc_gridtaxbox_shortcode($atts, $content = null) {
+        
+        $att = shortcode_atts( array(
+            'col' => 3,
+            'tax' => '',
+            'title' => false,
+        ), $atts );
+        
+        $html = '<div id="gridbox" class="row">';
+        
+        $taxgrid = get_terms( array(esc_attr($att['tax']) ), 'orderby=count&hide_empty=0' );
+        $colw = 12/ esc_attr($att['col']);
+        
+        foreach ( $taxgrid as $taxg ) :
+            $html .= '<div class="gridtaxbox-container col-sm-'.$colw.'">';
+            $html .= '<div class="gridtaxbox-thumbnail text-center">';
+            $html .= '<a href="'.get_term_link($taxg).'">';
+        
+            $tax_term_id = $taxg->term_id;
+            $images = get_option('taxonomy_image_plugin');
+            $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
+
+            $html .= '</a>';
+            if(esc_attr($att['title'])==true){
+                $html .= '<div class="captiongrid">';
+                $html .= '<h2 class="titlegrid">';
+                $html .= '<a href="'.get_term_link($taxg).'">'.$taxg->name.'</a></h2>';
+                $html .= '</div>';
+            }
+            $html .= '</div> </div>';
+        endforeach; 
+        $html .= '</div>';
+
+        return $html;
+	}
+	add_shortcode( 'gridtaxbox', 'btsc_gridtaxbox_shortcode' );
+}
+
+/*
+ * Carousel for Posts Types
+ * @since v1.0
+ * Version based on: http://bootsnipp.com/snippets/featured/infinite-carousel-loop
+ */
+if( !function_exists('btsc_carouselcpt_shortcode') ) {
+	function btsc_carouselcpt_shortcode($atts, $content = null) {
+        
+        $att = shortcode_atts( array(
+            'post_type' => 'page',
+            'tax' => '',
+            'type' => 'post'
+        ), $atts );
+        
+        $html = '<div id="gridcarbox" class="row">';
+        $type = esc_attr($att['type']);
+
+        if($type =='post') {
+            $args = array(
+                'post_type' => esc_attr($att['post_type']),
+                'post_parent' => 0,
+                'orderby' => 'date'
+            );
+            $grid = get_posts( $args );
+            
+        } elseif($type =='tax') { 
+            $grid = get_terms( array(esc_attr($att['tax']) ), 'orderby=count&hide_empty=0' );
+        }
+        $i = 1;
+        $html .='
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="carousel slide" id="myCarousel">
+                  <div class="carousel-inner">';
+        
+            foreach ( $grid as $gridg ) :        
+                    $html.='
+                    <div class="item';
+                    if($i == 1) $html.=' active';
+                    $html.='">';
+        
+                    $html.='<div class="col-xs-12 col-sm-4">';
+                    $html .= '<a href="'.get_term_link($gridg).'">';
+                    
+                    $tax_term_id = $gridg->term_id;
+                    $images = get_option('taxonomy_image_plugin');
+                    $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
+                    
+                    $html.= '</a></div>';
+                    $html.='</div>';
+                    $i++;
+                endforeach;         
+        
+        
+                  $html.='</div>
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>';
+        
+
+        $html .="
+<script type='text/javascript'>
+jQuery('#myCarousel').carousel({
+  interval: 40000
+});
+
+jQuery('.carousel .item').each(function(){
+  var next = jQuery(this).next();
+  if (!next.length) {
+    next = jQuery(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo(jQuery(this));
+  if (next.next().length>0) {
+      next.next().children(':first-child').clone().appendTo(jQuery(this)).addClass('rightest');
+  }
+  else {
+      jQuery(this).siblings(':first').children(':first-child').clone().appendTo(jQuery(this));
+  }
+});
+</script>";
+        $html .='
+<style>
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev        { left: -33%; }
+.carousel-control.left,.carousel-control.right {background-image:none;}
+.item:not(.prev) {visibility: visible;}
+.item.right:not(.prev) {visibility: hidden;}
+.rightest{ visibility: visible;}
+#myCarousel a.left.carousel-control {left: -75px;}
+#myCarousel a.right.carousel-control {right: -75px;}
+</style>
+        ';
+        return $html;
+	}
+	add_shortcode( 'carouselcpt', 'btsc_carouselcpt_shortcode' );
+}
