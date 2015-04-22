@@ -279,137 +279,132 @@ function btsc_shortcode_gallery( $output, $attr ) {
 }
 
 // Apply filter to default gallery shortcode
-add_filter( 'post_gallery', 'btsc_shortcode_gallery', 10, 2 );
+//add_filter( 'post_gallery', 'btsc_shortcode_gallery', 10, 2 );
 
-// Replace with custom shortcode
-function btffsc_shortcode_gallery($attr) {
-    $post = get_post();
+/*
+ * Carousel for Posts Types
+ * @since v1.0
+ **/
 
-    static $instance = 0;
-    $instance++;
+if ( !function_exists('btsc_carouselcpt_shortcode') ) {
+	function btsc_carouselcpt_shortcode($atts, $content = null) {
+        
+        $att = shortcode_atts( array(
+            'post_type' => 'page',
+            'tax' => '',
+            'title' => '',
+            'type' => 'post',
+            'col' => 3,
+            'titlep' => false
+        ), $atts );
+        
+        $html = '<div id="gridcarbox" class="row">';
+        $type = esc_attr($att['type']);
+        $idcarousel = rand(1,99);
+        $col = esc_attr($att['col']);
+        $colw = 12/ esc_attr($att['col']);
 
-    if (!empty($attr['ids'])) {
-        if (empty($attr['orderby'])) {
-            $attr['orderby'] = 'post__in';
+        if($type =='post') {
+            $args = array(
+                'post_type' => esc_attr($att['post_type']),
+                'post_parent' => 0,
+                'posts_per_page' => 6,
+                'orderby' => 'title'
+            );
+            $grid = get_posts( $args );
+            
+        } elseif($type =='tax') { 
+            $grid = get_terms( array(esc_attr($att['tax']) ), 'orderby=count&hide_empty=0' );
         }
-        $attr['include'] = $attr['ids'];
-    }
+                
+        $i = 1;
+        $idcarousel = rand(1,99);
+        $titlep = esc_attr($att['titlep']);
+        $html .='
+        <div class="container">
+            <div class="col-sm-12">';
+            if(esc_attr($att['title']) ) { $html.= '<h2>'.esc_attr($att['title']).'</h2>'; }
+        $html.='
+                <div class="carousel carousel'.$idcarousel.' slide" id="myCarousel'.$idcarousel.'">
+                  <div class="carousel-inner">';
 
-    $output = apply_filters('post_gallery', '', $attr);
+        
+            foreach ( $grid as $gridg ) : 
+                    $html.='
+                    <div class="item';
+                    if($i == 1) $html.=' active';
+                    $html.='">';
+        
+                    if($type =='post') { 
+                        $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
+                        $html .= '<a href="'.get_permalink($gridg).'">';
+                        $html.= get_the_post_thumbnail( $gridg->ID, 'thumb-col-'.$colw );
+                        $html.= '</a>';
+                        if($titlep) {
+                            $html .= '<div class="captiongrid">';
+                            $html .= '<h2 class="titlegrid"><a href="'.get_permalink($gridg).'">';
+                            $html .= get_the_title($gridg->ID);
+                            $html.= '</a></h2></div>';
+                            }
+                        $html.='</div>';
+                    } elseif($type =='tax') { 
+                        $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
+                        $html .= '<a href="'.get_term_link($gridg).'">';
 
-    if ($output != '') {
-        return $output;
-    }
+                        $tax_term_id = $gridg->term_id;
+                        $images = get_option('taxonomy_image_plugin');
+                        $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
+                        $html.= '</a></div>';
+                    }
+        
+                    $html.='</div>';
+                    $i++;
+                endforeach;         
+        
+        
+                  $html.='</div>
+                  <a class="left carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                  <a class="right carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        </div>';
+        
 
-    if (isset($attr['orderby'])) {
-        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-        if (!$attr['orderby']) {
-            unset($attr['orderby']);
-        }
-    }
+        $html .="
+        <script type='text/javascript'>
+        jQuery('#myCarousel".$idcarousel."').carousel({
+          interval: 40000
+        });
 
-    extract(shortcode_atts(array(
-        'order' => 'ASC',
-        'orderby' => 'menu_order ID',
-        'id' => $post->ID,
-        'itemtag' => '',
-        'icontag' => '',
-        'captiontag' => '',
-        'columns' => 3,
-        'size' => 'thumbnail',
-        'include' => '',
-        'link' => '',
-        'exclude' => ''
-                    ), $attr));
-
-    $id = intval($id);
-
-    if ($order === 'RAND') {
-        $orderby = 'none';
-    }
-
-    if (!empty($include)) {
-        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-
-        $attachments = array();
-        foreach ($_attachments as $key => $val) {
-            $attachments[$val->ID] = $_attachments[$key];
-        }
-    } elseif (!empty($exclude)) {
-        $attachments = get_children(array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-    } else {
-        $attachments = get_children(array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-    }
-
-    if (empty($attachments)) {
-        return '';
-    }
-
-    if (is_feed()) {
-        $output = "\n";
-        foreach ($attachments as $att_id => $attachment) {
-            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-        }
-        return $output;
-    }
-
-    //Bootstrap Output Begins Here
-    //Bootstrap needs a unique carousel id to work properly. Because I'm only using one gallery per post and showing them on an archive page, this uses the $post->ID to allow for multiple galleries on the same page.
-
-    $output .= '<h1>oryeba</h1><div id="carousel-' . $post->ID . '" class="carousel slide" data-ride="carousel">'; 
-    $output .= '<!-- Indicators -->';
-    $output .= '<ol class="carousel-indicators">';
-
-    //Automatically generate the correct number of slide indicators and set the first one to have be class="active".
-    $indicatorcount = 0;
-    foreach ($attachments as $id => $attachment) {
-        if ($indicatorcount == 1) {
-            $output .= '<li data-target="#carousel-' . $post->ID . '" data-slide-to="' . $indicatorcount . '" class="active"></li>';
-        } else {
-            $output .= '<li data-target="#carousel-' . $post->ID . '" data-slide-to="' . $indicatorcount . '"></li>';
-        }
-        $indicatorcount++;
-    }
-
-    $output .= '</ol>';
-    $output .= '<!-- Wrapper for slides -->';
-    $output .= '<div class="carousel-inner">';
-    $i = 0;
-
-    //Begin counting slides to set the first one as the active class
-    $slidecount = 1;
-    foreach ($attachments as $id => $attachment) {
-        $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
-
-        if ($slidecount == 1) {
-            $output .= '<div class="item active">';
-        } else {
-            $output .= '<div class="item">';
-        }
-
-        $image_src_url = wp_get_attachment_image_src($id, $size);
-        $output .= '<img src="' . $image_src_url[0] . '">';
-        $output .= '    </div>';
-
-
-        if (trim($attachment->post_excerpt)) {
-            $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
-        }
-
-        $slidecount++;
-    }
-
-    $output .= '</div>';
-    $output .= '<!-- Controls -->';
-    $output .= '<a class="left carousel-control" href="#carousel-' . $post->ID . '" data-slide="prev">';
-    $output .= '<span class="glyphicon glyphicon-chevron-left"></span>';
-    $output .= '</a>';
-    $output .= '<a class="right carousel-control" href="#carousel-' . $post->ID . '" data-slide="next">';
-    $output .= '<span class="glyphicon glyphicon-chevron-right"></span>';
-    $output .= '</a>';
-    $output .= '</div>';
-    $output .= '</dl>';
-    $output .= '</div>';
-
-    return $output;
+        jQuery('.carousel".$idcarousel." .item').each(function(){
+          var next = jQuery(this).next();
+          if (!next.length) {
+            next = jQuery(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo(jQuery(this));
+          if (next.next().length>0) {
+              next.next().children(':first-child').clone().appendTo(jQuery(this)).addClass('rightest');
+          }
+          else {
+              jQuery(this).siblings(':first').children(':first-child').clone().appendTo(jQuery(this));
+          }
+        });
+        </script>";
+        $html .='
+        <style>
+        .carousel-inner .active.left { left: -33%; }
+        .carousel-inner .next        { left:  33%; }
+        .carousel-inner .prev        { left: -33%; }
+        .carousel-control.left,.carousel-control.right {background-image:none;}
+        .item:not(.prev) {visibility: visible;}
+        .item.right:not(.prev) {visibility: hidden;}
+        .rightest{ visibility: visible;}
+        #myCarousel'.$idcarousel.' a.left.carousel-control {left: -75px;}
+        #myCarousel'.$idcarousel.' a.right.carousel-control {right: -75px;}
+        </style>
+        ';
+        return $html;
+	}
+add_shortcode( 'carouselcpt', 'btsc_carouselcpt_shortcode' );
 }

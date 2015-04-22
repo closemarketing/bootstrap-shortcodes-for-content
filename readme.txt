@@ -3,9 +3,9 @@ Contributors: closemarketing
 Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 0.1
-Version: 0.1
+Tested up to: 4.2
+Stable tag: 0.2
+Version: 0.2
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -23,7 +23,25 @@ Parameters:
 - tax -> Show Taxonomy that the post in.
 - size -> image size for post thumbnail
 
-[Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Please fork and add suggestions to the plugin! 
+[imagepostslider] - Image Slider from Images attached in a post
+
+[carouselcpt] - Multiple elements Carousel 
+
+- post_type -> slug of Post type that you want to show.
+- tax -> Show Taxonomy that the post in.
+- title -> Title that goes before
+- type -> post or tax
+- col -> Elements visibles
+- titlep -> true or false. Show Title's post in carousel
+
+
+[Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Fork and add make suggestions to the plugin! 
+
+Others Plugins:
+- [Gravity Forms CRM Addon](http://codecanyon.net/item/gravity-forms-crm-addon/10521695)
+- [Gravity Forms in Spanish](https://wordpress.org/plugins/gravityforms-es/)
+- [Clean HTML in Editor](https://wordpress.org/plugins/clean-html/) 
+- [Send SMS to Wordpress Users via Arsys](https://wordpress.org/plugins/send-sms-arsys/) 
 
 Made by [Closemarketing](https://www.closemarketing.es/) 
 
@@ -34,7 +52,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Developers ==
-
+[Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content)
 
 == Changelog ==
 
