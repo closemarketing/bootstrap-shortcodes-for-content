@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Bootstrap Shortcodes for Content
-Plugin URI: https://www.closemarketing.es
+Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
-Version: 0.1
+Version: 0.2
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
