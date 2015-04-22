@@ -7,25 +7,15 @@ Tested up to: 4.1
 Stable tag: 0.1
 Version: 0.1
 
-This WordPress plugin extends shortcodes to use in Bootstrap themes. It's a lightweight plugin.
+This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
 == Description ==
-This plugin give you a bunch of shortcodes that allows you to draw content using Bootstrap CSS and HTML. It does not load any CSS or JS in order to promote faster webs!. It's lightweight and you can customize the layout in Theme's CSS.
-
-Recommended for developers.
+This plugin give you a bunch of shortcodes that allows you to draw content using Bootstrap CSS and HTML. 
 
 Shortcodes:
 [gridbox] - Allows you to show a grid with post types related.
-Parameters:
-- post_type -> slug of Post type that you want to show.
-- posts_per_page -> 
-- col -> Columns that you want to show.
-- date -> true or false. If you want to show in the grid.
-- tax -> Show Taxonomy that the post in.
 
 Made by [Closemarketing](https://www.closemarketing.es/) 
-
-[Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Please fork and add suggestions to the plugin! 
 
 == Installation ==
 
