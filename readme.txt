@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.2
-Stable tag: 0.2
-Version: 0.2
+Stable tag: 0.3
+Version: 0.3
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -34,6 +34,7 @@ Parameters:
 - col -> Elements visibles
 - titlep -> true or false. Show Title's post in carousel
 
+[links] - List of all links added in Links admin menu.
 
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Fork and add make suggestions to the plugin! 
 
@@ -55,6 +56,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content)
 
 == Changelog ==
+= 0.3 =
+*	New shortcodes.
 
 = 0.1.0 =
 *	First released, created one shortcode.

@@ -17,65 +17,67 @@
  */
 add_filter('widget_text', 'do_shortcode');
 
-
 /*
  * Grid Box
  * @since v1.0
  */
 if( !function_exists('btsc_gridbox_shortcode') ) {
 	function btsc_gridbox_shortcode($atts, $content = null) {
-        
-        if( isset($atts['col']) ) $col= $atts['col']; else $col = 3;
-        
+
         $att = shortcode_atts( array(
             'post_type' => 'page',
             'posts_per_page' => -1,
             'col' => 3,
-            'size' => 'thumb-col-'.$col,
-            'date' => false
+            'date' => false,
+            'tax' => ''
         ), $atts );
-        
+
         $html = '<div id="gridbox" class="row">';
-        
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        
-        //$html .= esc_attr($att['posts_per_page']). " ". $paged;
-        
         $args = array(
                 'post_type' => esc_attr($att['post_type']),
                 'post_parent' => 0,
                 'posts_per_page' => esc_attr($att['posts_per_page']),
-                'orderby' => 'date',
-                'paged' => $paged
+                'orderby' => 'date'
         );
-        
-        $postsgrid = new WP_Query( $args );
-        $colw = 12/ $att['col'];
-        $sizethumb = esc_attr($att['size']);
+
+        $postsgrid = get_posts( $args );
+        $colw = 12/ esc_attr($att['col']);
+        $col = esc_attr($att['col']);
         //print_r($postsgrid);
-        
-        if ( $postsgrid->have_posts() ) :
-        while ( $postsgrid->have_posts() ) : $postsgrid->the_post(); 
-            $html .= '<div class="gridbox-container thumbnail col-sm-'.$colw.' col-xs-12">';
+
+
+        foreach ( $postsgrid as $postg ) :
+            $html .= '<div class="gridbox-container col-xs-12 col-sm-'.$colw;
+            if(!wp_is_mobile() ) $html.=' animated fadeInRight delay0 duration3 eds-on-scroll';
+            $html .= '">';
             $html .= '<div class="gridbox-thumbnail">';
-            $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
-            $html .= get_the_post_thumbnail($postsgrid->post->ID, $sizethumb);
+            $html .= '<a href="'.get_the_permalink($postg->ID).'">';
+            $html .= get_the_post_thumbnail($postg->ID, 'thumb-col-'.$col);
             $html .= '</a>';
-            $html .= '<div class="captiongrid caption-hover">';
-            $html .= '<h2 class="titlegrid">';
-            if(esc_attr($att['date'])) { 
-                $html .= '<span class="postdate">';
-                $html .= get_the_date('d/m', $postsgrid->post->ID);
+            $html .= '<div class="captiongrid">';
+            if(esc_attr($att['tax'])) {
+                $terms = get_the_terms( $postg->ID, esc_attr($att['tax']) );
+                if ( $terms && ! is_wp_error( $terms ) ) :
+                $tax_links = array();
+                    foreach ( $terms as $term ) {
+                        $tax_links[] = $term->name;
+                    }
+                $tax_text = join( ", ", $tax_links );
+                endif;
+
+                $html .= '<span class="taxonomy">';
+                $html .= $tax_text;
                 $html .= '</span>  ';
             }
-            $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">'.get_the_title($postsgrid->post->ID).'</a></h2>';
+            $html .= '<h2 class="titlegrid">';
+            if(esc_attr($att['date'])) {
+                $html .= '<span class="postdate">';
+                $html .= get_the_date('d/m', $postg->ID);
+                $html .= '</span>  ';
+            }
+            $html .= '<a href="'.get_the_permalink($postg->ID).'">'.get_the_title($postg->ID).'</a></h2>';
             $html .= '</div> </div> </div>';
-        endwhile; 
-        wp_reset_postdata();
-        $html .= get_next_posts_link( 'Older Entries', $postsgrid->post->max_num_pages );
-        $html .= get_previous_posts_link( 'Next Entries &raquo;' );
-
-        endif;
+        endforeach;
         $html .= '</div>';
 
         return $html;
@@ -89,7 +91,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
  */
 if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	function btsc_imagepostslider_shortcode($atts, $content = null) {
-        
+
         global $post;
         $args = array(
             'post_mime_type' => 'image',
@@ -104,7 +106,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
         if ( $attachments && $numattach == 1 ) {
             $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
         } elseif ($attachments) {
-            
+
         $html = '<div class="carousel slide" id="myCarousel">';
         $html .= '<div class="carousel-inner">';
 
@@ -115,7 +117,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             if($i==0) $html .= ' active';
             $html .= '">';
             $html .= '<div class="bannerImage">';
-            $html .= get_the_post_thumbnail( $post->ID, 'page-thumb' );
+            $html .= wp_get_attachment_image( $attachment->ID, 'page-thumb' );
             $html .= '</div>';
             $html .= '</div><!-- /Slide -->' ;
             $i++;
@@ -126,7 +128,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
         $html .= '<a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>';
         $html .= '</div><!-- /.control-box -->';
         $html .= '</div>';
-            
+
         return $html;
         }
     }
@@ -134,152 +136,53 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
 }
 
 /*
- * Gallery Shortcode
- * @since v0.1
+ * Grid Taxonomy Box
+ * @since v1.1
  */
-// Custom filter function to modify default gallery shortcode output
-function btsc_shortcode_gallery( $output, $attr ) {
+if( !function_exists('btsc_gridtaxbox_shortcode') ) {
+	function btsc_gridtaxbox_shortcode($atts, $content = null) {
 
-	// Initialize
-	global $post, $wp_locale;
+        $att = shortcode_atts( array(
+            'col' => 3,
+            'tax' => '',
+            'title' => false,
+        ), $atts );
 
-	// Gallery instance counter
-	static $instance = 0;
-	$instance++;
+        $html = '<div id="gridbox" class="row">';
 
-	// Validate the author's orderby attribute
-	if ( isset( $attr['orderby'] ) ) {
-		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-		if ( ! $attr['orderby'] ) unset( $attr['orderby'] );
+        $taxgrid = get_terms( array(esc_attr($att['tax']) ),
+                              array('orderby' => 'name',
+                                    'order'   => 'ASC',
+                                    'hide_empty' =>true
+                                   ) );
+        $colw = 12/ esc_attr($att['col']);
+
+        foreach ( $taxgrid as $taxg ) :
+            $html .= '<div class="gridtaxbox-container col-sm-'.$colw;
+            if(!wp_is_mobile() ) $html.= ' animated fadeInRight delay1 duration3 eds-on-scroll';
+            $html.='">';
+            $html .= '<div class="gridtaxbox-thumbnail text-center">';
+            $html .= '<a href="'.get_term_link($taxg).'">';
+
+            $tax_term_id = $taxg->term_id;
+            $images = get_option('taxonomy_image_plugin');
+            $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
+
+            $html .= '</a>';
+            if(esc_attr($att['title'])==true){
+                $html .= '<div class="captiongrid">';
+                $html .= '<h2 class="titlegrid">';
+                $html .= '<a href="'.get_term_link($taxg).'">'.$taxg->name.'</a></h2>';
+                $html .= '</div>';
+            }
+            $html .= '</div> </div>';
+        endforeach;
+        $html .= '</div>';
+
+        return $html;
 	}
-
-	// Get attributes from shortcode
-	extract( shortcode_atts( array(
-		'order'      => 'ASC',
-		'orderby'    => 'menu_order ID',
-		'id'         => $post->ID,
-		'itemtag'    => 'dl',
-		'icontag'    => 'dt',
-		'captiontag' => 'dd',
-		'columns'    => 3,
-		'size'       => 'thumbnail',
-		'include'    => '',
-		'exclude'    => ''
-	), $attr ) );
-
-	// Initialize
-	$id = intval( $id );
-	$attachments = array();
-	if ( $order == 'RAND' ) $orderby = 'none';
-
-	if ( ! empty( $include ) ) {
-
-		// Include attribute is present
-		$include = preg_replace( '/[^0-9,]+/', '', $include );
-		$_attachments = get_posts( array( 'include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
-
-		// Setup attachments array
-		foreach ( $_attachments as $key => $val ) {
-			$attachments[ $val->ID ] = $_attachments[ $key ];
-		}
-
-	} else if ( ! empty( $exclude ) ) {
-
-		// Exclude attribute is present 
-		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
-
-		// Setup attachments array
-		$attachments = get_children( array( 'post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
-	} else {
-		// Setup attachments array
-		$attachments = get_children( array( 'post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
-	}
-
-	if ( empty( $attachments ) ) return '';
-
-	// Filter gallery differently for feeds
-	if ( is_feed() ) {
-		$output = "\n";
-		foreach ( $attachments as $att_id => $attachment ) $output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
-		return $output;
-	}
-
-	// Filter tags and attributes
-	$itemtag = tag_escape( $itemtag );
-	$captiontag = tag_escape( $captiontag );
-	$columns = intval( $columns );
-	$itemwidth = $columns > 0 ? floor( 100 / $columns ) : 100;
-	$float = is_rtl() ? 'right' : 'left';
-	$selector = "gallery-{$instance}";
-
-	// Filter gallery CSS
-	$output = apply_filters( 'gallery_style', "
-		<style type='text/css'>
-			#{$selector} {
-				margin: auto;
-			}
-			#{$selector} .gallery-item {
-				float: {$float};
-				margin-top: 10px;
-				text-align: center;
-				width: {$itemwidth}%;
-			}
-			#{$selector} img {
-				border: 2px solid #cfcfcf;
-			}
-			#{$selector} .gallery-caption {
-				margin-left: 0;
-			}
-		</style>
-		<!-- see gallery_shortcode() in wp-includes/media.php -->
-		<div id='$selector' class='gallery galleryid-{$id}'>"
-	);
-
-	// Iterate through the attachments in this gallery instance
-	$i = 0;
-	foreach ( $attachments as $id => $attachment ) {
-
-		// Attachment link
-		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false ); 
-
-		// Start itemtag
-		$output .= "<{$itemtag} class='gallery-item'>";
-
-		// icontag
-		$output .= "
-		<{$icontag} class='gallery-icon'>
-			$link
-		</{$icontag}>";
-
-		if ( $captiontag && trim( $attachment->post_excerpt ) ) {
-
-			// captiontag
-			$output .= "
-			<{$captiontag} class='gallery-caption'>
-				" . wptexturize($attachment->post_excerpt) . "
-			</{$captiontag}>";
-
-		}
-
-		// End itemtag
-		$output .= "</{$itemtag}>";
-
-		// Line breaks by columns set
-		if($columns > 0 && ++$i % $columns == 0) $output .= '<br style="clear: both">';
-
-	}
-
-	// End gallery output
-	$output .= "
-		<br style='clear: both;'>
-	</div>\n";
-
-	return $output;
-
+	add_shortcode( 'gridtaxbox', 'btsc_gridtaxbox_shortcode' );
 }
-
-// Apply filter to default gallery shortcode
-//add_filter( 'post_gallery', 'btsc_shortcode_gallery', 10, 2 );
 
 /*
  * Carousel for Posts Types
@@ -288,7 +191,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
 
 if ( !function_exists('btsc_carouselcpt_shortcode') ) {
 	function btsc_carouselcpt_shortcode($atts, $content = null) {
-        
+
         $att = shortcode_atts( array(
             'post_type' => 'page',
             'tax' => '',
@@ -297,7 +200,7 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
             'col' => 3,
             'titlep' => false
         ), $atts );
-        
+
         $html = '<div id="gridcarbox" class="row">';
         $type = esc_attr($att['type']);
         $idcarousel = rand(1,99);
@@ -309,14 +212,14 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                 'post_type' => esc_attr($att['post_type']),
                 'post_parent' => 0,
                 'posts_per_page' => 6,
-                'orderby' => 'title'
+                'orderby' => 'date'
             );
             $grid = get_posts( $args );
-            
-        } elseif($type =='tax') { 
+
+        } elseif($type =='tax') {
             $grid = get_terms( array(esc_attr($att['tax']) ), 'orderby=count&hide_empty=0' );
         }
-                
+
         $i = 1;
         $idcarousel = rand(1,99);
         $titlep = esc_attr($att['titlep']);
@@ -325,17 +228,17 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
             <div class="col-sm-12">';
             if(esc_attr($att['title']) ) { $html.= '<h2>'.esc_attr($att['title']).'</h2>'; }
         $html.='
-                <div class="carousel carousel'.$idcarousel.' slide" id="myCarousel'.$idcarousel.'">
+                <div class="carousel carousel'.$idcarousel.' slide" id="myCarousel'.$idcarousel.'" data-ride="carousel">
                   <div class="carousel-inner">';
 
-        
-            foreach ( $grid as $gridg ) : 
+
+            foreach ( $grid as $gridg ) :
                     $html.='
                     <div class="item';
                     if($i == 1) $html.=' active';
                     $html.='">';
-        
-                    if($type =='post') { 
+
+                    if($type =='post') {
                         $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
                         $html .= '<a href="'.get_permalink($gridg).'">';
                         $html.= get_the_post_thumbnail( $gridg->ID, 'thumb-col-'.$colw );
@@ -347,7 +250,7 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                             $html.= '</a></h2></div>';
                             }
                         $html.='</div>';
-                    } elseif($type =='tax') { 
+                    } elseif($type =='tax') {
                         $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
                         $html .= '<a href="'.get_term_link($gridg).'">';
 
@@ -356,12 +259,12 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                         $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
                         $html.= '</a></div>';
                     }
-        
+
                     $html.='</div>';
                     $i++;
-                endforeach;         
-        
-        
+                endforeach;
+
+
                   $html.='</div>
                   <a class="left carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                   <a class="right carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -369,12 +272,12 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
             </div>
         </div>
         </div>';
-        
+
 
         $html .="
         <script type='text/javascript'>
         jQuery('#myCarousel".$idcarousel."').carousel({
-          interval: 40000
+          interval: 2000
         });
 
         jQuery('.carousel".$idcarousel." .item').each(function(){
@@ -408,3 +311,155 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
 	}
 add_shortcode( 'carouselcpt', 'btsc_carouselcpt_shortcode' );
 }
+
+// Links shortcode
+if ( !function_exists('btsc_links_shortcode') ) {
+function btsc_links_shortcode($atts, $content = null) {
+    $args = array(
+        'orderby'          => 'name',
+        'order'            => 'ASC',
+        'limit'            => -1,
+        'hide_invisible'   => 1,
+        'show_updated'     => 0,
+        'echo'             => 1,
+        'categorize'       => 1,
+        'title_before'     => '<h2>',
+        'title_after'      => '</h2>',
+        'category_orderby' => 'name',
+        'category_order'   => 'ASC',
+        'class'            => 'linkcat',
+        'category_before'  => '<li id=%id class=%class>',
+        'category_after'   => '</li>' );
+    $output = "";
+    $output .= '<ul class="bookmarks_list mylinks">';
+    $output .= wp_list_bookmarks($args);
+    $output .= '</ul>';
+    }
+add_shortcode( 'links', 'btsc_links_shortcode' );
+}
+
+// Gallery shortcode
+
+// remove the standard shortcode
+remove_shortcode('gallery', 'gallery_shortcode');
+add_shortcode('gallery', 'gallery_shortcode_tbs');
+
+function gallery_shortcode_tbs($attr) {
+	global $post, $wp_locale;
+
+	$output = "";
+
+	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID );
+	$attachments = get_posts($args);
+	if ($attachments) {
+		$output = '<div class="row-fluid"><ul class="thumbnails">';
+		foreach ( $attachments as $attachment ) {
+			$output .= '<li class="col-sm-2">';
+			$att_title = apply_filters( 'the_title' , $attachment->post_title );
+			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
+			$output .= '</li>';
+		}
+		$output .= '</ul></div>';
+	}
+
+	return $output;
+}
+
+
+
+// Buttons
+function buttons( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'type' => 'default', /* primary, default, info, success, danger, warning, inverse */
+	'size' => 'default', /* mini, small, default, large */
+	'url'  => '',
+	'text' => '',
+	), $atts ) );
+
+	if($type == "default"){
+		$type = "";
+	}
+	else{
+		$type = "btn-" . $type;
+	}
+
+	if($size == "default"){
+		$size = "";
+	}
+	else{
+		$size = "btn-" . $size;
+	}
+
+	$output = '<a href="' . $url . '" class="btn '. $type . ' ' . $size . '">';
+	$output .= $text;
+	$output .= '</a>';
+
+	return $output;
+}
+
+add_shortcode('button', 'buttons');
+
+// Alerts
+function alerts( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
+	'close' => 'false', /* display close link */
+	'text' => '',
+	), $atts ) );
+
+	$output = '<div class="fade in alert alert-'. $type . '">';
+	if($close == 'true') {
+		$output .= '<a class="close" data-dismiss="alert">×</a>';
+	}
+	$output .= $text . '</div>';
+
+	return $output;
+}
+
+add_shortcode('alert', 'alerts');
+
+// Block Messages
+function block_messages( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
+	'close' => 'false', /* display close link */
+	'text' => '',
+	), $atts ) );
+
+	$output = '<div class="fade in alert alert-block alert-'. $type . '">';
+	if($close == 'true') {
+		$output .= '<a class="close" data-dismiss="alert">×</a>';
+	}
+	$output .= '<p>' . $text . '</p></div>';
+
+	return $output;
+}
+
+add_shortcode('block-message', 'block_messages');
+
+// Block Messages
+function blockquotes( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'float' => '', /* left, right */
+	'cite' => '', /* text for cite */
+	), $atts ) );
+
+	$output = '<blockquote';
+	if($float == 'left') {
+		$output .= ' class="pull-left"';
+	}
+	elseif($float == 'right'){
+		$output .= ' class="pull-right"';
+	}
+	$output .= '><p>' . $content . '</p>';
+
+	if($cite){
+		$output .= '<small>' . $cite . '</small>';
+	}
+
+	$output .= '</blockquote>';
+
+	return $output;
+}
+
+add_shortcode('blockquote', 'blockquotes');
