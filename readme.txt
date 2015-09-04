@@ -34,6 +34,7 @@ Parameters:
 - col -> Elements visibles
 - titlep -> true or false. Show Title's post in carousel
 
+[gallery] - Replaces the actual gallery from Wordpress
 
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Fork and add make suggestions to the plugin! 
 
