@@ -26,3 +26,7 @@ Parameters:
 - titlep -> true or false. Show Title's post in carousel
 
 [links] - List of all links added in Links admin menu.
+
+[gallery] - Replaces the actual gallery from Wordpress
+
+[gridtaxbox] - Allows you to show a grid with taxonomy related.

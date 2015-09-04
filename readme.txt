@@ -3,9 +3,9 @@ Contributors: closemarketing
 Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
-Tested up to: 4.2
-Stable tag: 0.3
-Version: 0.3
+Tested up to: 4.3
+Stable tag: 0.4
+Version: 0.4
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -23,6 +23,8 @@ Parameters:
 - tax -> Show Taxonomy that the post in.
 - size -> image size for post thumbnail
 
+[gridtaxbox] - Allows you to show a grid with taxonomy related.
+
 [imagepostslider] - Image Slider from Images attached in a post
 
 [carouselcpt] - Multiple elements Carousel 
@@ -34,7 +36,10 @@ Parameters:
 - col -> Elements visibles
 - titlep -> true or false. Show Title's post in carousel
 
-[links] - List of all links added in Links admin menu.
+[gallery] - Replaces the actual gallery from Wordpress
+
+[links] - List of Links in Wordpress
+
 
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content) . Fork and add make suggestions to the plugin! 
 
@@ -58,6 +63,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 == Changelog ==
 = 0.3 =
 *	New shortcodes.
+
+= 0.4.0 =
+*	Added Gallery Shortcode.
 
 = 0.1.0 =
 *	First released, created one shortcode.
