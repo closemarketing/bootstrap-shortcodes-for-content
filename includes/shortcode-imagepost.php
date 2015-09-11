@@ -5,7 +5,7 @@
  */
 if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	function btsc_imagepostslider_shortcode($atts, $content = null) {
-        
+
         global $post;
         $args = array(
             'post_mime_type' => 'image',
@@ -20,7 +20,9 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
         if ( $attachments && $numattach == 1 ) {
             $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
         } elseif ($attachments) {
-            
+
+		print_r($attachments);
+
         $html = '<div class="carousel slide" id="myCarousel">';
         $html .= '<div class="carousel-inner">';
 
@@ -31,7 +33,8 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             if($i==0) $html .= ' active';
             $html .= '">';
             $html .= '<div class="bannerImage">';
-            $html .= get_the_post_thumbnail( $post->ID, 'page-thumb' );
+			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'page-thumb' );
+			$html .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'">';
             $html .= '</div>';
             $html .= '</div><!-- /Slide -->' ;
             $i++;
@@ -42,7 +45,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
         $html .= '<a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>';
         $html .= '</div><!-- /.control-box -->';
         $html .= '</div>';
-            
+
         return $html;
         }
     }
