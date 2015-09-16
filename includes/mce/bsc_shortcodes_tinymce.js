@@ -376,6 +376,14 @@
 					}
 				}, // End Well
 
+				/* Lead */
+				{
+					text: 'Lead body copy',
+					onclick: function() {
+						editor.insertContent( '[lead] ... [/lead]');
+					}
+				}, // Lead
+
 			]
 		}, // End Bootstrap Components Section
 
@@ -451,7 +459,7 @@
                     editor.insertContent( '[imagepostslider]');
                 }
             }, // Image Post Slider
-            
+
             /* Links */
             {
                 text: 'Links',
@@ -459,57 +467,13 @@
                     editor.insertContent( '[links]');
                 }
             }, // Links
-            
-			/* Spacing */
-				{
-					text: 'Image',
-					onclick: function() {
-						editor.windowManager.open( {
-							title: 'Insert Spacing',
-							body: [ {
-								type: 'textbox',
-								name: 'spacingSize',
-								label: 'Height In Pixels',
-								value: '30'
-							} ],
-							onsubmit: function( e ) {
-								editor.insertContent( '[bsc_spacing size="' + e.data.spacingSize + '"]');
-							}
-						});
-					}
-				}, // End spacing
 
-
-
-				/* Testimonial */
-				{
-					text: 'Testimonial',
-					onclick: function() {
-						editor.insertContent( '[bsc_testimonial by="Person Name"]Your testimonial[/bsc_testimonial]');
-					}
-				}, // End Testimonial
-
-				/* Pricing Table */
-				{
-					text: 'Pricing Table',
-					onclick: function() {
-						editor.insertContent( '[bsc_pricing_table]<br />[bsc_pricing  size="4" plan="Basic" cost="$9.99" per="per month" button_url="#" button_text="Sign Up"  button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing featured="yes" size="4" plan="Best" cost="$19.99" per="per month" button_url="#" button_text="Sign Up" button_color="danger" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing  size="4" plan="Great" cost="$29.99" per="per month" button_url="#" button_text="Sign Up" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[/bsc_pricing_table]');
-					}
-				}, // End Pricing Table
-
-				/* Clear Floats */
-				{
-					text: 'Clear Floats',
-					onclick: function() {
-						editor.insertContent( '[bsc_clear_floats]');
-					}
-				}, // End Clear Floats
 
 			]
 		} // End extras section
-                
-                
-                
+
+
+
 			]
 		});
 	});
