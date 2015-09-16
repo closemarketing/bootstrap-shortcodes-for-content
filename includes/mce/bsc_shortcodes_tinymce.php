@@ -3,8 +3,8 @@
  * This file has all the main shortcode functions
  * @package Twitter Bootstrap Shortcodes Plugin
  * @since 1.0
- * @author Brad Williams : http://bragthemes.com
- * @copyright Copyright (c) 2013, Brad Williams
+ * @author David Perez : https://www.closemarketing.es
+ * @copyright Copyright (c) 2013, David Perez
  * @link http://bragthemes.com
  * @License: GNU General Public License version 3.0
  * @License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,7 @@ add_action('admin_head', 'bsc_add_mce_button');
 
 
 function bsc_add_tinymce_plugin( $plugin_array ) {
-	$plugin_array['bsc_mce_button'] = plugins_url( '/js/bsc_shortcodes_tinymce.js', __FILE__ );
+	$plugin_array['bsc_mce_button'] = plugins_url( '/bsc_shortcodes_tinymce.js', __FILE__ );
 	return $plugin_array;
 }
 
@@ -35,9 +35,3 @@ function bsc_register_mce_button( $buttons ) {
 	array_push( $buttons, 'bsc_mce_button' );
 	return $buttons;
 }
-
-
-function bsc_mce_css() {
-	wp_enqueue_style('tboot-tc', plugins_url('/css/bsc_tinymce_style.css', __FILE__) );
-}
-add_action( 'admin_enqueue_scripts', 'bsc_mce_css' );

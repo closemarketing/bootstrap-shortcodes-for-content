@@ -3,7 +3,7 @@
 		editor.addButton( 'bsc_mce_button', {
 			title: 'Bootstrap Shortcodes',
 			type: 'menubutton',
-			icon: 'icon tboot-icon',
+			icon: 'mce-ico mce-i-visualchars',
 			menu: [
 
 
@@ -32,7 +32,7 @@
 				{
 					text: 'Four Columns',
 					onclick: function() {
-						editor.insertContent( '[bsc_column_wrap]<br />[bsc_column size="3"]<br />Content in column 1<br />[/bsc_column]<br />[bsc_column size="3"]<br />Content in column 2<br />[/bsc_column]<br />[bsc_column size="3"]<br />Content in column 3<br />[/bsc_column]<br />[bsc_column size="3"]<br />Content in column 4<br />[/bsc_column]<br />[/bsc_column_wrap]');
+						editor.insertContent( '[row]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[/row]<br />');
 					}
 				}, // End Columns
 
@@ -181,7 +181,7 @@
 
 						 ],
 							onsubmit: function( e ) {
-								editor.insertContent( '[bsc_button url="' + e.data.buttonUrl + '" color="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '"]' + e.data.buttonText + '[/bsc_button]');
+								editor.insertContent( '[button url="' + e.data.buttonUrl + '" color="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '"]' + e.data.buttonText + '[/button]');
 							}
 						});
 					}
