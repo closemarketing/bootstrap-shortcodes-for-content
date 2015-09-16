@@ -50,7 +50,7 @@
 				{
 					text: 'Icon',
 					onclick: function() {
-						editor.insertContent( '[bsc_icon icon="spinner" size="2x" spin="yes" border="yes" muted="yes" align="left" rotate="180" flip="vertical"][/bsc_icon]');
+						editor.insertContent( '[icon icon="spinner" size="2x" spin="yes" border="yes" muted="yes" align="left" rotate="180" flip="vertical"][/icon]');
 					}
 				}, // End Icon
 
@@ -444,10 +444,17 @@
 		{
 		text: 'Content',
 		menu: [
-
+            /* Image Post Slider */
+            {
+                text: 'Image Post Slider',
+                onclick: function() {
+                    editor.insertContent( '[imagepostslider]');
+                }
+            }, // Image Post Slider
+            
 			/* Spacing */
 				{
-					text: 'Spacing',
+					text: 'Image',
 					onclick: function() {
 						editor.windowManager.open( {
 							title: 'Insert Spacing',
@@ -464,13 +471,7 @@
 					}
 				}, // End spacing
 
-				/* Highlight */
-				{
-					text: 'Highlight',
-					onclick: function() {
-						editor.insertContent( '[bsc_highlight color="yellow"]highlighted text[/bsc_highlight]');
-					}
-				}, // End Highlight
+
 
 				/* Testimonial */
 				{
