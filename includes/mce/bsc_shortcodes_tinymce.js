@@ -452,6 +452,14 @@
                 }
             }, // Image Post Slider
             
+            /* Links */
+            {
+                text: 'Links',
+                onclick: function() {
+                    editor.insertContent( '[links]');
+                }
+            }, // Links
+            
 			/* Spacing */
 				{
 					text: 'Image',
