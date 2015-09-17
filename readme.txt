@@ -4,6 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.3
+Stable tag: 0.4
+Version: 0.4
 Stable tag: 0.5
 Version: 0.5
 
@@ -69,6 +71,7 @@ Others Plugins:
 - [Send SMS to Wordpress Users via Arsys](https://wordpress.org/plugins/send-sms-arsys/) 
 
 Made by [Closemarketing](https://www.closemarketing.es/) 
+Shortcodes forked from [WP3 Shortcodes GitHub project](https://github.com/filipstefansson/bootstrap-3-shortcodes)
 
 == Installation ==
 
@@ -80,8 +83,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content)
 
 == Changelog ==
-= 0.3 =
-*	New shortcodes.
+= 0.9.0 =
+*	Added Tinymce Button.
 
 = 0.4.0 =
 *	Added Gallery Shortcode.
