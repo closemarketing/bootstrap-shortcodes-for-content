@@ -54,21 +54,21 @@
 					}
 				}, // End Icon
 
-				/* Icon Stacked */
+				/* Icon Stacked 
 				{
 					text: 'Icon Stacked',
 					onclick: function() {
-						editor.insertContent( '[bsc_iconstack icon="check-empty" top="twitter"][/bsc_iconstack]');
+						editor.insertContent( '[iconstack icon="check-empty" top="twitter"][/iconstack]');
 					}
 				}, // End Icon Stacked
 
-				/* Icon List */
+				/* Icon List 
 				{
 					text: 'Icon List',
 					onclick: function() {
 						editor.insertContent( '[bsc_iconlist]<br />[bsc_iconitem icon="youtube"]YouTube[/bsc_iconitem]<br />[bsc_iconitem icon="facebook"]Facebook[/bsc_iconitem]<br />[bsc_iconitem icon="twitter"]Twitter[/bsc_iconitem]<br />[/bsc_iconlist]');
 					}
-				}, // End Icon List
+				}, // End Icon List */
 
 			]
 		}, // End Icons Section
@@ -191,7 +191,7 @@
 				{
 					text: 'Button Dropdown',
 					onclick: function() {
-						editor.insertContent( '[bsc_button_dropdown label="Button Text" icon="info-sign" color="danger" size="lg"]<br />[bsc_dropdown_link icon="pencil" url="http://#.com/" target="blank"]Button Text[/bsc_dropdown_link]<br />[bsc_dropdown_link icon="comment" url="http://#.com/" target="blank"]Dropdown Link[/bsc_dropdown_link]<br />[bsc_dropdown_link icon="cog" url="http://#.com/" target="blank"]Button Text[/bsc_dropdown_link]<br />[bsc_dropdown_divider]<br />[bsc_dropdown_link url="http://#.com/" target="blank"]Button Text[/bsc_dropdown_link]<br />[/bsc_button_dropdown]');
+						editor.insertContent( '[button-group]<br />[button link="#" dropdown="true" data="toggle,dropdown"]<br /> ... <br />[caret][/button]<br />[dropdown]<br />[dropdown-header]<br /> ... <br />[/dropdown-header]<br />[dropdown-item link="#"]<br />... <br />[/dropdown-item]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[divider]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[/dropdown]<br />[/button-group]');
 					}
 				}, // End Button Dropdown
 
@@ -199,7 +199,7 @@
 				{
 					text: 'Button Split Dropdown',
 					onclick: function() {
-						editor.insertContent( '[bsc_button_split_dropdown label="Button Text" color="primary" size="lg" url="http://#.com/" target="blank"]<br />[bsc_dropdown_link icon="pencil" url="http://#.com/" target="blank"]Button Text[/bsc_dropdown_link]<br />[/bsc_button_split_dropdown]');
+						editor.insertContent( '[button-group]<br />[button link="#"]<br /> ... <br />[/button]<br />[button dropdown="true" data="toggle,dropdown"][caret][/button]<br />[dropdown]<br />   [dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[divider]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[/dropdown]<br />[/button-group]');
 					}
 				}, // Button Split Dropdown
 
@@ -207,17 +207,17 @@
 				{
 					text: 'Button Group',
 					onclick: function() {
-						editor.insertContent( '[bsc_button_group size="lg" ]<br />[bsc_button color="primary" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][bsc_button color="danger" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button]<br />[/bsc_button_group]');
+						editor.insertContent( '[button-group size="lg" justified="" vertical=""]<br />[button link="#"]<br />...<br />[/button]<br />[button link="#"]<br />...<br />[/button]<br />[button link="#"]<br />...<br />[/button]<br />[/button-group]');
 					}
 				}, // Button Group
 
-				/* Vertical Button Group */
+				/* Vertical Button Group *
 				{
 					text: 'Vertical Button Group',
 					onclick: function() {
 						editor.insertContent( '[bsc_button_group_vertical size="xs" ]<br />[bsc_button color="primary" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][bsc_button color="danger" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button]<br />[/bsc_button_group_vertical]');
 					}
-				}, // Vertical Button Group
+				}, // Vertical Button Group */
 
 			]
 		}, // End Buttons Section
@@ -232,7 +232,7 @@
 				{
 					text: 'Accordion',
 					onclick: function() {
-						editor.insertContent( '[bsc_accordion_bootstrap name="UniqueName"]<br />[bsc_accordion_bootstrap_section color="primary" name="UniqueName" heading="Container One Title" number="1" open="yes"]<br />Accordion Bootstrap Content<br />[/bsc_accordion_bootstrap_section]<br />[bsc_accordion_bootstrap_section color="primary" name="UniqueName" heading="Container Two Title" number="2"]<br />Accordion Bootstrap Content<br />[/bsc_accordion_bootstrap_section]<br />[/bsc_accordion_bootstrap]');
+						editor.insertContent( '[collapsibles]<br />[collapse title="Collapse 1" active="true"]<br />...<br />[/collapse]<br />[collapse title="Collapse 2"]<br />...<br />[/collapse]<br />[collapse title="Collapse 3"]<br />...<br />[/collapse]<br />[/collapsibles]');
 					}
 				}, // End bootstrap accordion
 
@@ -240,7 +240,7 @@
 				{
 					text: 'Tabs',
 					onclick: function() {
-						editor.insertContent( '[bsc_tab_bootstrap]<br />[bsc_tab_titlesection type="tabs"]<br />[bsc_tab_tabtitle active="yes" number="1"]Tab 1[/bsc_tab_tabtitle]<br />[bsc_tab_tabtitle number="2"]Tab 2[/bsc_tab_tabtitle]<br />[/bsc_tab_titlesection]<br />[bsc_tab_contentsection]<br />[bsc_tab_tabcontent active="yes" number="1"]Tab 1 Content[/bsc_tab_tabcontent]<br />[bsc_tab_tabcontent number="2"]Tab 2 Content[/bsc_tab_tabcontent]<br />[/bsc_tab_contentsection]<br />[/bsc_tab_bootstrap]');
+						editor.insertContent( '[tab title="Home" active="true"]<br />...<br />[/tab]<br />[tab title="Profile"]<br />...<br />[/tab]<br />[tab title="Messages"]<br />...<br />[/tab]<br />[/tabs]');
 					}
 				}, // End tabs
 
@@ -254,7 +254,7 @@
 		text: 'Tooltips',
 		menu: [
 
-				/* Tooltip */
+				/* Tooltip *
 				{
 					text: 'Tooltip',
 					onclick: function() {
@@ -262,13 +262,13 @@
 					}
 				}, // End Tooltip
 
-				/* Button Tooltip */
+				/* Button Tooltip *
 				{
 					text: 'Button Tooltip',
 					onclick: function() {
 						editor.insertContent( '[bsc_tooltip text="Text in tooltip" placement="top" color="primary" size="lg"]Link for tooltip[/bsc_tooltip]');
 					}
-				}, // End Button Tooltip
+				}, // End Button Tooltip */
 
 			]
 		}, // End tooltip section
@@ -279,7 +279,7 @@
 			text: 'Progress Bar',
 			menu: [
 
-				/* Single Progress Bar */
+				/* Single Progress Bar 
 				{
 					text: 'Single Progress Bar',
 					onclick: function() {
@@ -287,13 +287,13 @@
 					}
 				}, // End Single Progress Bar
 
-				/* Progress Bar - Stacked */
+				/* Progress Bar - Stacked *
 				{
 					text: 'Progress Bar - Stacked',
 					onclick: function() {
 						editor.insertContent( '[bsc_stacked_progress_bar]<br />[bsc_single_stacked_bar style="success" width="20"][/bsc_single_stacked_bar]<br />[bsc_single_stacked_bar style="warning" width="30"][/bsc_single_stacked_bar]<br />[bsc_single_stacked_bar style="danger" width="30"][/bsc_single_stacked_bar]<br />[/bsc_stacked_progress_bar]');
 					}
-				}, // End Progress Bar - Stacked
+				}, // End Progress Bar - Stacked */
 
 			]
 		}, // End Popovers Section
@@ -308,11 +308,11 @@
 				{
 					text: 'Alert',
 					onclick: function() {
-						editor.insertContent( '[bsc_alert color="danger"]Alert Content[/bsc_alert]');
+						editor.insertContent( '[alert type="success"] ... [/alert]');
 					}
 				}, // End Alert
 
-				/* Badge*/
+				/* Badge*
 				{
 					text: 'Badge',
 					onclick: function() {
@@ -320,7 +320,7 @@
 					}
 				}, // End Badge
 
-				/* Carousel */
+				/* Carousel *
 				{
 					text: 'Carousel',
 					onclick: function() {
@@ -330,13 +330,13 @@
 
 				/* Jumotron */
 				{
-					text: 'Jumotron',
+					text: 'Jumbotron',
 					onclick: function() {
-						editor.insertContent( '[bsc_jumbotron]Content of the Jumbotron <br />[bsc_button color="primary" size="lg" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][/bsc_jumbotron]');
+						editor.insertContent( '[jumbotron title="My Jumbotron"]Content of the Jumbotron <br />[bsc_button color="primary" size="lg" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][/jumbotron]');
 					}
 				}, // End Jumotron
 
-				/* Label */
+				/* Label *
 				{
 					text: 'Label',
 					onclick: function() {
@@ -344,7 +344,7 @@
 					}
 				}, // End Label
 
-				/* Modal */
+				/* Modal *
 				{
 					text: 'Modal',
 					onclick: function() {
@@ -352,7 +352,7 @@
 					}
 				}, // End Modal
 
-				/* Panel */
+				/* Panel *
 				{
 					text: 'Panel',
 					onclick: function() {
@@ -360,7 +360,7 @@
 					}
 				}, // End Panel
 
-				/* Table */
+				/* Table *
 				{
 					text: 'Table',
 					onclick: function() {
@@ -368,84 +368,16 @@
 					}
 				}, // End Table
 
-				/* Well */
+				/* Well *
 				{
 					text: 'Well',
 					onclick: function() {
 						editor.insertContent( '[bsc_well width="50%"]Your Well Content[/bsc_well]');
 					}
-				}, // End Well
-
-				/* Lead */
-				{
-					text: 'Lead body copy',
-					onclick: function() {
-						editor.insertContent( '[lead] ... [/lead]');
-					}
-				}, // Lead
+				}, // End Well*/
 
 			]
 		}, // End Bootstrap Components Section
-
-
-		/** Extras **/
-		{
-		text: 'Extras',
-		menu: [
-
-			/* Spacing */
-				{
-					text: 'Spacing',
-					onclick: function() {
-						editor.windowManager.open( {
-							title: 'Insert Spacing',
-							body: [ {
-								type: 'textbox',
-								name: 'spacingSize',
-								label: 'Height In Pixels',
-								value: '30'
-							} ],
-							onsubmit: function( e ) {
-								editor.insertContent( '[bsc_spacing size="' + e.data.spacingSize + '"]');
-							}
-						});
-					}
-				}, // End spacing
-
-				/* Highlight */
-				{
-					text: 'Highlight',
-					onclick: function() {
-						editor.insertContent( '[bsc_highlight color="yellow"]highlighted text[/bsc_highlight]');
-					}
-				}, // End Highlight
-
-				/* Testimonial */
-				{
-					text: 'Testimonial',
-					onclick: function() {
-						editor.insertContent( '[bsc_testimonial by="Person Name"]Your testimonial[/bsc_testimonial]');
-					}
-				}, // End Testimonial
-
-				/* Pricing Table */
-				{
-					text: 'Pricing Table',
-					onclick: function() {
-						editor.insertContent( '[bsc_pricing_table]<br />[bsc_pricing  size="4" plan="Basic" cost="$9.99" per="per month" button_url="#" button_text="Sign Up"  button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing featured="yes" size="4" plan="Best" cost="$19.99" per="per month" button_url="#" button_text="Sign Up" button_color="danger" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing  size="4" plan="Great" cost="$29.99" per="per month" button_url="#" button_text="Sign Up" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[/bsc_pricing_table]');
-					}
-				}, // End Pricing Table
-
-				/* Clear Floats */
-				{
-					text: 'Clear Floats',
-					onclick: function() {
-						editor.insertContent( '[bsc_clear_floats]');
-					}
-				}, // End Clear Floats
-
-			]
-		}, // End extras section
 
 
 		/** Content **/
@@ -459,7 +391,7 @@
                     editor.insertContent( '[imagepostslider]');
                 }
             }, // Image Post Slider
-
+            
             /* Links */
             {
                 text: 'Links',
@@ -468,12 +400,11 @@
                 }
             }, // Links
 
-
 			]
-		} // End extras section
-
-
-
+		} // End content section
+                
+                
+                
 			]
 		});
 	});

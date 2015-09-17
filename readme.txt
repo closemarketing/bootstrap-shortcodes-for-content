@@ -49,6 +49,7 @@ Others Plugins:
 - [Send SMS to Wordpress Users via Arsys](https://wordpress.org/plugins/send-sms-arsys/) 
 
 Made by [Closemarketing](https://www.closemarketing.es/) 
+Shortcodes forked from [WP3 Shortcodes GitHub project](https://github.com/filipstefansson/bootstrap-3-shortcodes)
 
 == Installation ==
 
@@ -60,6 +61,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-sc-content)
 
 == Changelog ==
+= 0.9.0 =
+*	Added Tinymce Button.
 
 = 0.4.0 =
 *	Added Gallery Shortcode.
