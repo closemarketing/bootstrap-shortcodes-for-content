@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
-Version: 0.4
+Version: 0.9
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
