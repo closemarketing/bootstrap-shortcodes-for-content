@@ -232,7 +232,7 @@
 				{
 					text: 'Accordion',
 					onclick: function() {
-						editor.insertContent( '[bsc_accordion_bootstrap name="UniqueName"]<br />[bsc_accordion_bootstrap_section color="primary" name="UniqueName" heading="Container One Title" number="1" open="yes"]<br />Accordion Bootstrap Content<br />[/bsc_accordion_bootstrap_section]<br />[bsc_accordion_bootstrap_section color="primary" name="UniqueName" heading="Container Two Title" number="2"]<br />Accordion Bootstrap Content<br />[/bsc_accordion_bootstrap_section]<br />[/bsc_accordion_bootstrap]');
+						editor.insertContent( '[collapsibles]<br />[collapse title="Collapse 1" active="true"]<br />...<br />[/collapse]<br />[collapse title="Collapse 2"]<br />...<br />[/collapse]<br />[collapse title="Collapse 3"]<br />...<br />[/collapse]<br />[/collapsibles]');
 					}
 				}, // End bootstrap accordion
 
@@ -240,7 +240,7 @@
 				{
 					text: 'Tabs',
 					onclick: function() {
-						editor.insertContent( '[bsc_tab_bootstrap]<br />[bsc_tab_titlesection type="tabs"]<br />[bsc_tab_tabtitle active="yes" number="1"]Tab 1[/bsc_tab_tabtitle]<br />[bsc_tab_tabtitle number="2"]Tab 2[/bsc_tab_tabtitle]<br />[/bsc_tab_titlesection]<br />[bsc_tab_contentsection]<br />[bsc_tab_tabcontent active="yes" number="1"]Tab 1 Content[/bsc_tab_tabcontent]<br />[bsc_tab_tabcontent number="2"]Tab 2 Content[/bsc_tab_tabcontent]<br />[/bsc_tab_contentsection]<br />[/bsc_tab_bootstrap]');
+						editor.insertContent( '[tab title="Home" active="true"]<br />...<br />[/tab]<br />[tab title="Profile"]<br />...<br />[/tab]<br />[tab title="Messages"]<br />...<br />[/tab]<br />[/tabs]');
 					}
 				}, // End tabs
 
@@ -330,9 +330,9 @@
 
 				/* Jumotron */
 				{
-					text: 'Jumotron',
+					text: 'Jumbotron',
 					onclick: function() {
-						editor.insertContent( '[bsc_jumbotron]Content of the Jumbotron <br />[bsc_button color="primary" size="lg" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][/bsc_jumbotron]');
+						editor.insertContent( '[jumbotron title="My Jumbotron"]Content of the Jumbotron <br />[bsc_button color="primary" size="lg" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][/jumbotron]');
 					}
 				}, // End Jumotron
 
@@ -380,66 +380,6 @@
 		}, // End Bootstrap Components Section
 
 
-		/** Extras **/
-		{
-		text: 'Extras',
-		menu: [
-
-			/* Spacing */
-				{
-					text: 'Spacing',
-					onclick: function() {
-						editor.windowManager.open( {
-							title: 'Insert Spacing',
-							body: [ {
-								type: 'textbox',
-								name: 'spacingSize',
-								label: 'Height In Pixels',
-								value: '30'
-							} ],
-							onsubmit: function( e ) {
-								editor.insertContent( '[bsc_spacing size="' + e.data.spacingSize + '"]');
-							}
-						});
-					}
-				}, // End spacing
-
-				/* Highlight */
-				{
-					text: 'Highlight',
-					onclick: function() {
-						editor.insertContent( '[bsc_highlight color="yellow"]highlighted text[/bsc_highlight]');
-					}
-				}, // End Highlight
-
-				/* Testimonial */
-				{
-					text: 'Testimonial',
-					onclick: function() {
-						editor.insertContent( '[bsc_testimonial by="Person Name"]Your testimonial[/bsc_testimonial]');
-					}
-				}, // End Testimonial
-
-				/* Pricing Table */
-				{
-					text: 'Pricing Table',
-					onclick: function() {
-						editor.insertContent( '[bsc_pricing_table]<br />[bsc_pricing  size="4" plan="Basic" cost="$9.99" per="per month" button_url="#" button_text="Sign Up"  button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing featured="yes" size="4" plan="Best" cost="$19.99" per="per month" button_url="#" button_text="Sign Up" button_color="danger" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing  size="4" plan="Great" cost="$29.99" per="per month" button_url="#" button_text="Sign Up" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[/bsc_pricing_table]');
-					}
-				}, // End Pricing Table
-
-				/* Clear Floats */
-				{
-					text: 'Clear Floats',
-					onclick: function() {
-						editor.insertContent( '[bsc_clear_floats]');
-					}
-				}, // End Clear Floats
-
-			]
-		}, // End extras section
-
-
 		/** Content **/
 		{
 		text: 'Content',
@@ -459,54 +399,9 @@
                     editor.insertContent( '[links]');
                 }
             }, // Links
-            
-			/* Spacing */
-				{
-					text: 'Image',
-					onclick: function() {
-						editor.windowManager.open( {
-							title: 'Insert Spacing',
-							body: [ {
-								type: 'textbox',
-								name: 'spacingSize',
-								label: 'Height In Pixels',
-								value: '30'
-							} ],
-							onsubmit: function( e ) {
-								editor.insertContent( '[bsc_spacing size="' + e.data.spacingSize + '"]');
-							}
-						});
-					}
-				}, // End spacing
-
-
-
-				/* Testimonial */
-				{
-					text: 'Testimonial',
-					onclick: function() {
-						editor.insertContent( '[bsc_testimonial by="Person Name"]Your testimonial[/bsc_testimonial]');
-					}
-				}, // End Testimonial
-
-				/* Pricing Table */
-				{
-					text: 'Pricing Table',
-					onclick: function() {
-						editor.insertContent( '[bsc_pricing_table]<br />[bsc_pricing  size="4" plan="Basic" cost="$9.99" per="per month" button_url="#" button_text="Sign Up"  button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing featured="yes" size="4" plan="Best" cost="$19.99" per="per month" button_url="#" button_text="Sign Up" button_color="danger" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[bsc_pricing  size="4" plan="Great" cost="$29.99" per="per month" button_url="#" button_text="Sign Up" button_target="self" button_rel="nofollow"]<br /><ul><li>Feature One</li><li>Feature Two</li><li>Feature Three</li><li>Feature Four</li><li>Feature Five</li></ul>[/bsc_pricing]<br />[/bsc_pricing_table]');
-					}
-				}, // End Pricing Table
-
-				/* Clear Floats */
-				{
-					text: 'Clear Floats',
-					onclick: function() {
-						editor.insertContent( '[bsc_clear_floats]');
-					}
-				}, // End Clear Floats
 
 			]
-		} // End extras section
+		} // End content section
                 
                 
                 
