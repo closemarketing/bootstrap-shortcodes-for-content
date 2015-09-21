@@ -32,6 +32,13 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
+
+function bsc_custom_init() {
+	load_plugin_textdomain( 'bsc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	}
+	//Load Translation
+add_action('plugins_loaded', 'bsc_custom_init');
+
 class BoostrapShortcodesContent {
 
   function __construct() {

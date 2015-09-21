@@ -35,3 +35,11 @@ function bsc_register_mce_button( $buttons ) {
 	array_push( $buttons, 'bsc_mce_button' );
 	return $buttons;
 }
+
+public function tinymce_loader() {
+add_filter( 'mce_external_languages', array( __class__, 'bctt_tinymce_languages' ) );
+}
+
+public static function bsc_tinymce_languages( $bsc_locales) {
+    	$bsc_locales[ 'bsc' ] = plugin_dir_path( __FILE__ ) . '/includes/mce/bsc_locale_tinymce.php';
+  		return $bsc_locales;
