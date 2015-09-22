@@ -75,7 +75,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
         
         $output.= '
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="';
+            <a class="thumbnail-gallery" href="#" data-image-id="" data-toggle="modal" data-title="';
         $output.=$attachment->title;
         $output.='" data-caption="'.$attachment->post_content.'" data-image="';
         $image_thumb = wp_get_attachment_image_src( $attachment->ID, 'thumnnail' );
