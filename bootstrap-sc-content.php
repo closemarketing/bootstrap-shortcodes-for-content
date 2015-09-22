@@ -37,6 +37,41 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
+
+// Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
+function bs_fix_shortcodes($content){   
+    $array = array (
+        '<p>[' => '[', 
+        ']</p>' => ']', 
+        ']<br />' => ']',
+        ']<br>' => ']'
+    );
+
+    $content = strtr($content, $array);
+    return $content;
+}
+
+function bs_cleanup_domdocument($content) {
+    $content = preg_replace('#(( ){0,}<br( {0,})(/{0,1})>){1,}$#i', '', $content);
+    return $content;
+}
+
+// We need to be able to figure out the attributes of a wrapped shortcode
+function bs_attribute_map($str, $att = null) {
+    $res = array();
+    $return = array();
+    $reg = get_shortcode_regex();
+    preg_match_all('~'.$reg.'~',$str, $matches);
+    foreach($matches[2] as $key => $name) {
+        $parsed = shortcode_parse_atts($matches[3][$key]);
+        $parsed = is_array($parsed) ? $parsed : array();
+
+            $res[$name] = $parsed;
+            $return[] = $res;
+        }
+    return $return;
+}
+
 class BoostrapShortcodesContent {
 
   function __construct() {
