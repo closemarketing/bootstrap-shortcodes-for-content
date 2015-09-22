@@ -21,9 +21,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
         } elseif ($attachments) {
 
-		print_r($attachments);
-
-        $html = '<div class="carousel slide" id="myCarousel">';
+        $html = '<div class="carousel slide imagepostslider" id="myCarousel">';
         $html .= '<div class="carousel-inner">';
 
         $i = 0;
