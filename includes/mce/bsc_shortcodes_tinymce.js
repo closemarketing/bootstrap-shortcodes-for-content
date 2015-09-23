@@ -400,8 +400,7 @@
                 }
             }, // Links
 
-
-            /* Buttons */
+            /* Gridbox */
             {
                 text: 'Gridbox',
                 onclick: function() {
