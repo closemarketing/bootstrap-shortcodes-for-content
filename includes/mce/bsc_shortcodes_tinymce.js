@@ -400,10 +400,73 @@
                 }
             }, // Links
 
+
+            /* Buttons */
+            {
+                text: 'Gridbox',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Gridbox',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'gridpost_type',
+                            label: 'Post Type Name',
+                            value: 'page'
+                        },
+
+                        // Posts per Page
+                        {
+                            type: 'textbox',
+                            name: 'gridposts_per_page',
+                            label: 'Posts for grid',
+                            value: '-1'
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'gridcol',
+                            label: 'Columns Grid',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Button Include date
+                        {
+                            type: 'listbox',
+                            name: 'griddate',
+                            label: 'Include Date',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: 'Image Size (Wordpress name)',
+                            value: ''
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[gridbox post_type="' + e.data.gridpost_type + '" posts_per_page="' + e.data.gridposts_per_page + '" col="' + e.data.gridcol + '" date="' + e.data.griddate + '" size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
+                }
+            }, // End button
 			]
 		} // End content section
-                
-                
                 
 			]
 		});
