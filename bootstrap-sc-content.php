@@ -29,6 +29,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image
 require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
+//require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
