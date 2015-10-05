@@ -3,9 +3,9 @@ Contributors: closemarketing
 Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
-Tested up to: 4.3
-Stable tag: 0.9
-Version: 0.9
+Tested up to: 4.3.1
+Stable tag: 0.9.1
+Version: 1.0
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -41,23 +41,17 @@ Parameters:
 [links] - List of Links in Wordpress
 
 Tabs - Allows you to show a tab panel. Ex:
-[tabgroup][tab_titlesection]
-[tab_tabtitle active="yes" name="slug1"]Title 1[/tab_tabtitle]
-[tab_tabtitle name="slug2"]Title 2[/tab_tabtitle]
-[tab_tabtitle name="slug3"]Title 3[/tab_tabtitle]
-[/tab_titlesection]
-[tab_contentsection]
-[tab_tabcontent active="yes" name="slug1"]
-content3
-[/tab_tabcontent]
-[tab_tabcontent name="slug2"]
-content2
-[/tab_tabcontent]
-[tab_tabcontent name="slug3"]
-content3
-[/tab_tabcontent]
-[/tab_contentsection]
-[/tabgroup]
+[tabs type="tabs"]
+[tab title="Home" active="true"]
+...
+[/tab]
+[tab title="Profile"]
+...
+[/tab]
+[tab title="Messages"]
+...
+[/tab]
+[/tabs]
 
 
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content) . Fork and add make suggestions to the plugin!
@@ -81,6 +75,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
+= 0.9.1 =
+*	Added shortcodes to Tinymce button.
+*	Solved problems with tabs shortcode.
+
 = 0.9.0 =
 *	Added Tinymce Button.
 

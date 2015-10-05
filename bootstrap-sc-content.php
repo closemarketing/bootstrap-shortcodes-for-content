@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
-Version: 0.9
+Version: 0.9.1
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bootstrap-sc-content
@@ -37,6 +37,41 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 //Register Image sizes
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
+
+
+// Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
+function bsc_fix_shortcodes($content){
+    $array = array (
+        '<p>[' => '[',
+        ']</p>' => ']',
+        ']<br />' => ']',
+        ']<br>' => ']'
+    );
+
+    $content = strtr($content, $array);
+    return $content;
+}
+
+function bsc_cleanup_domdocument($content) {
+    $content = preg_replace('#(( ){0,}<br( {0,})(/{0,1})>){1,}$#i', '', $content);
+    return $content;
+}
+
+// We need to be able to figure out the attributes of a wrapped shortcode
+function bsc_attribute_map($str, $att = null) {
+    $res = array();
+    $return = array();
+    $reg = get_shortcode_regex();
+    preg_match_all('~'.$reg.'~',$str, $matches);
+    foreach($matches[2] as $key => $name) {
+        $parsed = shortcode_parse_atts($matches[3][$key]);
+        $parsed = is_array($parsed) ? $parsed : array();
+
+            $res[$name] = $parsed;
+            $return[] = $res;
+        }
+    return $return;
+}
 
 class BoostrapShortcodesContent {
 
@@ -1157,7 +1192,7 @@ class BoostrapShortcodesContent {
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
-    $atts_map = bs_attribute_map( $content );
+    $atts_map = bsc_attribute_map( $content );
 
     // Extract the tab titles for use in the tab widget.
     if ( $atts_map ) {
@@ -1369,7 +1404,7 @@ class BoostrapShortcodesContent {
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
-    $atts_map = bs_attribute_map( $content );
+    $atts_map = bsc_attribute_map( $content );
 
     // Extract the slide titles for use in the carousel widget.
     if ( $atts_map ) {

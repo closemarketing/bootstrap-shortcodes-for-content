@@ -32,20 +32,14 @@ Parameters:
 [gridtaxbox] - Allows you to show a grid with taxonomy related.
 
 Tabs - Allows you to show a tab panel.
-[tabgroup][tab_titlesection]
-[tab_tabtitle active="yes" name="slug1"]Title 1[/tab_tabtitle]
-[tab_tabtitle name="slug2"]Title 2[/tab_tabtitle]
-[tab_tabtitle name="slug3"]Title 3[/tab_tabtitle]
-[/tab_titlesection]
-[tab_contentsection]
-[tab_tabcontent active="yes" name="slug1"]
-content3
-[/tab_tabcontent]
-[tab_tabcontent name="slug2"]
-content2
-[/tab_tabcontent]
-[tab_tabcontent name="slug3"]
-content3
-[/tab_tabcontent]
-[/tab_contentsection]
-[/tabgroup]
+[tabs type="tabs"]
+[tab title="Home" active="true"]
+...
+[/tab]
+[tab title="Profile"]
+...
+[/tab]
+[tab title="Messages"]
+...
+[/tab]
+[/tabs]
