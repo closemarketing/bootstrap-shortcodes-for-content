@@ -384,21 +384,7 @@
 		{
 		text: 'Content',
 		menu: [
-            /* Image Post Slider */
-            {
-                text: 'Image Post Slider',
-                onclick: function() {
-                    editor.insertContent( '[imagepostslider]');
-                }
-            }, // Image Post Slider
-            
-            /* Links */
-            {
-                text: 'Links',
-                onclick: function() {
-                    editor.insertContent( '[links]');
-                }
-            }, // Links
+
 
             /* Gridbox */
             {
@@ -454,7 +440,7 @@
                             type: 'textbox',
                             name: 'gridimagesize',
                             label: 'Image Size (Wordpress name)',
-                            value: ''
+                            value: 'thumbnail'
                         },
 
                      ],
@@ -463,7 +449,89 @@
                         }
                     });
                 }
-            }, // End button
+            }, // End gridbox    
+
+
+            /* Gridtaxbox */
+            {
+                text: 'Gridtaxbox',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Gridbox for Taxonomy',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'gridtax',
+                            label: 'Taxonomy Name',
+                            value: 'category'
+                        },
+
+                        // Posts per Page
+                        {
+                            type: 'textbox',
+                            name: 'gridposts_per_page',
+                            label: 'Posts for grid',
+                            value: '-1'
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'gridcol',
+                            label: 'Columns Grid',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Title included?
+                        {
+                            type: 'listbox',
+                            name: 'gridtaxtitle',
+                            label: 'Include Taxonomy Title',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: 'Image Size (Wordpress name)',
+                            value: 'thumbnail'
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[gridtaxbox tax="' + e.data.gridtax + '" posts_per_page="' + e.data.gridposts_per_page + '" col="' + e.data.gridcol + '" title="' + e.data.gridtaxtitle + '" size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
+                }
+            }, // End gridtaxbox 
+            
+            /* Image Post Slider */
+            {
+                text: 'Image Post Slider',
+                onclick: function() {
+                    editor.insertContent( '[imagepostslider]');
+                }
+            }, // Image Post Slider
+            
+            /* Links */
+            {
+                text: 'Links',
+                onclick: function() {
+                    editor.insertContent( '[links]');
+                }
+            }, // Links
 			]
 		} // End content section
                 
