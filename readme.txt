@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 3.0
 Tested up to: 4.3.1
 Stable tag: 0.9.1
-Version: 1.0
+Version: 0.9.1
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
