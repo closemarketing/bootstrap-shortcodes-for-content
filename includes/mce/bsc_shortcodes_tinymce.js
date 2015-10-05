@@ -54,7 +54,7 @@
 					}
 				}, // End Icon
 
-				/* Icon Stacked 
+				/* Icon Stacked
 				{
 					text: 'Icon Stacked',
 					onclick: function() {
@@ -62,7 +62,7 @@
 					}
 				}, // End Icon Stacked
 
-				/* Icon List 
+				/* Icon List
 				{
 					text: 'Icon List',
 					onclick: function() {
@@ -181,7 +181,7 @@
 
 						 ],
 							onsubmit: function( e ) {
-								editor.insertContent( '[button url="' + e.data.buttonUrl + '" color="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '"]' + e.data.buttonText + '[/button]');
+								editor.insertContent( '[button link="' + e.data.buttonUrl + '" color="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '"]' + e.data.buttonText + '[/button]');
 							}
 						});
 					}
@@ -279,7 +279,7 @@
 			text: 'Progress Bar',
 			menu: [
 
-				/* Single Progress Bar 
+				/* Single Progress Bar
 				{
 					text: 'Single Progress Bar',
 					onclick: function() {
@@ -391,7 +391,7 @@
                     editor.insertContent( '[imagepostslider]');
                 }
             }, // Image Post Slider
-            
+
             /* Links */
             {
                 text: 'Links',
@@ -402,9 +402,9 @@
 
 			]
 		} // End content section
-                
-                
-                
+
+
+
 			]
 		});
 	});
