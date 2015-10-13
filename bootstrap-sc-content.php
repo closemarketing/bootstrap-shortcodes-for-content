@@ -5,16 +5,20 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
-Version: 0.9
+Version: 0.9.2
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: bootstrap-sc-content
+Domain Path: /languages
 */
 
 /*
  * Allow shortcodes in widgets
  * @since v0.1
  */
-add_filter('widget_text', 'do_shortcode');
+//Prevent br and p in shortcode
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
 
 //Include functions shortcodes
 require_once( dirname(__FILE__) . '/includes/shortcode-gallery.php'); // Gallery
@@ -24,6 +28,8 @@ require_once( dirname(__FILE__) . '/includes/shortcode-gridtaxbox.php'); // Grid
 require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image Post Slider
 require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
+require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
+//require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
@@ -32,12 +38,45 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
-
 function bsc_custom_init() {
 	load_plugin_textdomain( 'bsc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 	//Load Translation
 add_action('plugins_loaded', 'bsc_custom_init');
+
+// Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
+function bsc_fix_shortcodes($content){
+    $array = array (
+        '<p>[' => '[',
+        ']</p>' => ']',
+        ']<br />' => ']',
+        ']<br>' => ']'
+    );
+
+    $content = strtr($content, $array);
+    return $content;
+}
+
+function bsc_cleanup_domdocument($content) {
+    $content = preg_replace('#(( ){0,}<br( {0,})(/{0,1})>){1,}$#i', '', $content);
+    return $content;
+}
+
+// We need to be able to figure out the attributes of a wrapped shortcode
+function bsc_attribute_map($str, $att = null) {
+    $res = array();
+    $return = array();
+    $reg = get_shortcode_regex();
+    preg_match_all('~'.$reg.'~',$str, $matches);
+    foreach($matches[2] as $key => $name) {
+        $parsed = shortcode_parse_atts($matches[3][$key]);
+        $parsed = is_array($parsed) ? $parsed : array();
+
+            $res[$name] = $parsed;
+            $return[] = $res;
+        }
+    return $return;
+}
 
 class BoostrapShortcodesContent {
 
@@ -109,7 +148,6 @@ class BoostrapShortcodesContent {
       'thumbnail',
       'tooltip',
       'well',
-      'imagepostslider',
     );
 
     foreach ( $shortcodes as $shortcode ) {
@@ -1158,7 +1196,7 @@ class BoostrapShortcodesContent {
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
-    $atts_map = bs_attribute_map( $content );
+    $atts_map = bsc_attribute_map( $content );
 
     // Extract the tab titles for use in the tab widget.
     if ( $atts_map ) {
@@ -1370,7 +1408,7 @@ class BoostrapShortcodesContent {
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
-    $atts_map = bs_attribute_map( $content );
+    $atts_map = bsc_attribute_map( $content );
 
     // Extract the slide titles for use in the carousel widget.
     if ( $atts_map ) {
@@ -1913,57 +1951,6 @@ function bs_popover( $atts, $content = null ) {
       do_shortcode( $content )
     );
   }
-
-  /*--------------------------------------------------------------------------------------
-    *
-    * bs_imagepostslider
-    *
-    * @author closemarketing
-    * @since 3.3.6
-    *
-    *-------------------------------------------------------------------------------------*/
-	function bs_imagepostslider($atts, $content = null) {
-
-        $args = array(
-            'post_mime_type' => 'image',
-            'post_parent' => $post->ID,
-            'post_type' => 'attachment',
-            'suppress_filters' => 0
-        );
-
-        $attachments = get_children( $args );
-        $numattach = count($attachments);
-
-        if ( $attachments && $numattach == 1 ) {
-            $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
-        } elseif ($attachments) {
-
-        $html = '<div class="carousel slide" id="myCarousel">';
-        $html .= '<div class="carousel-inner">';
-
-        $i = 0;
-        foreach ( $attachments as $attachment ) {
-
-            $html .= '<div class="item ';
-            if($i==0) $html .= ' active';
-            $html .= '">';
-            $html .= '<div class="bannerImage">';
-            $html .= get_the_post_thumbnail( $post->ID, 'page-thumb' );
-            $html .= '</div>';
-            $html .= '</div><!-- /Slide -->' ;
-            $i++;
-        }
-        $html .= '</div>';
-        $html .= '<div class="control-box">';
-        $html .= '<a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>';
-        $html .= '<a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>';
-        $html .= '</div><!-- /.control-box -->';
-        $html .= '</div>';
-
-        return $html;
-        }
-    }
-
 
   /*--------------------------------------------------------------------------------------
     *

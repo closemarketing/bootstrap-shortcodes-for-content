@@ -3,6 +3,7 @@
 This plugin give you a bunch of shortcodes that allows you to draw content using Bootstrap CSS and HTML. 
 
 Shortcodes:
+
 [gridbox] - Allows you to show a grid with post types related.
 
 Parameters:
@@ -24,8 +25,21 @@ Parameters:
 - col -> Elements visibles
 - titlep -> true or false. Show Title's post in carousel
 
+[links] - List of all links added in Links admin menu.
+
 [gallery] - Replaces the actual gallery from Wordpress
 
 [gridtaxbox] - Allows you to show a grid with taxonomy related.
 
-[links] - List of Links in Wordpress
+Tabs - Allows you to show a tab panel.
+[tabs type="tabs"]
+[tab title="Home" active="true"]
+...
+[/tab]
+[tab title="Profile"]
+...
+[/tab]
+[tab title="Messages"]
+...
+[/tab]
+[/tabs]
