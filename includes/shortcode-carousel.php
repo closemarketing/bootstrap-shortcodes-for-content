@@ -7,7 +7,7 @@
 
 if ( !function_exists('btsc_carouselcpt_shortcode') ) {
 	function btsc_carouselcpt_shortcode($atts, $content = null) {
-        
+
         $att = shortcode_atts( array(
             'post_type' => 'page',
             'tax' => '',
@@ -16,7 +16,7 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
             'col' => 3,
             'titlep' => false
         ), $atts );
-        
+
         $html = '<div id="gridcarbox" class="row">';
         $type = esc_attr($att['type']);
         $idcarousel = rand(1,99);
@@ -31,11 +31,11 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                 'orderby' => 'title'
             );
             $grid = get_posts( $args );
-            
-        } elseif($type =='tax') { 
+
+        } elseif($type =='tax') {
             $grid = get_terms( array(esc_attr($att['tax']) ), 'orderby=count&hide_empty=0' );
         }
-                
+
         $i = 1;
         $idcarousel = rand(1,99);
         $titlep = esc_attr($att['titlep']);
@@ -47,17 +47,17 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                 <div class="carousel carousel'.$idcarousel.' slide" id="myCarousel'.$idcarousel.'">
                   <div class="carousel-inner">';
 
-        
-            foreach ( $grid as $gridg ) : 
+
+            foreach ( $grid as $gridg ) :
                     $html.='
                     <div class="item';
                     if($i == 1) $html.=' active';
                     $html.='">';
-        
-                    if($type =='post') { 
+
+                    if($type =='post') {
                         $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
                         $html .= '<a href="'.get_permalink($gridg).'">';
-                        $html.= get_the_post_thumbnail( $gridg->ID, 'thumb-col-'.$colw );
+                        $html.= wp_get_attachment_image( $gridg->ID, 'thumb-col-'.$colw );
                         $html.= '</a>';
                         if($titlep) {
                             $html .= '<div class="captiongrid">';
@@ -66,7 +66,7 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                             $html.= '</a></h2></div>';
                             }
                         $html.='</div>';
-                    } elseif($type =='tax') { 
+                    } elseif($type =='tax') {
                         $html.='<div class="col-xs-12 col-sm-'.$colw.'">';
                         $html .= '<a href="'.get_term_link($gridg).'">';
 
@@ -75,12 +75,12 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
                         $html.= wp_get_attachment_image( $images[$tax_term_id], 'medium' );
                         $html.= '</a></div>';
                     }
-        
+
                     $html.='</div>';
                     $i++;
-                endforeach;         
-        
-        
+                endforeach;
+
+
                   $html.='</div>
                   <a class="left carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                   <a class="right carousel-control" href="#myCarousel'.$idcarousel.'" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -88,7 +88,7 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
             </div>
         </div>
         </div>';
-        
+
 
         $html .="
         <script type='text/javascript'>
