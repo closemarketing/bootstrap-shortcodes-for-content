@@ -38,6 +38,13 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
+//Localization
+function bsc_lang_init() {
+	load_plugin_textdomain( 'bsc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	}
+	//Load Translation
+add_action('plugins_loaded', 'bsc_lang_init');
+
 
 // Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
 function bsc_fix_shortcodes($content){

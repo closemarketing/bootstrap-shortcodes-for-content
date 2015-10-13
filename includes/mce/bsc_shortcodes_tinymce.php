@@ -35,3 +35,10 @@ function bsc_register_mce_button( $buttons ) {
 	array_push( $buttons, 'bsc_mce_button' );
 	return $buttons;
 }
+
+function bsc_mce_button_lang($locales) {
+    $locales['bsc_mce_button'] = plugin_dir_path ( __FILE__ ) . 'translations.php';
+    return $locales;
+}
+ 
+add_filter( 'mce_external_languages', 'bsc_mce_button_lang');
