@@ -517,6 +517,84 @@
                 }
             }, // End gridtaxbox
 
+
+            /* Carousel CPT */
+            {
+                text: 'Carousel from Custom Post Type',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Carousel from custom post type',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'carcpt',
+                            label: 'Slug Custom Post Type',
+                            value: 'page'
+                        },
+
+                        // Taxonomy
+                        {
+                            type: 'textbox',
+                            name: 'cartax',
+                            label: 'Show Taxonomy that the post in',
+                            value: ''
+                        },
+
+                        // Title
+                        {
+                            type: 'textbox',
+                            name: 'cartitle',
+                            label: 'Title that goes before',
+                            value: ''
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'carcol',
+                            label: 'Elements visibles',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Type
+                        {
+                            type: 'listbox',
+                            name: 'cartype',
+                            label: 'Type of entries',
+                            'values': [
+                                {text: 'Post', value: 'post'},
+                                {text: 'Taxonomy', value: 'tax'}
+                            ]
+                        },
+
+                        // Title included?
+                        {
+                            type: 'listbox',
+                            name: 'cartitlep',
+                            label: 'Show Titles post in carousel',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[carouselcpt post_type="' + e.data.carcpt + '" tax="' + e.data.cartax + '" title="' + e.data.cartitle + '" type="' + e.data.cartype + '" col="' + e.data.carcol + '" titlep="' + e.data.cartitlep + '"]');
+                        }
+                    });
+                }
+            }, // End carousel cpt            
+            
+            
             /* Image Post Slider */
             {
                 text: 'Image Post Slider',
