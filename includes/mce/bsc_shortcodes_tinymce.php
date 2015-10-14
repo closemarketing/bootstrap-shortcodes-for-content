@@ -20,6 +20,7 @@ function bsc_add_mce_button() {
 	if ( 'true' == get_user_option( 'rich_editing' ) ) {
 		add_filter( 'mce_external_plugins', 'bsc_add_tinymce_plugin' );
 		add_filter( 'mce_buttons', 'bsc_register_mce_button' );
+        add_filter( 'mce_external_languages', 'bsc_mce_button_lang');
 	}
 }
 add_action('admin_head', 'bsc_add_mce_button');
@@ -38,7 +39,6 @@ function bsc_register_mce_button( $buttons ) {
 
 function bsc_mce_button_lang($locales) {
     $locales['bsc_mce_button'] = plugin_dir_path ( __FILE__ ) . 'translations.php';
+    
     return $locales;
 }
- 
-add_filter( 'mce_external_languages', 'bsc_mce_button_lang');

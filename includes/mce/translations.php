@@ -17,5 +17,5 @@ function bsc_mce_button_translation() {
  
     return $translated;
 }
- 
+
 $strings = bsc_mce_button_translation();
