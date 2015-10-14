@@ -8,8 +8,6 @@ Author URI: http://twitter.com/closemarketing
 Version: 0.9.2
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: bootstrap-sc-content
-Domain Path: /languages
 */
 
 /*
@@ -38,11 +36,13 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
-function bsc_custom_init() {
-	load_plugin_textdomain( 'bsc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-	}
-	//Load Translation
-add_action('plugins_loaded', 'bsc_custom_init');
+/**
+ * Load plugin textdomain.
+ *
+ * @since 0.9.3
+ */
+load_plugin_textdomain( 'bsc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
 
 // Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
 function bsc_fix_shortcodes($content){
