@@ -92,23 +92,31 @@ if ( !function_exists('btsc_carouselcpt_shortcode') ) {
 
         $html .="
         <script type='text/javascript'>
-        jQuery('#myCarousel".$idcarousel."').carousel({
-          interval: 40000
-        });
+            jQuery('#myCarousel".$idcarousel."').carousel({
+              interval: 5000
+            });
 
-        jQuery('.carousel".$idcarousel." .item').each(function(){
-          var next = jQuery(this).next();
-          if (!next.length) {
-            next = jQuery(this).siblings(':first');
-          }
-          next.children(':first-child').clone().appendTo(jQuery(this));
-          if (next.next().length>0) {
-              next.next().children(':first-child').clone().appendTo(jQuery(this)).addClass('rightest');
-          }
-          else {
-              jQuery(this).siblings(':first').children(':first-child').clone().appendTo(jQuery(this));
-          }
-        });
+            jQuery('.carousel".$idcarousel." .item').each(function(){
+            var itemToClone = jQuery(this);
+            var widthwindow = jQuery( window ).width();
+
+            if (widthwindow > 360) {
+                for (var i=1;i<4;i++) {
+                  itemToClone = itemToClone.next();
+
+                  // wrap around if at end of item collection
+                  if (!itemToClone.length) {
+                    itemToClone = jQuery(this).siblings(':first');
+                  }
+
+                  // grab item, clone, add marker class, add to collection
+                  itemToClone.children(':first-child').clone()
+                    .addClass('cloneditem-'+(i))
+                    .appendTo(jQuery(this));
+                }
+            }
+
+            });
         </script>";
         $html .='
         <style>

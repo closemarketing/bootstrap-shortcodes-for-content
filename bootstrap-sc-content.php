@@ -27,6 +27,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image
 require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
+require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Latest News
 //require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //-------------
