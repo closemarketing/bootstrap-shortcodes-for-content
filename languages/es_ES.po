@@ -1,22 +1,50 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-13 14:21+0200\n"
-"PO-Revision-Date: 2015-10-13 14:21+0200\n"
+"POT-Creation-Date: 2015-10-21 12:44+0200\n"
+"PO-Revision-Date: 2015-10-21 12:44+0200\n"
+"Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: bootstrap-sc-content.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: David <david@closemarketing.es>\n"
-"Language: es_ES\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/mce/bsc_locale_tinymce.php:6
+msgid "Image Post Slider"
+msgstr ""
+
+#: includes/mce/bsc_locale_tinymce.php:7
+msgctxt ""
+"Text for title of the popup box when creating tweetable quote in the visual "
+"editor"
+msgid "Better Click To Tweet Shortcode Generator"
+msgstr ""
+
+#: includes/mce/bsc_locale_tinymce.php:8
+msgctxt "Text for label on input box on popup box in visual editor"
+msgid "Tweetable Quote"
+msgstr ""
+
+#: includes/mce/bsc_locale_tinymce.php:9
+msgctxt "Text explaining the checkbox on the visual editor"
+msgid "Add \\\"via @YourTwitterName\\\" to this tweet"
+msgstr ""
+
+#: includes/mce/bsc_locale_tinymce.php:10
+msgctxt "Checkbox label in visual editor"
+msgid "Include \"via\"?"
+msgstr ""
 
 #: includes/mce/translations.php:11
 msgid "Two Columns"
@@ -25,6 +53,80 @@ msgstr "Dos columnas"
 #: includes/mce/translations.php:12
 msgid "Three Columns"
 msgstr "Tres columnas"
+
+#: includes/widgets/button.php:18
+msgid "Add a Button Bootstrap"
+msgstr ""
+
+#: includes/widgets/button.php:20
+msgid "Button to Action"
+msgstr "Botón de Acción"
+
+#: includes/widgets/button.php:62
+msgid "Button Text:"
+msgstr "Texto del botón:"
+
+#: includes/widgets/button.php:66
+msgid "Button URL:"
+msgstr ""
+
+#: includes/widgets/button.php:72
+msgid "Button Size:"
+msgstr "Tamaño del Botón:"
+
+#: includes/widgets/button.php:78
+#, fuzzy
+msgid "Large"
+msgstr "Grande"
+
+#: includes/widgets/button.php:83
+#, fuzzy
+msgid "Medium"
+msgstr "Medio"
+
+#: includes/widgets/button.php:88
+#, fuzzy
+msgid "Small"
+msgstr "Pequeño"
+
+#: includes/widgets/button.php:93
+#, fuzzy
+msgid "Extra Small"
+msgstr "Muy Pequeño"
+
+#: includes/widgets/button.php:99
+#, fuzzy
+msgid "Button Style:"
+msgstr "Texto del botón"
+
+#: includes/widgets/button.php:105
+#, fuzzy
+msgid "Default"
+msgstr "Por defecto"
+
+#: includes/widgets/button.php:110
+#, fuzzy
+msgid "Primary"
+msgstr "Primario"
+
+#: includes/widgets/button.php:115
+#, fuzzy
+msgid "Success"
+msgstr "Realizado"
+
+#: includes/widgets/button.php:120
+#, fuzzy
+msgid "Info"
+msgstr "Información del Servidor"
+
+#: includes/widgets/button.php:125
+#, fuzzy
+msgid "Warning"
+msgstr "Advertencia"
+
+#: includes/widgets/button.php:130
+msgid "Danger"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "Bootstrap Shortcodes for Content"
@@ -45,3 +147,11 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://twitter.com/closemarketing"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Title:"
+#~ msgstr "Título:"
+
+#, fuzzy
+#~ msgid "Image URL:"
+#~ msgstr "URL de la Imagen"

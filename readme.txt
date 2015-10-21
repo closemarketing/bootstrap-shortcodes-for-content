@@ -76,6 +76,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 *   Latest news shortcode
+*   New Widgets: Button.
+
 = 0.9.2 =
 *	Fixed imagepostslider and carouselcpt to show images.
 
