@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.3.1
-Stable tag: 1.0
-Version: 1.0
+Stable tag: 0.9.2
+Version: 0.9.2
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -75,8 +75,12 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
-= 1.0 =
+= 0.9.2 =
+*	Fixed imagepostslider and carouselcpt to show images.
+
+= 0.9.1 =
 *	Added shortcodes to Tinymce button.
+*	Solved problems with tabs shortcode.
 
 = 0.9.0 =
 *	Added Tinymce Button.

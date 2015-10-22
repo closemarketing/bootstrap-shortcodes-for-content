@@ -21,7 +21,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
         } elseif ($attachments) {
 
-        $html = '<div class="carousel slide imagepostslider" id="myCarousel">';
+        $html = '<div class="carousel slide" id="myCarousel">';
         $html .= '<div class="carousel-inner">';
 
         $i = 0;
@@ -31,8 +31,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
             if($i==0) $html .= ' active';
             $html .= '">';
             $html .= '<div class="bannerImage">';
-			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'page-thumb' );
-			$html .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'">';
+            $html .= wp_get_attachment_image( $attachment->ID, 'page-thumb' );
             $html .= '</div>';
             $html .= '</div><!-- /Slide -->' ;
             $i++;

@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
-Version: 1.0
+Version: 0.9.2
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bootstrap-sc-content
@@ -29,7 +29,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image
 require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
-require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
+//require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
@@ -143,7 +143,6 @@ class BoostrapShortcodesContent {
       'thumbnail',
       'tooltip',
       'well',
-      'imagepostslider',
     );
 
     foreach ( $shortcodes as $shortcode ) {
@@ -1947,57 +1946,6 @@ function bs_popover( $atts, $content = null ) {
       do_shortcode( $content )
     );
   }
-
-  /*--------------------------------------------------------------------------------------
-    *
-    * bs_imagepostslider
-    *
-    * @author closemarketing
-    * @since 3.3.6
-    *
-    *-------------------------------------------------------------------------------------*/
-	function bs_imagepostslider($atts, $content = null) {
-
-        $args = array(
-            'post_mime_type' => 'image',
-            'post_parent' => $post->ID,
-            'post_type' => 'attachment',
-            'suppress_filters' => 0
-        );
-
-        $attachments = get_children( $args );
-        $numattach = count($attachments);
-
-        if ( $attachments && $numattach == 1 ) {
-            $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
-        } elseif ($attachments) {
-
-        $html = '<div class="carousel slide" id="myCarousel">';
-        $html .= '<div class="carousel-inner">';
-
-        $i = 0;
-        foreach ( $attachments as $attachment ) {
-
-            $html .= '<div class="item ';
-            if($i==0) $html .= ' active';
-            $html .= '">';
-            $html .= '<div class="bannerImage">';
-            $html .= get_the_post_thumbnail( $post->ID, 'page-thumb' );
-            $html .= '</div>';
-            $html .= '</div><!-- /Slide -->' ;
-            $i++;
-        }
-        $html .= '</div>';
-        $html .= '<div class="control-box">';
-        $html .= '<a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>';
-        $html .= '<a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>';
-        $html .= '</div><!-- /.control-box -->';
-        $html .= '</div>';
-
-        return $html;
-        }
-    }
-
 
   /*--------------------------------------------------------------------------------------
     *
