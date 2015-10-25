@@ -99,7 +99,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
             <div class="modal-footer">
                 <div class="col-md-2">
                     <button type="button" class="btn btn-primary" id="show-previous-image">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="font-size:1.5em;" ></span></button>
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true" style="font-size:1.5em;" ></span></button>
                 </div>
 
                 <div class="col-md-8 text-justify" id="image-gallery-caption">
@@ -108,7 +108,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
 
                 <div class="col-md-2">
                     <button type="button" class="btn btn-primary" id="show-next-image">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:1.5em;" ></span></button>
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true" style="font-size:1.5em;" ></span></button>
                 </div>
             </div>
         </div>
