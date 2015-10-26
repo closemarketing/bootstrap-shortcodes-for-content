@@ -163,8 +163,8 @@
 								name: 'buttonLinkTarget',
 								label: 'Button: Link Target',
 								'values': [
-									{text: 'Self', value: 'self'},
-									{text: 'Blank', value: 'blank'}
+									{text: 'Self', value: '_self'},
+									{text: 'New Window', value: '_blank'}
 								]
 							},
 
@@ -178,10 +178,18 @@
 									{text: 'Nofollow', value: 'nofollow'}
 								]
 							},
+                                
+							// Button XClass
+							{
+								type: 'textbox',
+								name: 'buttonxclass',
+								label: 'Extra class',
+								value: ''
+							},
 
 						 ],
 							onsubmit: function( e ) {
-								editor.insertContent( '[button link="' + e.data.buttonUrl + '" color="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '"]' + e.data.buttonText + '[/button]');
+								editor.insertContent( '[button link="' + e.data.buttonUrl + '" type="' + e.data.buttonColor + '" size="' + e.data.buttonSize + '" target="' + e.data.buttonLinkTarget + '" rel="' + e.data.buttonRel + '" xclass="' + e.data.buttonxclass + '"]' + e.data.buttonText + '[/button]');
 							}
 						});
 					}

@@ -34,6 +34,8 @@ require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Late
 
 //Widgets
 require_once( dirname(__FILE__) . '/includes/widgets/button.php'); // Call to Action
+require_once( dirname(__FILE__) . '/includes/widgets/latest-tweets.php'); // Latest Tweets
+require_once( dirname(__FILE__) . '/includes/widgets/recent-posts.php'); // Recent Posts
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
