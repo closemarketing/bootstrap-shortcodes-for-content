@@ -3,20 +3,20 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-13 14:21+0200\n"
+"POT-Creation-Date: 2015-10-26 18:11+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: bootstrap-sc-content.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -26,6 +26,70 @@ msgstr ""
 
 #: includes/mce/translations.php:12
 msgid "Three Columns"
+msgstr ""
+
+#: includes/widgets/button.php:18
+msgid "Add a Button Bootstrap"
+msgstr ""
+
+#: includes/widgets/button.php:20
+msgid "Button to Action"
+msgstr ""
+
+#: includes/widgets/button.php:62
+msgid "Button Text:"
+msgstr ""
+
+#: includes/widgets/button.php:66
+msgid "Button URL:"
+msgstr ""
+
+#: includes/widgets/button.php:72
+msgid "Button Size:"
+msgstr ""
+
+#: includes/widgets/button.php:78
+msgid "Large"
+msgstr ""
+
+#: includes/widgets/button.php:83
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/button.php:88
+msgid "Small"
+msgstr ""
+
+#: includes/widgets/button.php:93
+msgid "Extra Small"
+msgstr ""
+
+#: includes/widgets/button.php:99
+msgid "Button Style:"
+msgstr ""
+
+#: includes/widgets/button.php:105
+msgid "Default"
+msgstr ""
+
+#: includes/widgets/button.php:110
+msgid "Primary"
+msgstr ""
+
+#: includes/widgets/button.php:115
+msgid "Success"
+msgstr ""
+
+#: includes/widgets/button.php:120
+msgid "Info"
+msgstr ""
+
+#: includes/widgets/button.php:125
+msgid "Warning"
+msgstr ""
+
+#: includes/widgets/button.php:130
+msgid "Danger"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

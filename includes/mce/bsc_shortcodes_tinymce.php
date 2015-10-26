@@ -39,6 +39,6 @@ function bsc_register_mce_button( $buttons ) {
 
 function bsc_mce_button_lang($locales) {
     $locales['bsc_mce_button'] = plugin_dir_path ( __FILE__ ) . 'translations.php';
-    
+
     return $locales;
 }

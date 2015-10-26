@@ -592,9 +592,9 @@
                         }
                     });
                 }
-            }, // End carousel cpt            
-            
-            
+            }, // End carousel cpt
+
+
             /* Image Post Slider */
             {
                 text: 'Image Post Slider',
