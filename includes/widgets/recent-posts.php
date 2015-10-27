@@ -64,22 +64,20 @@ class recent_posts extends WP_Widget {
             
             $img = '';
             if(has_post_thumbnail())
-                { $img = yit_image( "size=blog_thumb&alt=blog_thumb", false ); }
-			
-            else
-                { $img = '<img src="'.get_template_directory_uri().'/images/no_image_recentposts.jpg" alt="No Image" />'; }
-			
+                { $img = get_the_post_thumbnail( get_the_ID(), 'thumbnail' ); }
     		    
-            $html .= '<div class="hentry-post group">'."\n";	
+            $html .= '<div class="hentry-post group row">'."\n";	
 				
             if ( $show == 'thumb' ) {
-                $html .= '<div class="thumb-img">' . $img . '</div>';
-                $html .= '<div class="text">';
+                $html .= '<div class="thumb-img col-sm-3">';
+                $html .= '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">';
+                $html .= $img . '</a></div>';
+                $html .= '<div class="col-sm-9 text">';
             } elseif ( $show == 'date' ) {
                 $html .= '<div class="thumb-date"><span class="month">' . get_the_date('M') . '</span><span class="day">' . get_the_date('d') . '</span></div>';
-                $html .= '<div class="text">';
+                $html .= '<div class="col-sm-9 text">';
             } else {
-                $html .= '<div class="text without-thumbnail">';
+                $html .= '<div class="col-sm-9 text without-thumbnail">';
             }
             
             $html .= the_title( '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">', '</a>', false );
@@ -90,7 +88,7 @@ class recent_posts extends WP_Widget {
 	            } else {
 	            	$post_readmore = $more_text;
 	            }
-                $html .= yit_content( 'excerpt', $excerpt_length, $post_readmore );
+                $html .= get_the_excerpt();
             }
 
             if ( $show_comments == 'yes' ) {

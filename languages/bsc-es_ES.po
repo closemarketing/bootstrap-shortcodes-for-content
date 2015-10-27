@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-26 18:21+0100\n"
-"PO-Revision-Date: 2015-10-26 18:21+0100\n"
+"POT-Creation-Date: 2015-10-27 13:06+0100\n"
+"PO-Revision-Date: 2015-10-27 13:07+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -98,16 +98,16 @@ msgstr ""
 
 #: includes/widgets/latest-tweets.php:26 includes/widgets/latest-tweets.php:32
 msgid "Last Tweets"
-msgstr ""
+msgstr "Últimos tweets"
 
-#: includes/widgets/latest-tweets.php:47 includes/widgets/recent-posts.php:159
+#: includes/widgets/latest-tweets.php:47 includes/widgets/recent-posts.php:161
 msgid "Title"
 msgstr "Título"
 
 #: includes/widgets/latest-tweets.php:54
 #, fuzzy
 msgid "Username"
-msgstr "Nombre de usuario"
+msgstr "Usuario"
 
 #: includes/widgets/latest-tweets.php:61
 #, fuzzy
@@ -117,12 +117,12 @@ msgstr "Clave del cliente"
 #: includes/widgets/latest-tweets.php:68
 #, fuzzy
 msgid "Consumer secret"
-msgstr "Secreto del cliente"
+msgstr "Codigo secreto de cliente"
 
 #: includes/widgets/latest-tweets.php:75
 #, fuzzy
 msgid "Access token"
-msgstr "Ficha de acceso"
+msgstr "Clave de Acceso"
 
 #: includes/widgets/latest-tweets.php:82
 msgid "Access token secret"
@@ -134,7 +134,7 @@ msgstr "Límite"
 
 #: includes/widgets/latest-tweets.php:104
 msgid "Show Time"
-msgstr ""
+msgstr "Mostrar hora"
 
 #: includes/widgets/latest-tweets.php:112
 msgid "Show Follow link"
@@ -148,79 +148,70 @@ msgstr ""
 msgid "The latest posts, with a preview thumb."
 msgstr ""
 
-#: includes/widgets/recent-posts.php:27 includes/widgets/recent-posts.php:147
-#, fuzzy
+#: includes/widgets/recent-posts.php:27 includes/widgets/recent-posts.php:149
 msgid "Recent Posts"
-msgstr "Recientes Post"
-
-#: includes/widgets/recent-posts.php:100
-#, fuzzy
-msgid "0 comments"
-msgstr "0 Comentarios"
+msgstr "Entradas recientes"
 
 #: includes/widgets/recent-posts.php:102
-#, fuzzy
-msgid "1 comment"
-msgstr "1 Comentario"
+msgid "0 comments"
+msgstr "0 comentarios"
 
 #: includes/widgets/recent-posts.php:104
-#, fuzzy
+msgid "1 comment"
+msgstr "1 comentario"
+
+#: includes/widgets/recent-posts.php:106
 msgid " comments"
-msgstr "OBSERVACIONES:"
+msgstr "comentarios"
 
-#: includes/widgets/recent-posts.php:152
-#, fuzzy
+#: includes/widgets/recent-posts.php:154
 msgid "Read More"
-msgstr "Seguir Leyendo"
+msgstr "Leer más"
 
-#: includes/widgets/recent-posts.php:165
+#: includes/widgets/recent-posts.php:167
 #, fuzzy
 msgid "Items"
 msgstr "Items"
 
-#: includes/widgets/recent-posts.php:171
-#, fuzzy
-msgid "Show"
-msgstr "Show"
-
 #: includes/widgets/recent-posts.php:173
+msgid "Show"
+msgstr "Mostrar"
+
+#: includes/widgets/recent-posts.php:175
 msgid "Nothing"
 msgstr "Nada"
 
-#: includes/widgets/recent-posts.php:174
-#, fuzzy
+#: includes/widgets/recent-posts.php:176
 msgid "Thumbnails"
 msgstr "Miniaturas"
 
-#: includes/widgets/recent-posts.php:175
-#, fuzzy
+#: includes/widgets/recent-posts.php:177
 msgid "Date"
 msgstr "Fecha"
 
-#: includes/widgets/recent-posts.php:181
+#: includes/widgets/recent-posts.php:183
 msgid "Show Excerpt"
-msgstr ""
+msgstr "Mostrar extracto"
 
-#: includes/widgets/recent-posts.php:183 includes/widgets/recent-posts.php:204
-#, fuzzy
+#: includes/widgets/recent-posts.php:185 includes/widgets/recent-posts.php:206
 msgid "Yes"
 msgstr "Si"
 
-#: includes/widgets/recent-posts.php:184 includes/widgets/recent-posts.php:205
+#: includes/widgets/recent-posts.php:186 includes/widgets/recent-posts.php:207
 msgid "No"
-msgstr ""
+msgstr "No"
 
-#: includes/widgets/recent-posts.php:190
+#: includes/widgets/recent-posts.php:192
 msgid "Excerpt Lenght"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:196
+#: includes/widgets/recent-posts.php:198
 msgid "More Text"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:202
+#: includes/widgets/recent-posts.php:204
 msgid "Show Comments"
-msgstr ""
+msgstr "Mostrar Comentarios"
 
 #. Plugin Name of the plugin/theme
 msgid "Bootstrap Shortcodes for Content"

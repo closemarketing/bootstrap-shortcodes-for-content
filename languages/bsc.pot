@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-26 18:21+0100\n"
+"POT-Creation-Date: 2015-10-27 13:06+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -102,7 +102,7 @@ msgid "Last Tweets"
 msgstr ""
 
 #: includes/widgets/latest-tweets.php:47
-#: includes/widgets/recent-posts.php:159
+#: includes/widgets/recent-posts.php:161
 msgid "Title"
 msgstr ""
 
@@ -146,69 +146,69 @@ msgstr ""
 msgid "The latest posts, with a preview thumb."
 msgstr ""
 
-#: includes/widgets/recent-posts.php:27 includes/widgets/recent-posts.php:147
+#: includes/widgets/recent-posts.php:27 includes/widgets/recent-posts.php:149
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:100
+#: includes/widgets/recent-posts.php:102
 msgid "0 comments"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:102
+#: includes/widgets/recent-posts.php:104
 msgid "1 comment"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:104
+#: includes/widgets/recent-posts.php:106
 msgid " comments"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:152
+#: includes/widgets/recent-posts.php:154
 msgid "Read More"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:165
+#: includes/widgets/recent-posts.php:167
 msgid "Items"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:171
+#: includes/widgets/recent-posts.php:173
 msgid "Show"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:173
+#: includes/widgets/recent-posts.php:175
 msgid "Nothing"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:174
+#: includes/widgets/recent-posts.php:176
 msgid "Thumbnails"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:175
+#: includes/widgets/recent-posts.php:177
 msgid "Date"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:181
+#: includes/widgets/recent-posts.php:183
 msgid "Show Excerpt"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:183
-#: includes/widgets/recent-posts.php:204
+#: includes/widgets/recent-posts.php:185
+#: includes/widgets/recent-posts.php:206
 msgid "Yes"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:184
-#: includes/widgets/recent-posts.php:205
+#: includes/widgets/recent-posts.php:186
+#: includes/widgets/recent-posts.php:207
 msgid "No"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:190
+#: includes/widgets/recent-posts.php:192
 msgid "Excerpt Lenght"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:196
+#: includes/widgets/recent-posts.php:198
 msgid "More Text"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:202
+#: includes/widgets/recent-posts.php:204
 msgid "Show Comments"
 msgstr ""
 
