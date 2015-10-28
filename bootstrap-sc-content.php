@@ -20,6 +20,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
 
+require_once( dirname(__FILE__) . '/includes/general-settings.php'); // Settings in General options
+
 //Include functions shortcodes
 require_once( dirname(__FILE__) . '/includes/shortcode-gallery.php'); // Gallery
 require_once( dirname(__FILE__) . '/includes/shortcode-carousel.php'); // Carousel
@@ -34,6 +36,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Late
 
 //Widgets
 require_once( dirname(__FILE__) . '/includes/widgets/button.php'); // Call to Action
+require_once( dirname(__FILE__) . '/includes/widgets/social-icons.php'); // Recent Posts
 require_once( dirname(__FILE__) . '/includes/widgets/latest-tweets.php'); // Latest Tweets
 require_once( dirname(__FILE__) . '/includes/widgets/recent-posts.php'); // Recent Posts
 

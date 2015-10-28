@@ -77,6 +77,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 == Changelog ==
 *   Latest news shortcode
 *   New Widgets: Button.
+*   Add settings field: Phone.
+*   Added Social Icons (gets URLs from Yoast SEO / Tab option).
 
 = 0.9.2 =
 *	Fixed imagepostslider and carouselcpt to show images.

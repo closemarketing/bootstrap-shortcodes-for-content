@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-26 18:21+0100\n"
-"PO-Revision-Date: 2015-10-26 18:21+0100\n"
+"POT-Creation-Date: 2015-10-29 00:11+0100\n"
+"PO-Revision-Date: 2015-10-29 00:12+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -19,6 +19,11 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/general-settings.php:26
+#, fuzzy
+msgid "Phone Number"
+msgstr "Teléfono"
 
 #: includes/mce/translations.php:11
 msgid "Two Columns"
@@ -37,36 +42,36 @@ msgid "Button to Action"
 msgstr "Botón de Acción"
 
 #: includes/widgets/button.php:62
-msgid "Button Text:"
-msgstr "Texto del Botón:"
+msgid "Button Text"
+msgstr "Texto del Botón"
 
 #: includes/widgets/button.php:66
-msgid "Button URL:"
-msgstr "URL del botón:"
+msgid "Button URL"
+msgstr "URL del botón"
 
 #: includes/widgets/button.php:72
-msgid "Button Size:"
-msgstr "Tamaño del Botón:"
+msgid "Button Size"
+msgstr "Tamaño del Botón"
 
-#: includes/widgets/button.php:78
+#: includes/widgets/button.php:78 includes/widgets/social-icons.php:74
 msgid "Large"
 msgstr "Grande"
 
-#: includes/widgets/button.php:83
+#: includes/widgets/button.php:83 includes/widgets/social-icons.php:79
 msgid "Medium"
 msgstr "Mediano"
 
-#: includes/widgets/button.php:88
+#: includes/widgets/button.php:88 includes/widgets/social-icons.php:84
 msgid "Small"
 msgstr "Pequeño"
 
-#: includes/widgets/button.php:93
+#: includes/widgets/button.php:93 includes/widgets/social-icons.php:89
 msgid "Extra Small"
 msgstr "Muy Pequeño"
 
 #: includes/widgets/button.php:99
-msgid "Button Style:"
-msgstr "Estilo del botón:"
+msgid "Button Style"
+msgstr "Estilo del botón"
 
 #: includes/widgets/button.php:105
 msgid "Default"
@@ -105,7 +110,6 @@ msgid "Title"
 msgstr "Título"
 
 #: includes/widgets/latest-tweets.php:54
-#, fuzzy
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -193,7 +197,6 @@ msgid "Thumbnails"
 msgstr "Miniaturas"
 
 #: includes/widgets/recent-posts.php:175
-#, fuzzy
 msgid "Date"
 msgstr "Fecha"
 
@@ -202,7 +205,6 @@ msgid "Show Excerpt"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:183 includes/widgets/recent-posts.php:204
-#, fuzzy
 msgid "Yes"
 msgstr "Si"
 
@@ -221,6 +223,38 @@ msgstr ""
 #: includes/widgets/recent-posts.php:202
 msgid "Show Comments"
 msgstr ""
+
+#: includes/widgets/social-icons.php:18
+msgid "Adds social icons with URLs included in Yoast SEO"
+msgstr ""
+
+#: includes/widgets/social-icons.php:20
+msgid "Social Icons"
+msgstr ""
+
+#: includes/widgets/social-icons.php:58
+msgid "It uses the URLs defined in Yoast SEO / Social tab."
+msgstr ""
+
+#: includes/widgets/social-icons.php:62
+msgid "Icon Size"
+msgstr "Tamaño de icono"
+
+#: includes/widgets/social-icons.php:69
+msgid "Extra Large"
+msgstr "Extra Grande"
+
+#: includes/widgets/social-icons.php:95
+msgid "Icon Style"
+msgstr "Estilo de ícono"
+
+#: includes/widgets/social-icons.php:101
+msgid "Simple"
+msgstr "Sencillo"
+
+#: includes/widgets/social-icons.php:106
+msgid "Square"
+msgstr "Cuadrado"
 
 #. Plugin Name of the plugin/theme
 msgid "Bootstrap Shortcodes for Content"

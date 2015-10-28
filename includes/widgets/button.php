@@ -59,17 +59,17 @@ class BSC_Button extends WP_Widget {
 		$buttonstyle = esc_textarea($instance['buttonstyle']);
 ?>
 		<p>
-            <label for="<?php echo $this->get_field_id('buttontext'); ?>"><?php _e('Button Text:','bsc'); ?></label>		        <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo esc_attr($buttontext); ?>" />
+            <label for="<?php echo $this->get_field_id('buttontext'); ?>"><?php _e('Button Text','bsc'); ?>:</label>		        <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo esc_attr($buttontext); ?>" />
         </p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('buttonurl'); ?>"><?php _e('Button URL:','bsc'); ?></label>
+            <label for="<?php echo $this->get_field_id('buttonurl'); ?>"><?php _e('Button URL','bsc'); ?>:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id('buttonurl'); ?>" name="<?php echo $this->get_field_name('buttonurl'); ?>" type="text" value="<?php echo esc_attr($buttonurl); ?>" />
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'buttonsize' ); ?> ">
-                <?php _e('Button Size:', 'bsc'); ?>
+                <?php _e('Button Size', 'bsc'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'buttonsize' ); ?>" name="<?php echo $this->get_field_name( 'buttonsize' ); ?>">
                 <option value="btn-lg" <?php
@@ -96,7 +96,7 @@ class BSC_Button extends WP_Widget {
 
         <p>
             <label for="<?php echo $this->get_field_id( 'buttonstyle' ); ?> ">
-                <?php _e('Button Style:', 'bsc'); ?>
+                <?php _e('Button Style', 'bsc'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'buttonstyle' ); ?>" name="<?php echo $this->get_field_name( 'buttonstyle' ); ?>">
                 <option value="btn-default" <?php
