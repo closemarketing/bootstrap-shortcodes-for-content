@@ -9,12 +9,12 @@
 
 		/** Columns **/
 		{
-			text: 'Columns',
+			text: editor.getLang( 'bsc_mce_button.columns' ),
 			menu: [
 
 				/* Columns */
 				{
-					text: 'Two Columns',
+					text: editor.getLang( 'bsc_mce_button.twocolumns' ),
 					onclick: function() {
 						editor.insertContent( '[row]<br />[column sm="6"]<br />...<br />[/column]<br />[column sm="6"]<br />...<br />[/column]<br />[/row]<br />');
 					}
@@ -22,7 +22,7 @@
 
 				/* Columns */
 				{
-					text: 'Three Columns',
+					text: editor.getLang( 'bsc_mce_button.threecolumns' ),
 					onclick: function() {
 						editor.insertContent( '[row]<br />[column sm="4"]<br />...<br />[/column]<br />[column sm="4"]<br />...<br />[/column]<br />[column sm="4"]<br />...<br />[/column]<br />[/row]<br />');
 					}
@@ -30,7 +30,7 @@
 
 				/* Columns */
 				{
-					text: 'Four Columns',
+					text: editor.getLang( 'bsc_mce_button.fourcolumns' ),
 					onclick: function() {
 						editor.insertContent( '[row]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[column sm="3"]<br />...<br />[/column]<br />[/row]<br />');
 					}
@@ -43,12 +43,12 @@
 
 		/** Icons **/
 		{
-			text: 'Icons',
+			text: editor.getLang( 'bsc_mce_button.icons' ),
 			menu: [
 
 				/* Icon */
 				{
-					text: 'Icon',
+					text: editor.getLang( 'bsc_mce_button.icon' ),
 					onclick: function() {
 						editor.insertContent( '[icon icon="spinner" size="2x" spin="yes" border="yes" muted="yes" align="left" rotate="180" flip="vertical"][/icon]');
 					}
@@ -76,12 +76,12 @@
 
 		/** Popover **/
 		{
-			text: 'Popovers',
+			text: editor.getLang( 'bsc_mce_button.popovers' ),
 			menu: [
 
 				/* Popover */
 				{
-					text: 'Popover',
+					text: editor.getLang( 'bsc_mce_button.popover' ),
 					onclick: function() {
 						editor.insertContent( '[bsc_popover placement="top" popcontent="Content in Popover" title="Title in Popover"]Click this text for Popover[/bsc_popover]');
 					}
@@ -89,7 +89,7 @@
 
 				/* Button Popover */
 				{
-					text: 'Button Popover',
+					text: editor.getLang( 'bsc_mce_button.buttonpopover' ),
 					onclick: function() {
 						editor.insertContent( '[bsc_button color="primary" size="lg" popplacement="top" poptitle="Title" popcontent="Content of popover"]Button Text[/bsc_button]');
 					}
@@ -101,30 +101,30 @@
 
 		/** Buttons **/
 		{
-			text: 'Buttons',
+			text: editor.getLang( 'bsc_mce_button.buttons' ),
 			menu: [
 
 				/* Buttons */
 				{
-					text: 'Button',
+					text: editor.getLang( 'bsc_mce_button.button' ),
 					onclick: function() {
 						editor.windowManager.open( {
-							title: 'Insert Button',
+							title: editor.getLang( 'bsc_mce_button.buttoninsert' ),
 							body: [
 
 							// Button Text
 							{
 								type: 'textbox',
 								name: 'buttonText',
-								label: 'Button: Text',
-								value: 'Download'
+								label: editor.getLang( 'bsc_mce_button.buttontext' ),
+								value: editor.getLang( 'bsc_mce_button.buttondownload' )
 							},
 
 							// Button URL
 							{
 								type: 'textbox',
 								name: 'buttonUrl',
-								label: 'Button: URL',
+								label: editor.getLang( 'bsc_mce_button.buttonurl' ),
 								value: 'http://www.#.com/'
 							},
 
@@ -132,15 +132,15 @@
 							{
 								type: 'listbox',
 								name: 'buttonColor',
-								label: 'Button: Color',
+								label: editor.getLang( 'bsc_mce_button.buttoncolor' ),
 								'values': [
-									{text: 'Default', value: 'default'},
-									{text: 'Primary', value: 'primary'},
-									{text: 'Success', value: 'success'},
-									{text: 'Info', value: 'info'},
-									{text: 'Warning', value: 'warning'},
-									{text: 'Danger', value: 'danger'},
-									{text: 'Link', value: 'link'}
+									{text: editor.getLang( 'bsc_mce_button.buttondef' ), value: 'default'},
+									{text: editor.getLang( 'bsc_mce_button.buttonprim' ), value: 'primary'},
+									{text: editor.getLang( 'bsc_mce_button.buttonsucc' ), value: 'success'},
+									{text: editor.getLang( 'bsc_mce_button.buttoninfo' ), value: 'info'},
+									{text: editor.getLang( 'bsc_mce_button.buttonwarn' ), value: 'warning'},
+									{text: editor.getLang( 'bsc_mce_button.buttondanger' ), value: 'danger'},
+									{text: editor.getLang( 'bsc_mce_button.buttonlink' ), value: 'link'}
 								]
 							},
 
@@ -148,7 +148,7 @@
 							{
 								type: 'listbox',
 								name: 'buttonSize',
-								label: 'Button: Size',
+								label: editor.getLang( 'bsc_mce_button.buttonsize' ),
 								'values': [
 									{text: 'Default', value: ''},
 									{text: 'Extra Small', value: 'xs'},
@@ -161,7 +161,7 @@
 							{
 								type: 'listbox',
 								name: 'buttonLinkTarget',
-								label: 'Button: Link Target',
+								label: editor.getLang( 'bsc_mce_button.buttonlinkt' ),
 								'values': [
 									{text: 'Self', value: '_self'},
 									{text: 'New Window', value: '_blank'}
@@ -172,13 +172,13 @@
 							{
 								type: 'listbox',
 								name: 'buttonRel',
-								label: 'Button: Rel',
+								label: editor.getLang( 'bsc_mce_button.buttonrel' ),
 								'values': [
 									{text: 'None', value: ''},
 									{text: 'Nofollow', value: 'nofollow'}
 								]
 							},
-                                
+
 							// Button XClass
 							{
 								type: 'textbox',
@@ -233,12 +233,12 @@
 
 		/** Tabs and Toggles **/
 		{
-		text: 'Tabs and Toggles',
+		text: editor.getLang( 'bsc_mce_button.tabstoogles' ),
 		menu: [
 
 				/* Bootstrap Accordion */
 				{
-					text: 'Accordion',
+					text: editor.getLang( 'bsc_mce_button.tabaccordion' ),
 					onclick: function() {
 						editor.insertContent( '[collapsibles]<br />[collapse title="Collapse 1" active="true"]<br />...<br />[/collapse]<br />[collapse title="Collapse 2"]<br />...<br />[/collapse]<br />[collapse title="Collapse 3"]<br />...<br />[/collapse]<br />[/collapsibles]');
 					}
@@ -246,7 +246,7 @@
 
 				/* Tabs */
 				{
-					text: 'Tabs',
+					text: editor.getLang( 'bsc_mce_button.tabs' ),
 					onclick: function() {
 						editor.insertContent( '[tabs type="tabs"]<br />[tab title="Home" active="true"]<br />...<br />[/tab]<br />[tab title="Profile"]<br />...<br />[/tab]<br />[tab title="Messages"]<br />...<br />[/tab]<br />[/tabs]');
 					}
@@ -259,7 +259,7 @@
 
 		/** Tooltips **/
 		{
-		text: 'Tooltips',
+		text: editor.getLang( 'bsc_mce_button.tool' ),
 		menu: [
 
 				/* Tooltip *
@@ -284,7 +284,7 @@
 
 		/** Popover **/
 		{
-			text: 'Progress Bar',
+			text: editor.getLang( 'bsc_mce_button.progress' ),
 			menu: [
 
 				/* Single Progress Bar
@@ -309,7 +309,7 @@
 
 		/** Bootstrap Components **/
 		{
-			text: 'Bootstrap Components',
+			text: editor.getLang( 'bsc_mce_button.boot' ),
 			menu: [
 
 				/* Alert */
@@ -390,7 +390,7 @@
 
 		/** Content **/
 		{
-		text: 'Content',
+		text: editor.getLang( 'bsc_mce_button.content' ),
 		menu: [
 
 
@@ -399,7 +399,7 @@
                 text: 'Gridbox',
                 onclick: function() {
                     editor.windowManager.open( {
-                        title: 'Insert Gridbox',
+                        title: editor.getLang( 'bsc_mce_button.contentgridbox' ),
                         body: [
 
                         // Post Type
@@ -528,7 +528,7 @@
 
             /* Carousel CPT */
             {
-                text: 'Carousel from Custom Post Type',
+                text: editor.getLang( 'bsc_mce_button.content_carousel' ),
                 onclick: function() {
                     editor.windowManager.open( {
                         title: 'Insert Carousel from custom post type',
@@ -605,7 +605,7 @@
 
             /* Image Post Slider */
             {
-                text: 'Image Post Slider',
+                text: editor.getLang( 'bsc_mce_button.content_imgslider' ),
                 onclick: function() {
                     editor.insertContent( '[imagepostslider]');
                 }
@@ -613,7 +613,7 @@
 
             /* Links */
             {
-                text: 'Links',
+                text: editor.getLang( 'bsc_mce_button.content_links' ),
                 onclick: function() {
                     editor.insertContent( '[links]');
                 }

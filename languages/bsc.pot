@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-10-29 00:10+0100\n"
+"POT-Creation-Date: 2015-11-14 11:35+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -25,11 +25,151 @@ msgid "Phone Number"
 msgstr ""
 
 #: includes/mce/translations.php:11
-msgid "Two Columns"
+msgid "Columns"
 msgstr ""
 
 #: includes/mce/translations.php:12
+msgid "Two Columns"
+msgstr ""
+
+#: includes/mce/translations.php:13
 msgid "Three Columns"
+msgstr ""
+
+#: includes/mce/translations.php:14
+msgid "Four Columns"
+msgstr ""
+
+#: includes/mce/translations.php:15
+msgid "Icons"
+msgstr ""
+
+#: includes/mce/translations.php:16
+msgid "Icon"
+msgstr ""
+
+#: includes/mce/translations.php:17
+msgid "Popovers"
+msgstr ""
+
+#: includes/mce/translations.php:18
+msgid "Popover"
+msgstr ""
+
+#: includes/mce/translations.php:19
+msgid "Button Popover"
+msgstr ""
+
+#: includes/mce/translations.php:20
+msgid "Buttons"
+msgstr ""
+
+#: includes/mce/translations.php:21
+msgid "Button"
+msgstr ""
+
+#: includes/mce/translations.php:22
+msgid "Insert a Button"
+msgstr ""
+
+#: includes/mce/translations.php:23
+msgid "Button: Text"
+msgstr ""
+
+#: includes/mce/translations.php:24
+msgid "Download"
+msgstr ""
+
+#: includes/mce/translations.php:25
+msgid "Button: URL"
+msgstr ""
+
+#: includes/mce/translations.php:26
+msgid "Button: Color"
+msgstr ""
+
+#: includes/mce/translations.php:27 includes/widgets/button.php:105
+msgid "Default"
+msgstr ""
+
+#: includes/mce/translations.php:28 includes/widgets/button.php:110
+msgid "Primary"
+msgstr ""
+
+#: includes/mce/translations.php:29
+msgid "Successs"
+msgstr ""
+
+#: includes/mce/translations.php:30 includes/widgets/button.php:120
+msgid "Info"
+msgstr ""
+
+#: includes/mce/translations.php:31 includes/widgets/button.php:125
+msgid "Warning"
+msgstr ""
+
+#: includes/mce/translations.php:32 includes/widgets/button.php:130
+msgid "Danger"
+msgstr ""
+
+#: includes/mce/translations.php:33
+msgid "Link"
+msgstr ""
+
+#: includes/mce/translations.php:34
+msgid "Button: Size"
+msgstr ""
+
+#: includes/mce/translations.php:35
+msgid "Button: Link Target"
+msgstr ""
+
+#: includes/mce/translations.php:36
+msgid "Button: Rel"
+msgstr ""
+
+#: includes/mce/translations.php:37
+msgid "Tabs and Toggles"
+msgstr ""
+
+#: includes/mce/translations.php:38
+msgid "Accordion"
+msgstr ""
+
+#: includes/mce/translations.php:39
+msgid "Tabs"
+msgstr ""
+
+#: includes/mce/translations.php:40
+msgid "Content"
+msgstr ""
+
+#: includes/mce/translations.php:41
+msgid "Insert Gridbox"
+msgstr ""
+
+#: includes/mce/translations.php:42
+msgid "Carousel from Custom Post Type"
+msgstr ""
+
+#: includes/mce/translations.php:43
+msgid "Image Post Slider"
+msgstr ""
+
+#: includes/mce/translations.php:44
+msgid "Links"
+msgstr ""
+
+#: includes/mce/translations.php:45
+msgid "Bootstrap Components"
+msgstr ""
+
+#: includes/mce/translations.php:46
+msgid "Progress Bar"
+msgstr ""
+
+#: includes/mce/translations.php:47
+msgid "Tooltips"
 msgstr ""
 
 #: includes/widgets/button.php:18
@@ -72,28 +212,8 @@ msgstr ""
 msgid "Button Style"
 msgstr ""
 
-#: includes/widgets/button.php:105
-msgid "Default"
-msgstr ""
-
-#: includes/widgets/button.php:110
-msgid "Primary"
-msgstr ""
-
 #: includes/widgets/button.php:115
 msgid "Success"
-msgstr ""
-
-#: includes/widgets/button.php:120
-msgid "Info"
-msgstr ""
-
-#: includes/widgets/button.php:125
-msgid "Warning"
-msgstr ""
-
-#: includes/widgets/button.php:130
-msgid "Danger"
 msgstr ""
 
 #: includes/widgets/latest-tweets.php:21

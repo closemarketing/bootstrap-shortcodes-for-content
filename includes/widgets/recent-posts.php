@@ -1,7 +1,7 @@
 <?php
 /**
- * Closemarketing 
- * 
+ * Closemarketing
+ *
  * @package WordPress
  * @subpackage Closemarketing
  * @author Closemarketing <info@closemarketing.es>
@@ -16,62 +16,62 @@ if( !class_exists( 'recent_posts' ) ) :
 class recent_posts extends WP_Widget {
     function recent_posts() {
     	unregister_widget( 'WP_Widget_Recent_Posts' );
-		
-        $widget_ops = array( 
-            'classname' => 'recent-posts', 
-            'description' => __('The latest posts, with a preview thumb.', 'bsc') 
+
+        $widget_ops = array(
+            'classname' => 'recent-posts',
+            'description' => __('The latest posts, with a preview thumb.', 'bsc')
         );
 
         $control_ops = array( 'id_base' => 'recent-posts' );
 
         WP_Widget::__construct( 'recent-posts', __('Recent Posts', 'bsc'), $widget_ops, $control_ops );
     }
-    
+
     function widget( $args, $instance ) {
         extract( $args );
 
         /* User-selected settings. */
         if( !isset( $instance['title'] ) )
             $instance['title'] = '';
-            
+
         $title = apply_filters('widget_title', $instance['title'] );
 
         $items = isset( $instance['items']) ? $instance['items'] : '';
-        $more_text = isset( $instance['more_text']) ? $instance['more_text'] : '';  
+        $more_text = isset( $instance['more_text']) ? $instance['more_text'] : '';
         $show = isset( $instance['show'] ) ? $instance['show'] : 'nothing';
         $excerpt = isset( $instance['excerpt']) ? $instance['excerpt'] : 'no';
         $excerpt_length = isset( $instance['excerpt_length'] ) ? $instance['excerpt_length'] : 10;
         $show_comments = isset( $instance ['show_comments'] ) ? $instance['show_comments'] : 'no';
 
         echo $before_widget;
-        
+
         if ( $title ) echo $before_title . $title . $after_title;
 
         $args = array(
            'posts_per_page' => $items,
            'orderby' => 'date',
            'ignore_sticky_posts' => 1
-        );                            
-        
-        $args['order'] = 'DESC'; 
-        
+        );
+
+        $args['order'] = 'DESC';
+
         $myposts = new WP_Query( $args );
-    	
-        $html = "\n";       
+
+        $html = "\n";
         $html .= '<div class="recent-post group">'."\n";
-        
+
         if( $myposts->have_posts() ) : while( $myposts->have_posts() ) { $myposts->the_post();
-            
+
             $img = '';
             if(has_post_thumbnail())
                 { $img = yit_image( "size=blog_thumb&alt=blog_thumb", false ); }
-			
+
             else
                 { $img = '<img src="'.get_template_directory_uri().'/images/no_image_recentposts.jpg" alt="No Image" />'; }
-			
-    		    
-            $html .= '<div class="hentry-post group">'."\n";	
-				
+
+
+            $html .= '<div class="hentry-post group">'."\n";
+
             if ( $show == 'thumb' ) {
                 $html .= '<div class="thumb-img">' . $img . '</div>';
                 $html .= '<div class="text">';
@@ -81,9 +81,9 @@ class recent_posts extends WP_Widget {
             } else {
                 $html .= '<div class="text without-thumbnail">';
             }
-            
+
             $html .= the_title( '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">', '</a>', false );
-            
+
             if ( $excerpt == 'yes' ) {
             	if( strpos( $more_text, "href='#'" ) ) {
 	                $post_readmore = str_replace( "href='#'", "href='" . get_permalink() . "'", str_replace( '"', "'", do_shortcode( $more_text ) ) );
@@ -105,19 +105,19 @@ class recent_posts extends WP_Widget {
                 }
                 $html .= '</p>';
             }
-			
+
             $html .= '</div>'."\n";
     		$html .= '</div>'."\n";
-        
+
         } endif;
-        
+
         wp_reset_query();
         $html .= '</div>';
-        
+
         echo $html;
-        
+
         add_filter( 'the_content_more_link', 'yit_sc_more_link', 10, 3 );  //shortcode in more links
-        
+
         echo $after_widget;
     }
 
@@ -135,16 +135,16 @@ class recent_posts extends WP_Widget {
         $instance['excerpt_length'] = $new_instance['excerpt_length'];
 
         $instance['more_text'] = str_replace( '"', "'", $new_instance['more_text'] );
-        
+
         $instance['show_comments'] = $new_instance['show_comments'];
 
         return $instance;
     }
 
-    function form( $instance ) {   
+    function form( $instance ) {
         /* Impostazioni di default del widget */
-        $defaults = array( 
-            'title' => __('Recent Posts', 'bsc'), 
+        $defaults = array(
+            'title' => __('Recent Posts', 'bsc'),
             'items' => 3,
             'show' => 'thumb',
             'excerpt' => 'no',
@@ -152,9 +152,9 @@ class recent_posts extends WP_Widget {
             'more_text' => '|| ' . __( 'Read More', 'bsc' ),
             'show_comments' => 'no'
         );
-        
+
         $instance = wp_parse_args( (array) $instance, $defaults ); ?>
-        
+
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'bsc' ) ?>:
                  <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" class="widefat" />
@@ -166,7 +166,7 @@ class recent_posts extends WP_Widget {
                 <input type="text" id="<?php echo $this->get_field_id( 'items' ); ?>" name="<?php echo $this->get_field_name( 'items' ); ?>" value="<?php echo $instance['items']; ?>" size="3" />
             </label>
         </p>
-        
+
         <p>
             <label for="<?php echo $this->get_field_id( 'show' ); ?>"><?php _e( 'Show', 'bsc' ) ?>:
                  <select id="<?php echo $this->get_field_id( 'show' ); ?>" name="<?php echo $this->get_field_name( 'show' ); ?>">
@@ -176,7 +176,7 @@ class recent_posts extends WP_Widget {
                  </select>
             </label>
         </p>
-        
+
         <p>
             <label for="<?php echo $this->get_field_id( 'excerpt' ); ?>"><?php _e( 'Show Excerpt', 'bsc' ) ?>:
                  <select id="<?php echo $this->get_field_id( 'excerpt' ); ?>" name="<?php echo $this->get_field_name( 'excerpt' ); ?>">
@@ -185,7 +185,7 @@ class recent_posts extends WP_Widget {
                  </select>
             </label>
         </p>
-        
+
         <p>
             <label for="<?php echo $this->get_field_id( 'excerpt_length' ); ?>"><?php _e( 'Excerpt Lenght', 'bsc' ) ?>:
                  <input type="text" id="<?php echo $this->get_field_id( 'excerpt_length' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_length' ); ?>" value="<?php echo $instance['excerpt_length']; ?>"  size="3" />

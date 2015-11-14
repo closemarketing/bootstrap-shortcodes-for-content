@@ -28,12 +28,14 @@ add_action('admin_head', 'bsc_add_mce_button');
 
 function bsc_add_tinymce_plugin( $plugin_array ) {
 	$plugin_array['bsc_mce_button'] = plugins_url( '/bsc_shortcodes_tinymce.js', __FILE__ );
+
 	return $plugin_array;
 }
 
 
 function bsc_register_mce_button( $buttons ) {
 	array_push( $buttons, 'bsc_mce_button' );
+
 	return $buttons;
 }
 
