@@ -6,10 +6,10 @@ Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: David Perez
 Author URI: http://twitter.com/closemarketing
 Version: 0.9.2
+Text Domain: bsc
+Domain Path: /languages
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: bootstrap-sc-content
-Domain Path: /languages
 */
 
 /*
@@ -20,6 +20,8 @@ Domain Path: /languages
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
 
+require_once( dirname(__FILE__) . '/includes/general-settings.php'); // Settings in General options
+
 //Include functions shortcodes
 require_once( dirname(__FILE__) . '/includes/shortcode-gallery.php'); // Gallery
 require_once( dirname(__FILE__) . '/includes/shortcode-carousel.php'); // Carousel
@@ -29,7 +31,14 @@ require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image
 require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
+require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Latest News
 //require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
+
+//Widgets
+require_once( dirname(__FILE__) . '/includes/widgets/button.php'); // Call to Action
+require_once( dirname(__FILE__) . '/includes/widgets/social-icons.php'); // Recent Posts
+require_once( dirname(__FILE__) . '/includes/widgets/latest-tweets.php'); // Latest Tweets
+require_once( dirname(__FILE__) . '/includes/widgets/recent-posts.php'); // Recent Posts
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
@@ -38,6 +47,16 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
 
+/**
+ * Load plugin textdomain.
+ *
+ * @since 0.9.3
+ */
+add_action( 'plugins_loaded', 'bsc_load_textdomain' );
+
+function bsc_load_textdomain() {
+  load_plugin_textdomain( 'bsc', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
 
 // Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
 function bsc_fix_shortcodes($content){
