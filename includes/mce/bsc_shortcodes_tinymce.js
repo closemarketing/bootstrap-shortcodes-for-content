@@ -240,7 +240,7 @@
 				{
 					text: 'Tabs',
 					onclick: function() {
-						editor.insertContent( '[tab title="Home" active="true"]<br />...<br />[/tab]<br />[tab title="Profile"]<br />...<br />[/tab]<br />[tab title="Messages"]<br />...<br />[/tab]<br />[/tabs]');
+						editor.insertContent( '[tabs type="tabs"]<br />[tab title="Home" active="true"]<br />...<br />[/tab]<br />[tab title="Profile"]<br />...<br />[/tab]<br />[tab title="Messages"]<br />...<br />[/tab]<br />[/tabs]');
 					}
 				}, // End tabs
 
@@ -384,6 +384,217 @@
 		{
 		text: 'Content',
 		menu: [
+
+
+            /* Gridbox */
+            {
+                text: 'Gridbox',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Gridbox',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'gridpost_type',
+                            label: 'Post Type Name',
+                            value: 'page'
+                        },
+
+                        // Posts per Page
+                        {
+                            type: 'textbox',
+                            name: 'gridposts_per_page',
+                            label: 'Posts for grid',
+                            value: '-1'
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'gridcol',
+                            label: 'Columns Grid',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Button Include date
+                        {
+                            type: 'listbox',
+                            name: 'griddate',
+                            label: 'Include Date',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: 'Image Size (Wordpress name)',
+                            value: 'thumbnail'
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[gridbox post_type="' + e.data.gridpost_type + '" posts_per_page="' + e.data.gridposts_per_page + '" col="' + e.data.gridcol + '" date="' + e.data.griddate + '" size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
+                }
+            }, // End gridbox
+
+
+            /* Gridtaxbox */
+            {
+                text: 'Gridtaxbox',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Gridbox for Taxonomy',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'gridtax',
+                            label: 'Taxonomy Name',
+                            value: 'category'
+                        },
+
+                        // Posts per Page
+                        {
+                            type: 'textbox',
+                            name: 'gridposts_per_page',
+                            label: 'Posts for grid',
+                            value: '-1'
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'gridcol',
+                            label: 'Columns Grid',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Title included?
+                        {
+                            type: 'listbox',
+                            name: 'gridtaxtitle',
+                            label: 'Include Taxonomy Title',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: 'Image Size (Wordpress name)',
+                            value: 'thumbnail'
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[gridtaxbox tax="' + e.data.gridtax + '" posts_per_page="' + e.data.gridposts_per_page + '" col="' + e.data.gridcol + '" title="' + e.data.gridtaxtitle + '" size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
+                }
+            }, // End gridtaxbox
+
+
+            /* Carousel CPT */
+            {
+                text: 'Carousel from Custom Post Type',
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: 'Insert Carousel from custom post type',
+                        body: [
+
+                        // Post Type
+                        {
+                            type: 'textbox',
+                            name: 'carcpt',
+                            label: 'Slug Custom Post Type',
+                            value: 'page'
+                        },
+
+                        // Taxonomy
+                        {
+                            type: 'textbox',
+                            name: 'cartax',
+                            label: 'Show Taxonomy that the post in',
+                            value: ''
+                        },
+
+                        // Title
+                        {
+                            type: 'textbox',
+                            name: 'cartitle',
+                            label: 'Title that goes before',
+                            value: ''
+                        },
+
+                        // Columns
+                        {
+                            type: 'listbox',
+                            name: 'carcol',
+                            label: 'Elements visibles',
+                            'values': [
+                                {text: '4 columns', value: '4'},
+                                {text: '3 columns', value: '3'},
+                                {text: '2 columns', value: '2'},
+                                {text: '6 columns', value: '6'},
+                                {text: '12 columns', value: '12'}
+                            ]
+                        },
+
+                        // Type
+                        {
+                            type: 'listbox',
+                            name: 'cartype',
+                            label: 'Type of entries',
+                            'values': [
+                                {text: 'Post', value: 'post'},
+                                {text: 'Taxonomy', value: 'tax'}
+                            ]
+                        },
+
+                        // Title included?
+                        {
+                            type: 'listbox',
+                            name: 'cartitlep',
+                            label: 'Show Titles post in carousel',
+                            'values': [
+                                {text: 'No', value: 'false'},
+                                {text: 'Yes', value: 'true'}
+                            ]
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[carouselcpt post_type="' + e.data.carcpt + '" tax="' + e.data.cartax + '" title="' + e.data.cartitle + '" type="' + e.data.cartype + '" col="' + e.data.carcol + '" titlep="' + e.data.cartitlep + '"]');
+                        }
+                    });
+                }
+            }, // End carousel cpt            
+            
+            
             /* Image Post Slider */
             {
                 text: 'Image Post Slider',
@@ -399,11 +610,8 @@
                     editor.insertContent( '[links]');
                 }
             }, // Links
-
 			]
 		} // End content section
-
-
 
 			]
 		});

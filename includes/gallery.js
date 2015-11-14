@@ -2,7 +2,7 @@
     
     $(document).ready(function(){
 
-    loadGallery(true, 'a.thumbnail');
+    loadGallery(true, 'a.thumbnail-gallery');
 
     //This function disables buttons when needed
     function disableButtons(counter_max, counter_current){
