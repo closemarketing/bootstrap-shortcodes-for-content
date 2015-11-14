@@ -3,9 +3,9 @@
 Plugin Name: Bootstrap Shortcodes for Content
 Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
-Author: David Perez
+Author: closemarketing
 Author URI: http://twitter.com/closemarketing
-Version: 0.9.2
+Version: 1.0
 Text Domain: bsc
 Domain Path: /languages
 License: GNU General Public License version 3.0

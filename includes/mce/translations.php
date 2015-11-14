@@ -41,7 +41,7 @@ function bsc_mce_button_translation() {
         'contentgridbox'=> __('Insert Gridbox', 'bsc'),
         'content_carousel'=> __('Carousel from Custom Post Type', 'bsc'),
         'content_imgslider' => __('Image Post Slider', 'bsc'),
-        'content_links' => __('Links', 'bsc')
+        'content_links' => __('Links', 'bsc'),
         'boot' => __('Bootstrap Components', 'bsc'),
         'progress' => __('Progress Bar', 'bsc'),
         'tool' => __('Tooltips', 'bsc')
