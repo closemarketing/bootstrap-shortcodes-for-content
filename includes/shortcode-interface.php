@@ -1,7 +1,7 @@
 <?php
 
 // Buttons
-function buttons( $atts, $content = null ) {
+function bsc_buttons( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	'type' => 'default', /* primary, default, info, success, danger, warning, inverse */
 	'size' => 'default', /* mini, small, default, large */
@@ -30,10 +30,10 @@ function buttons( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('button', 'buttons'); 
+add_shortcode('button', 'bsc_buttons'); 
 
 // Alerts
-function alerts( $atts, $content = null ) {
+function bsc_alerts( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
 	'close' => 'false', /* display close link */
@@ -49,10 +49,10 @@ function alerts( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('alert', 'alerts');
+add_shortcode('alert', 'bsc_alerts');
 
 // Block Messages
-function block_messages( $atts, $content = null ) {
+function bsc_block_messages( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
 	'close' => 'false', /* display close link */
@@ -68,10 +68,10 @@ function block_messages( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('block-message', 'block_messages'); 
+add_shortcode('block-message', 'bsc_block_messages'); 
 
 // Block Messages
-function blockquotes( $atts, $content = null ) {
+function bsc_blockquotes( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	'float' => '', /* left, right */
 	'cite' => '', /* text for cite */
@@ -95,4 +95,4 @@ function blockquotes( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('blockquote', 'blockquotes'); 
+add_shortcode('blockquote', 'bsc_blockquotes'); 

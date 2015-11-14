@@ -52,7 +52,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
 
         } elseif ( ! empty( $exclude ) ) {
 
-		// Exclude attribute is present 
+		// Exclude attribute is present
 		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
 
 		// Setup attachments array
@@ -63,8 +63,8 @@ function btsc_shortcode_gallery( $output, $attr ) {
         }
 
 	if ( empty( $attachments ) ) return '';
-    
-    $output= '<div class="row"><div class="col-sm-12">';
+
+    $output= '<div class="row gallery"><div class="col-sm-12">';
 
 	// Iterate through the attachments in this gallery instance
 	$i = 0;
@@ -72,7 +72,7 @@ function btsc_shortcode_gallery( $output, $attr ) {
 
 		// Attachment link
 		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false );
-        
+
         $output.= '
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a class="thumbnail-gallery" href="#" data-image-id="" data-toggle="modal" data-title="';
@@ -90,22 +90,25 @@ function btsc_shortcode_gallery( $output, $attr ) {
     $output.='<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            </div>
             <div class="modal-body">
                 <img id="image-gallery-image" class="img-responsive" src="">
             </div>
             <div class="modal-footer">
                 <div class="col-md-2">
                     <button type="button" class="btn btn-primary" id="show-previous-image">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="font-size:1.5em;" ></span></button>
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true" style="font-size:1.5em;" ></span></button>
                 </div>
 
                 <div class="col-md-8 text-justify" id="image-gallery-caption">
-                    
+
                 </div>
 
                 <div class="col-md-2">
                     <button type="button" class="btn btn-primary" id="show-next-image">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:1.5em;" ></span></button>
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true" style="font-size:1.5em;" ></span></button>
                 </div>
             </div>
         </div>

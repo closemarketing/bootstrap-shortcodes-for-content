@@ -1,0 +1,389 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bootstrap Shortcodes for Content\n"
+"POT-Creation-Date: 2015-11-14 11:35+0100\n"
+"PO-Revision-Date: 2015-10-13 14:21+0200\n"
+"Last-Translator: David <david@closemarketing.es>\n"
+"Language-Team: David <david@closemarketing.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bootstrap-sc-content.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/general-settings.php:26
+msgid "Phone Number"
+msgstr ""
+
+#: includes/mce/translations.php:11
+msgid "Columns"
+msgstr ""
+
+#: includes/mce/translations.php:12
+msgid "Two Columns"
+msgstr ""
+
+#: includes/mce/translations.php:13
+msgid "Three Columns"
+msgstr ""
+
+#: includes/mce/translations.php:14
+msgid "Four Columns"
+msgstr ""
+
+#: includes/mce/translations.php:15
+msgid "Icons"
+msgstr ""
+
+#: includes/mce/translations.php:16
+msgid "Icon"
+msgstr ""
+
+#: includes/mce/translations.php:17
+msgid "Popovers"
+msgstr ""
+
+#: includes/mce/translations.php:18
+msgid "Popover"
+msgstr ""
+
+#: includes/mce/translations.php:19
+msgid "Button Popover"
+msgstr ""
+
+#: includes/mce/translations.php:20
+msgid "Buttons"
+msgstr ""
+
+#: includes/mce/translations.php:21
+msgid "Button"
+msgstr ""
+
+#: includes/mce/translations.php:22
+msgid "Insert a Button"
+msgstr ""
+
+#: includes/mce/translations.php:23
+msgid "Button: Text"
+msgstr ""
+
+#: includes/mce/translations.php:24
+msgid "Download"
+msgstr ""
+
+#: includes/mce/translations.php:25
+msgid "Button: URL"
+msgstr ""
+
+#: includes/mce/translations.php:26
+msgid "Button: Color"
+msgstr ""
+
+#: includes/mce/translations.php:27 includes/widgets/button.php:105
+msgid "Default"
+msgstr ""
+
+#: includes/mce/translations.php:28 includes/widgets/button.php:110
+msgid "Primary"
+msgstr ""
+
+#: includes/mce/translations.php:29
+msgid "Successs"
+msgstr ""
+
+#: includes/mce/translations.php:30 includes/widgets/button.php:120
+msgid "Info"
+msgstr ""
+
+#: includes/mce/translations.php:31 includes/widgets/button.php:125
+msgid "Warning"
+msgstr ""
+
+#: includes/mce/translations.php:32 includes/widgets/button.php:130
+msgid "Danger"
+msgstr ""
+
+#: includes/mce/translations.php:33
+msgid "Link"
+msgstr ""
+
+#: includes/mce/translations.php:34
+msgid "Button: Size"
+msgstr ""
+
+#: includes/mce/translations.php:35
+msgid "Button: Link Target"
+msgstr ""
+
+#: includes/mce/translations.php:36
+msgid "Button: Rel"
+msgstr ""
+
+#: includes/mce/translations.php:37
+msgid "Tabs and Toggles"
+msgstr ""
+
+#: includes/mce/translations.php:38
+msgid "Accordion"
+msgstr ""
+
+#: includes/mce/translations.php:39
+msgid "Tabs"
+msgstr ""
+
+#: includes/mce/translations.php:40
+msgid "Content"
+msgstr ""
+
+#: includes/mce/translations.php:41
+msgid "Insert Gridbox"
+msgstr ""
+
+#: includes/mce/translations.php:42
+msgid "Carousel from Custom Post Type"
+msgstr ""
+
+#: includes/mce/translations.php:43
+msgid "Image Post Slider"
+msgstr ""
+
+#: includes/mce/translations.php:44
+msgid "Links"
+msgstr ""
+
+#: includes/mce/translations.php:45
+msgid "Bootstrap Components"
+msgstr ""
+
+#: includes/mce/translations.php:46
+msgid "Progress Bar"
+msgstr ""
+
+#: includes/mce/translations.php:47
+msgid "Tooltips"
+msgstr ""
+
+#: includes/widgets/button.php:18
+msgid "Add a Button Bootstrap"
+msgstr ""
+
+#: includes/widgets/button.php:20
+msgid "Button to Action"
+msgstr ""
+
+#: includes/widgets/button.php:62
+msgid "Button Text"
+msgstr ""
+
+#: includes/widgets/button.php:66
+msgid "Button URL"
+msgstr ""
+
+#: includes/widgets/button.php:72
+msgid "Button Size"
+msgstr ""
+
+#: includes/widgets/button.php:78 includes/widgets/social-icons.php:74
+msgid "Large"
+msgstr ""
+
+#: includes/widgets/button.php:83 includes/widgets/social-icons.php:79
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/button.php:88 includes/widgets/social-icons.php:84
+msgid "Small"
+msgstr ""
+
+#: includes/widgets/button.php:93 includes/widgets/social-icons.php:89
+msgid "Extra Small"
+msgstr ""
+
+#: includes/widgets/button.php:99
+msgid "Button Style"
+msgstr ""
+
+#: includes/widgets/button.php:115
+msgid "Success"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:21
+msgid "Retrieve the last tweets."
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:26
+#: includes/widgets/latest-tweets.php:32
+msgid "Last Tweets"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:47
+#: includes/widgets/recent-posts.php:159
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:54
+msgid "Username"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:61
+msgid "Consumer key"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:68
+msgid "Consumer secret"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:75
+msgid "Access token"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:82
+msgid "Access token secret"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:89
+msgid "Limit"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:104
+msgid "Show Time"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:112
+msgid "Show Follow link"
+msgstr ""
+
+#: includes/widgets/latest-tweets.php:166
+msgid "Follow us on Twitter &rarr;"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:22
+msgid "The latest posts, with a preview thumb."
+msgstr ""
+
+#: includes/widgets/recent-posts.php:27 includes/widgets/recent-posts.php:147
+msgid "Recent Posts"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:100
+msgid "0 comments"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:102
+msgid "1 comment"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:104
+msgid " comments"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:152
+msgid "Read More"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:165
+msgid "Items"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:171
+msgid "Show"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:173
+msgid "Nothing"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:174
+msgid "Thumbnails"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:175
+msgid "Date"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:181
+msgid "Show Excerpt"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:183
+#: includes/widgets/recent-posts.php:204
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:184
+#: includes/widgets/recent-posts.php:205
+msgid "No"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:190
+msgid "Excerpt Lenght"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:196
+msgid "More Text"
+msgstr ""
+
+#: includes/widgets/recent-posts.php:202
+msgid "Show Comments"
+msgstr ""
+
+#: includes/widgets/social-icons.php:18
+msgid "Adds social icons with URLs included in Yoast SEO"
+msgstr ""
+
+#: includes/widgets/social-icons.php:20
+msgid "Social Icons"
+msgstr ""
+
+#: includes/widgets/social-icons.php:58
+msgid "It uses the URLs defined in Yoast SEO / Social tab."
+msgstr ""
+
+#: includes/widgets/social-icons.php:62
+msgid "Icon Size"
+msgstr ""
+
+#: includes/widgets/social-icons.php:69
+msgid "Extra Large"
+msgstr ""
+
+#: includes/widgets/social-icons.php:95
+msgid "Icon Style"
+msgstr ""
+
+#: includes/widgets/social-icons.php:101
+msgid "Simple"
+msgstr ""
+
+#: includes/widgets/social-icons.php:106
+msgid "Square"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Bootstrap Shortcodes for Content"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/closemarketing/bootstrap-sc-content"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "David Perez"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://twitter.com/closemarketing"
+msgstr ""
