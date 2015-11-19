@@ -29,7 +29,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
                 'post_parent' => 0,
                 'posts_per_page' => esc_attr($att['posts_per_page']),
                 'orderby' => esc_attr($att['orderby']),
-				'oder' => esc_attr($att['order']),
+				'order' => esc_attr($att['order']),
                 'paged' => $paged
         );
 
