@@ -18,7 +18,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
 			'order' => 'ASC'
         ), $atts );
 
-        $html = '<div id="gridbox" class="row">';
+        $html = '<div id="gridbox" class="row gridcol-'.$att['col'].'">';
 
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -37,10 +37,11 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         $colw = 12/ $att['col'];
         $sizethumb = esc_attr($att['size']);
         //print_r($postsgrid);
+        $coldiv=1;
 
         if ( $postsgrid->have_posts() ) :
         while ( $postsgrid->have_posts() ) : $postsgrid->the_post();
-            $html .= '<div class="gridbox-container thumbnail col-sm-'.$colw.' col-xs-12">';
+            $html .= '<div class="gridbox-container thumbnail col-sm-'.$colw.' col-xs-12 coldiv-'.$coldiv.'">';
             $html .= '<div class="gridbox-thumbnail">';
             $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
             $html .= get_the_post_thumbnail($postsgrid->post->ID, $sizethumb);
@@ -54,11 +55,13 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             }
             $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">'.get_the_title($postsgrid->post->ID).'</a></h2>';
             $html .= '</div> </div> </div>';
+            $coldiv++;
+            if($coldiv>$att['col']) $coldiv=1;
         endwhile;
         wp_reset_postdata();
         $html .= get_next_posts_link( 'Older Entries', $postsgrid->post->max_num_pages );
         $html .= get_previous_posts_link( 'Next Entries &raquo;' );
-
+        
         endif;
         $html .= '</div>';
 
