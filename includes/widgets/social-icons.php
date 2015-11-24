@@ -30,11 +30,11 @@ class BSC_Social extends WP_Widget {
         $wpseo_social = get_option('wpseo_social'); 
 
         if($wpseo_social[facebook_site])
-            echo '<a href="'.$wpseo_social[facebook_site].'"><i class="fa '.$iconsize.' fa-facebook'.$iconstyle.'"></i></a>';
+            echo '<a href="'.$wpseo_social[facebook_site].'"><i class="fa '.$iconsize.' fa-facebook'.$iconstyle.'" rel="nofollow"></i></a>';
         if($wpseo_social[instagram_url])
-            echo '<a href="'.$wpseo_social[instagram_url].'"><i class="fa '.$iconsize.' fa-instagram'.$iconstyle.'"></i></a>';
+            echo '<a href="'.$wpseo_social[instagram_url].'"><i class="fa '.$iconsize.' fa-instagram'.$iconstyle.'" rel="nofollow"></i></a>';
         if($wpseo_social[google_plus_url])
-            echo '<a href="'.$wpseo_social[google_plus_url].'"><i class="fa '.$iconsize.' fa-google-plus'.$iconstyle.'"></i></a>';
+            echo '<a href="'.$wpseo_social[google_plus_url].'"><i class="fa '.$iconsize.' fa-google-plus'.$iconstyle.'" rel="nofollow"></i></a>';
 
 		echo $after_widget;
 	}

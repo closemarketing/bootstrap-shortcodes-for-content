@@ -3,7 +3,7 @@ Contributors: closemarketing
 Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
-Tested up to: 4.3.1
+Tested up to: 4.4
 Stable tag: 1.1
 Version: 1.1
 

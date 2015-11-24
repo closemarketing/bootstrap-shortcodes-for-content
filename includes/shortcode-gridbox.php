@@ -42,7 +42,8 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
             $html .= get_the_post_thumbnail($postsgrid->post->ID, $sizethumb);
             $html .= '</a>';
-            $html .= '<div class="captiongrid caption-hover">';
+            $html .= "<div onclick=\"location.href='".get_the_permalink($postsgrid->post->ID)."';\" ";
+            $html .= 'style="cursor: pointer;" class="captiongrid caption-hover">';
             $html .= '<h2 class="titlegrid">';
             if(esc_attr($att['date'])) { 
                 $html .= '<span class="postdate">';
