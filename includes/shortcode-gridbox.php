@@ -41,7 +41,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
 
         if ( $postsgrid->have_posts() ) :
         while ( $postsgrid->have_posts() ) : $postsgrid->the_post();
-            $html .= '<div class="gridbox-container thumbnail col-sm-'.$colw.' col-xs-12 coldiv-'.$coldiv.'">';
+            $html .= '<div class="gridbox-container thumbnail col-sm-'.$colw.' col-xs-6 coldiv-'.$coldiv.'">';
             $html .= '<div class="gridbox-thumbnail">';
             $html .= '<a href="'.get_the_permalink($postsgrid->post->ID).'">';
             $html .= get_the_post_thumbnail($postsgrid->post->ID, $sizethumb);

@@ -69,15 +69,15 @@ class recent_posts extends WP_Widget {
             $html .= '<div class="hentry-post group row">'."\n";	
 				
             if ( $show == 'thumb' ) {
-                $html .= '<div class="thumb-img col-sm-4">';
+                $html .= '<div class="thumb-img col-xs-4">';
                 $html .= '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">';
                 $html .= $img . '</a></div>';
-                $html .= '<div class="col-sm-8 text">';
+                $html .= '<div class="col-xs-8 text">';
             } elseif ( $show == 'date' ) {
                 $html .= '<div class="thumb-date"><span class="month">' . get_the_date('M') . '</span><span class="day">' . get_the_date('d') . '</span></div>';
-                $html .= '<div class="col-sm-8 text">';
+                $html .= '<div class="col-xs-8 text">';
             } else {
-                $html .= '<div class="col-sm-8 text without-thumbnail">';
+                $html .= '<div class="col-xs-8 text without-thumbnail">';
             }
             
             $html .= the_title( '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">', '</a>', false );
