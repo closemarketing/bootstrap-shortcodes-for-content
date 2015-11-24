@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-14 11:35+0100\n"
+"POT-Creation-Date: 2015-11-24 10:49+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -274,6 +274,10 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
+#: includes/widgets/recent-posts.php:91 includes/widgets/recent-posts.php:92
+msgid "F jS, Y"
+msgstr ""
+
 #: includes/widgets/recent-posts.php:100
 msgid "0 comments"
 msgstr ""
@@ -283,7 +287,7 @@ msgid "1 comment"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:104
-msgid " comments"
+msgid "comments"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:152
@@ -315,12 +319,14 @@ msgid "Show Excerpt"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:183
-#: includes/widgets/recent-posts.php:204
+#: includes/widgets/recent-posts.php:198
+#: includes/widgets/recent-posts.php:207
 msgid "Yes"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:184
-#: includes/widgets/recent-posts.php:205
+#: includes/widgets/recent-posts.php:199
+#: includes/widgets/recent-posts.php:208
 msgid "No"
 msgstr ""
 
@@ -329,10 +335,10 @@ msgid "Excerpt Lenght"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:196
-msgid "More Text"
+msgid "Show Date"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:202
+#: includes/widgets/recent-posts.php:205
 msgid "Show Comments"
 msgstr ""
 
@@ -381,7 +387,7 @@ msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "David Perez"
+msgid "closemarketing"
 msgstr ""
 
 #. Author URI of the plugin/theme

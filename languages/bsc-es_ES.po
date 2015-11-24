@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-14 11:36+0100\n"
-"PO-Revision-Date: 2015-11-14 11:36+0100\n"
+"POT-Creation-Date: 2015-11-24 10:39+0100\n"
+"PO-Revision-Date: 2015-11-24 10:40+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -272,6 +272,10 @@ msgstr "Ultimas entradas con una miniatura."
 msgid "Recent Posts"
 msgstr "Entradas recientes"
 
+#: includes/widgets/recent-posts.php:91 includes/widgets/recent-posts.php:92
+msgid "F jS, Y"
+msgstr "j F Y"
+
 #: includes/widgets/recent-posts.php:100
 msgid "0 comments"
 msgstr "0 comentarios"
@@ -281,7 +285,7 @@ msgid "1 comment"
 msgstr "1 comentario"
 
 #: includes/widgets/recent-posts.php:104
-msgid " comments"
+msgid "comments"
 msgstr "comentarios"
 
 #: includes/widgets/recent-posts.php:152
@@ -312,11 +316,13 @@ msgstr "Fecha"
 msgid "Show Excerpt"
 msgstr "Mostrar resumen"
 
-#: includes/widgets/recent-posts.php:183 includes/widgets/recent-posts.php:204
+#: includes/widgets/recent-posts.php:183 includes/widgets/recent-posts.php:198
+#: includes/widgets/recent-posts.php:207
 msgid "Yes"
 msgstr "Si"
 
-#: includes/widgets/recent-posts.php:184 includes/widgets/recent-posts.php:205
+#: includes/widgets/recent-posts.php:184 includes/widgets/recent-posts.php:199
+#: includes/widgets/recent-posts.php:208
 msgid "No"
 msgstr "No"
 
@@ -325,10 +331,10 @@ msgid "Excerpt Lenght"
 msgstr "Longitud del extracto"
 
 #: includes/widgets/recent-posts.php:196
-msgid "More Text"
-msgstr "Más texto"
+msgid "Show Date"
+msgstr "Mostrar Fecha"
 
-#: includes/widgets/recent-posts.php:202
+#: includes/widgets/recent-posts.php:205
 msgid "Show Comments"
 msgstr "Mostrar Comentarios"
 
@@ -377,9 +383,15 @@ msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
 msgstr "Plugin Shortcodes Bootstrap para el contenido."
 
 #. Author of the plugin/theme
-msgid "David Perez"
-msgstr "David Perez"
+msgid "closemarketing"
+msgstr "closemarketing"
 
 #. Author URI of the plugin/theme
 msgid "http://twitter.com/closemarketing"
 msgstr "http://twitter.com/closemarketing"
+
+#~ msgid "More Text"
+#~ msgstr "Más texto"
+
+#~ msgid "David Perez"
+#~ msgstr "David Perez"
