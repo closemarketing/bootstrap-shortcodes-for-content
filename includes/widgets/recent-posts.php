@@ -37,11 +37,11 @@ class recent_posts extends WP_Widget {
         $title = apply_filters('widget_title', $instance['title'] );
 
         $items = isset( $instance['items']) ? $instance['items'] : '';
-        $more_text = isset( $instance['more_text']) ? $instance['more_text'] : '';  
         $show = isset( $instance['show'] ) ? $instance['show'] : 'nothing';
         $excerpt = isset( $instance['excerpt']) ? $instance['excerpt'] : 'no';
         $excerpt_length = isset( $instance['excerpt_length'] ) ? $instance['excerpt_length'] : 10;
         $show_comments = isset( $instance ['show_comments'] ) ? $instance['show_comments'] : 'no';
+        $show_date = isset( $instance ['show_date'] ) ? $instance['show_date'] : 'no';
 
         echo $before_widget;
         
@@ -69,26 +69,28 @@ class recent_posts extends WP_Widget {
             $html .= '<div class="hentry-post group row">'."\n";	
 				
             if ( $show == 'thumb' ) {
-                $html .= '<div class="thumb-img col-sm-3">';
+                $html .= '<div class="thumb-img col-sm-4">';
                 $html .= '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">';
                 $html .= $img . '</a></div>';
-                $html .= '<div class="col-sm-9 text">';
+                $html .= '<div class="col-sm-8 text">';
             } elseif ( $show == 'date' ) {
                 $html .= '<div class="thumb-date"><span class="month">' . get_the_date('M') . '</span><span class="day">' . get_the_date('d') . '</span></div>';
-                $html .= '<div class="col-sm-9 text">';
+                $html .= '<div class="col-sm-8 text">';
             } else {
-                $html .= '<div class="col-sm-9 text without-thumbnail">';
+                $html .= '<div class="col-sm-8 text without-thumbnail">';
             }
             
             $html .= the_title( '<a href="'.get_permalink().'" title="'.get_the_title().'" class="title">', '</a>', false );
             
             if ( $excerpt == 'yes' ) {
-            	if( strpos( $more_text, "href='#'" ) ) {
-	                $post_readmore = str_replace( "href='#'", "href='" . get_permalink() . "'", str_replace( '"', "'", do_shortcode( $more_text ) ) );
-	            } else {
-	            	$post_readmore = $more_text;
-	            }
                 $html .= get_the_excerpt();
+            }
+            if ( $show_date == 'yes' ) {
+                $html .= '<p class="post-date">';
+                $html .= '<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ';
+                $html .= '<time datetime="'.get_the_time(__('F jS, Y','bsc')).'" pubdate>';
+                $html .= get_the_time(__('F jS, Y','bsc'));
+                $html .= '</time></p>';
             }
 
             if ( $show_comments == 'yes' ) {
@@ -99,13 +101,13 @@ class recent_posts extends WP_Widget {
                 } elseif ( $number_comments == 1 ) {
                     $html .= __('1 comment', 'bsc');
                 } else {
-                    $html .= $number_comments . __(' comments', 'bsc');
+                    $html .= $number_comments .' '. __('comments', 'bsc');
                 }
                 $html .= '</p>';
             }
 			
             $html .= '</div>'."\n";
-    		$html .= '</div>'."\n";
+    		$html .= '</div>'."\n".'<hr/>';
         
         } endif;
         
@@ -131,8 +133,8 @@ class recent_posts extends WP_Widget {
         $instance['excerpt'] = $new_instance['excerpt'];
 
         $instance['excerpt_length'] = $new_instance['excerpt_length'];
-
-        $instance['more_text'] = str_replace( '"', "'", $new_instance['more_text'] );
+        
+        $instance['show_date'] = $new_instance['show_date'];
         
         $instance['show_comments'] = $new_instance['show_comments'];
 
@@ -191,8 +193,11 @@ class recent_posts extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More Text', 'bsc' ) ?>:
-                <input type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" value="<?php echo $instance['more_text']; ?>" class="widefat" />
+            <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Show Date', 'bsc' ) ?>:
+                <select id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>">
+                    <option value="yes" <?php selected( $instance['show_date'], 'yes' ) ?>><?php _e( 'Yes', 'bsc' ) ?></option>
+                    <option value="no" <?php selected( $instance['show_date'], 'no' ) ?>><?php _e( 'No', 'bsc' ) ?></option>
+                </select>
             </label>
         </p>
 
