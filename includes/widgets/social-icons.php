@@ -28,13 +28,23 @@ class BSC_Social extends WP_Widget {
 		echo $before_widget; 
         
         $wpseo_social = get_option('wpseo_social'); 
+        
+        
 
-        if($wpseo_social[facebook_site])
-            echo '<a href="'.$wpseo_social[facebook_site].'"><i class="fa '.$iconsize.' fa-facebook'.$iconstyle.'" rel="nofollow"></i></a>';
-        if($wpseo_social[instagram_url])
-            echo '<a href="'.$wpseo_social[instagram_url].'"><i class="fa '.$iconsize.' fa-instagram'.$iconstyle.'" rel="nofollow"></i></a>';
-        if($wpseo_social[google_plus_url])
-            echo '<a href="'.$wpseo_social[google_plus_url].'"><i class="fa '.$iconsize.' fa-google-plus'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['facebook_site'])
+            echo '<a href="'.$wpseo_social['facebook_site'].'"><i class="fa '.$iconsize.' fa-facebook'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['twitter_site'])
+            echo '<a href="https://twitter.com/'.$wpseo_social['twitter_site'].'"><i class="fa '.$iconsize.' fa-twitter'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['linkedin_url'])
+            echo '<a href="'.$wpseo_social['linkedin_url'].'"><i class="fa '.$iconsize.' fa-linkedin'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['instagram_url'])
+            echo '<a href="'.$wpseo_social['instagram_url'].'"><i class="fa '.$iconsize.' fa-instagram'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['google_plus_url'])
+            echo '<a href="'.$wpseo_social['google_plus_url'].'"><i class="fa '.$iconsize.' fa-google-plus'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['youtube_url'])
+            echo '<a href="'.$wpseo_social['youtube_url'].'"><i class="fa '.$iconsize.' fa-youtube'.$iconstyle.'" rel="nofollow"></i></a>';
+        if($wpseo_social['pinterest_url'])
+            echo '<a href="'.$wpseo_social['pinterest_url'].'"><i class="fa '.$iconsize.' fa-pinterest'.$iconstyle.'" rel="nofollow"></i></a>';
 
 		echo $after_widget;
 	}
