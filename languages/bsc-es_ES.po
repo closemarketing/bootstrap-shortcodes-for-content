@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-24 10:39+0100\n"
-"PO-Revision-Date: 2015-11-24 10:40+0100\n"
+"POT-Creation-Date: 2015-11-25 09:26+0100\n"
+"PO-Revision-Date: 2015-11-25 09:28+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -88,7 +88,8 @@ msgstr "URL del botón:"
 msgid "Button: Color"
 msgstr "Color Botón:"
 
-#: includes/mce/translations.php:27 includes/widgets/button.php:105
+#: includes/mce/translations.php:27 includes/mce/translations.php:74
+#: includes/widgets/button.php:105
 msgid "Default"
 msgstr "Por defecto"
 
@@ -172,6 +173,131 @@ msgstr "Barra de progreso"
 msgid "Tooltips"
 msgstr "Sugerencias"
 
+#: includes/mce/translations.php:48
+msgid "Extra Class"
+msgstr "Clase extra"
+
+#: includes/mce/translations.php:49
+msgid "Button Dropdown"
+msgstr "Botón desplegable"
+
+#: includes/mce/translations.php:50
+msgid "Button Split Dropdown"
+msgstr ""
+
+#: includes/mce/translations.php:51
+msgid "Button Group"
+msgstr "Botón Grupo"
+
+#: includes/mce/translations.php:52
+msgid "Jumbotron"
+msgstr "Ventana Gigante"
+
+#: includes/mce/translations.php:53
+msgid "Posts for grid"
+msgstr "Entradas en rejilla"
+
+#: includes/mce/translations.php:54
+msgid "Columns Grid"
+msgstr "Columna Rejilla"
+
+#: includes/mce/translations.php:55
+msgid "Post Type Name"
+msgstr "Nombre Tipo Entrada"
+
+#: includes/mce/translations.php:56
+msgid "Include Date"
+msgstr "Incluir fecha"
+
+#: includes/mce/translations.php:57
+msgid "Image Size (Wordpress name)"
+msgstr "Tamaño de la imagen (nombre Wordpress)"
+
+#: includes/mce/translations.php:58
+msgid "Include Taxonomy Title"
+msgstr "Incluir Título Taxonomía"
+
+#: includes/mce/translations.php:59
+msgid "Insert Carousel from custom post type"
+msgstr "Carrusel desde un tipo de entrada"
+
+#: includes/mce/translations.php:60
+msgid "Slug Custom Post Type"
+msgstr "Slug Tipo de Entrada Personalizada"
+
+#: includes/mce/translations.php:61
+msgid "Show Taxonomy that the post in"
+msgstr "Mostrar Taxonomía que la entrada tiene en"
+
+#: includes/mce/translations.php:62
+msgid "Title that goes before"
+msgstr "Título que va delante"
+
+#: includes/mce/translations.php:63
+msgid "Elements visibles"
+msgstr "Elementos visibles"
+
+#: includes/mce/translations.php:64
+msgid "Type of entries"
+msgstr "Tipo de entradas"
+
+#: includes/mce/translations.php:65
+msgid "Show Titles post in carousel"
+msgstr "Mostrar títulos de entradas en el carrusel"
+
+#: includes/mce/translations.php:66 includes/widgets/recent-posts.php:184
+#: includes/widgets/recent-posts.php:199 includes/widgets/recent-posts.php:208
+msgid "No"
+msgstr "No"
+
+#: includes/mce/translations.php:67 includes/widgets/recent-posts.php:183
+#: includes/widgets/recent-posts.php:198 includes/widgets/recent-posts.php:207
+msgid "Yes"
+msgstr "Si"
+
+#: includes/mce/translations.php:68
+msgid "columns"
+msgstr "columnas"
+
+#: includes/mce/translations.php:69
+msgid "Post"
+msgstr "Entrada"
+
+#: includes/mce/translations.php:70
+msgid "Taxonomy"
+msgstr "Taxonomía"
+
+#: includes/mce/translations.php:71 includes/widgets/button.php:78
+#: includes/widgets/social-icons.php:74
+msgid "Large"
+msgstr "Grande"
+
+#: includes/mce/translations.php:72 includes/widgets/button.php:88
+#: includes/widgets/social-icons.php:84
+msgid "Small"
+msgstr "Pequeño"
+
+#: includes/mce/translations.php:73 includes/widgets/button.php:93
+#: includes/widgets/social-icons.php:89
+msgid "Extra Small"
+msgstr "Muy Pequeño"
+
+#: includes/mce/translations.php:75
+msgid "Self"
+msgstr "Misma ventana"
+
+#: includes/mce/translations.php:76
+msgid "New Window"
+msgstr "Nueva ventana"
+
+#: includes/mce/translations.php:77
+msgid "None"
+msgstr "Ninguno"
+
+#: includes/mce/translations.php:78
+msgid "Nofollow"
+msgstr "Nofollow"
+
 #: includes/widgets/button.php:18
 msgid "Add a Button Bootstrap"
 msgstr "Añadir un botón Bootstrap"
@@ -192,21 +318,9 @@ msgstr "URL del botón"
 msgid "Button Size"
 msgstr "Tamaño del Botón"
 
-#: includes/widgets/button.php:78 includes/widgets/social-icons.php:74
-msgid "Large"
-msgstr "Grande"
-
 #: includes/widgets/button.php:83 includes/widgets/social-icons.php:79
 msgid "Medium"
 msgstr "Mediano"
-
-#: includes/widgets/button.php:88 includes/widgets/social-icons.php:84
-msgid "Small"
-msgstr "Pequeño"
-
-#: includes/widgets/button.php:93 includes/widgets/social-icons.php:89
-msgid "Extra Small"
-msgstr "Muy Pequeño"
 
 #: includes/widgets/button.php:99
 msgid "Button Style"
@@ -315,16 +429,6 @@ msgstr "Fecha"
 #: includes/widgets/recent-posts.php:181
 msgid "Show Excerpt"
 msgstr "Mostrar resumen"
-
-#: includes/widgets/recent-posts.php:183 includes/widgets/recent-posts.php:198
-#: includes/widgets/recent-posts.php:207
-msgid "Yes"
-msgstr "Si"
-
-#: includes/widgets/recent-posts.php:184 includes/widgets/recent-posts.php:199
-#: includes/widgets/recent-posts.php:208
-msgid "No"
-msgstr "No"
 
 #: includes/widgets/recent-posts.php:190
 msgid "Excerpt Lenght"

@@ -150,10 +150,10 @@
 								name: 'buttonSize',
 								label: editor.getLang( 'bsc_mce_button.buttonsize' ),
 								'values': [
-									{text: 'Default', value: ''},
-									{text: 'Extra Small', value: 'xs'},
-									{text: 'Small', value: 'sm'},
-									{text: 'Large', value: 'lg'}
+									{text: editor.getLang( 'bsc_mce_button.def' ), value: ''},
+									{text: editor.getLang( 'bsc_mce_button.xs' ), value: 'xs'},
+									{text: editor.getLang( 'bsc_mce_button.sm' ), value: 'sm'},
+									{text: editor.getLang( 'bsc_mce_button.large' ), value: 'lg'}
 								]
 							},
 
@@ -163,8 +163,8 @@
 								name: 'buttonLinkTarget',
 								label: editor.getLang( 'bsc_mce_button.buttonlinkt' ),
 								'values': [
-									{text: 'Self', value: '_self'},
-									{text: 'New Window', value: '_blank'}
+									{text: editor.getLang( 'bsc_mce_button.self' ), value: '_self'},
+									{text: editor.getLang( 'bsc_mce_button.neww' ), value: '_blank'}
 								]
 							},
 
@@ -174,8 +174,8 @@
 								name: 'buttonRel',
 								label: editor.getLang( 'bsc_mce_button.buttonrel' ),
 								'values': [
-									{text: 'None', value: ''},
-									{text: 'Nofollow', value: 'nofollow'}
+									{text: editor.getLang( 'bsc_mce_button.bnone' ), value: ''},
+									{text: editor.getLang( 'bsc_mce_button.nof' ), value: 'nofollow'}
 								]
 							},
 
@@ -183,7 +183,7 @@
 							{
 								type: 'textbox',
 								name: 'buttonxclass',
-								label: 'Extra class',
+								label: editor.getLang( 'bsc_mce_button.xclass' ),
 								value: ''
 							},
 
@@ -197,7 +197,7 @@
 
 				/* Button Dropdown */
 				{
-					text: 'Button Dropdown',
+					text: editor.getLang( 'bsc_mce_button.buttondropdown' ),
 					onclick: function() {
 						editor.insertContent( '[button-group]<br />[button link="#" dropdown="true" data="toggle,dropdown"]<br /> ... <br />[caret][/button]<br />[dropdown]<br />[dropdown-header]<br /> ... <br />[/dropdown-header]<br />[dropdown-item link="#"]<br />... <br />[/dropdown-item]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[divider]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[/dropdown]<br />[/button-group]');
 					}
@@ -205,7 +205,7 @@
 
 				/* Button Split Dropdown */
 				{
-					text: 'Button Split Dropdown',
+					text: editor.getLang( 'bsc_mce_button.buttonsdropdown' ),
 					onclick: function() {
 						editor.insertContent( '[button-group]<br />[button link="#"]<br /> ... <br />[/button]<br />[button dropdown="true" data="toggle,dropdown"][caret][/button]<br />[dropdown]<br />   [dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[divider]<br />[dropdown-item link="#"]<br /> ... <br />[/dropdown-item]<br />[/dropdown]<br />[/button-group]');
 					}
@@ -213,7 +213,7 @@
 
 				/* Button Group */
 				{
-					text: 'Button Group',
+					text: editor.getLang( 'bsc_mce_button.buttongroup' ),
 					onclick: function() {
 						editor.insertContent( '[button-group size="lg" justified="" vertical=""]<br />[button link="#"]<br />...<br />[/button]<br />[button link="#"]<br />...<br />[/button]<br />[button link="#"]<br />...<br />[/button]<br />[/button-group]');
 					}
@@ -338,7 +338,7 @@
 
 				/* Jumotron */
 				{
-					text: 'Jumbotron',
+					text: editor.getLang( 'bsc_mce_button.jumbo' ),
 					onclick: function() {
 						editor.insertContent( '[jumbotron title="My Jumbotron"]Content of the Jumbotron <br />[bsc_button color="primary" size="lg" url="http://#.com/" title="Visit Site" target="blank"]Button Text[/bsc_button][/jumbotron]');
 					}
@@ -406,7 +406,7 @@
                         {
                             type: 'textbox',
                             name: 'gridpost_type',
-                            label: 'Post Type Name',
+                            label: editor.getLang( 'bsc_mce_button.pname' ),
                             value: 'page'
                         },
 
@@ -414,7 +414,7 @@
                         {
                             type: 'textbox',
                             name: 'gridposts_per_page',
-                            label: 'Posts for grid',
+                            label: editor.getLang( 'bsc_mce_button.posts' ),
                             value: '-1'
                         },
 
@@ -422,13 +422,13 @@
                         {
                             type: 'listbox',
                             name: 'gridcol',
-                            label: 'Columns Grid',
+                            label: editor.getLang( 'bsc_mce_button.col' ),
                             'values': [
-                                {text: '4 columns', value: '4'},
-                                {text: '3 columns', value: '3'},
-                                {text: '2 columns', value: '2'},
-                                {text: '6 columns', value: '6'},
-                                {text: '12 columns', value: '12'}
+                                {text: '4 '.editor.getLang( 'bsc_mce_button.colum' ), value: '4'},
+                                {text: '3 '.editor.getLang( 'bsc_mce_button.colum' ), value: '3'},
+                                {text: '2 '.editor.getLang( 'bsc_mce_button.colum' ), value: '2'},
+                                {text: '6 '.editor.getLang( 'bsc_mce_button.colum' ), value: '6'},
+                                {text: '12 '.editor.getLang( 'bsc_mce_button.colum' ), value: '12'}
                             ]
                         },
 
@@ -436,7 +436,7 @@
                         {
                             type: 'listbox',
                             name: 'griddate',
-                            label: 'Include Date',
+                            label: editor.getLang( 'bsc_mce_button.idate' ),
                             'values': [
                                 {text: 'No', value: 'false'},
                                 {text: 'Yes', value: 'true'}
@@ -447,7 +447,7 @@
                         {
                             type: 'textbox',
                             name: 'gridimagesize',
-                            label: 'Image Size (Wordpress name)',
+                            label: editor.getLang( 'bsc_mce_button.isize' )Image Size (Wordpress name)',
                             value: 'thumbnail'
                         },
 
@@ -480,7 +480,7 @@
                         {
                             type: 'textbox',
                             name: 'gridposts_per_page',
-                            label: 'Posts for grid',
+                            label: editor.getLang( 'bsc_mce_button.posts' ),
                             value: '-1'
                         },
 
@@ -488,13 +488,13 @@
                         {
                             type: 'listbox',
                             name: 'gridcol',
-                            label: 'Columns Grid',
+                            label: editor.getLang( 'bsc_mce_button.col' ),
                             'values': [
-                                {text: '4 columns', value: '4'},
-                                {text: '3 columns', value: '3'},
-                                {text: '2 columns', value: '2'},
-                                {text: '6 columns', value: '6'},
-                                {text: '12 columns', value: '12'}
+                                {text: '4 '.editor.getLang( 'bsc_mce_button.colum' ), value: '4'},
+                                {text: '3 '.editor.getLang( 'bsc_mce_button.colum' ), value: '3'},
+                                {text: '2 '.editor.getLang( 'bsc_mce_button.colum' ), value: '2'},
+                                {text: '6 '.editor.getLang( 'bsc_mce_button.colum' ), value: '6'},
+                                {text: '12 '.editor.getLang( 'bsc_mce_button.colum' ), value: '12'}
                             ]
                         },
 
@@ -502,7 +502,7 @@
                         {
                             type: 'listbox',
                             name: 'gridtaxtitle',
-                            label: 'Include Taxonomy Title',
+                            label: editor.getLang( 'bsc_mce_button.itaxtitle' ),
                             'values': [
                                 {text: 'No', value: 'false'},
                                 {text: 'Yes', value: 'true'}
@@ -513,7 +513,7 @@
                         {
                             type: 'textbox',
                             name: 'gridimagesize',
-                            label: 'Image Size (Wordpress name)',
+                            label: editor.getLang( 'bsc_mce_button.isize' ),
                             value: 'thumbnail'
                         },
 
@@ -531,14 +531,14 @@
                 text: editor.getLang( 'bsc_mce_button.content_carousel' ),
                 onclick: function() {
                     editor.windowManager.open( {
-                        title: 'Insert Carousel from custom post type',
+                        title: editor.getLang( 'bsc_mce_button.cardesc' ),
                         body: [
 
                         // Post Type
                         {
                             type: 'textbox',
                             name: 'carcpt',
-                            label: 'Slug Custom Post Type',
+                            label: editor.getLang( 'bsc_mce_button.carslug' ),
                             value: 'page'
                         },
 
@@ -546,7 +546,7 @@
                         {
                             type: 'textbox',
                             name: 'cartax',
-                            label: 'Show Taxonomy that the post in',
+                            label: editor.getLang( 'bsc_mce_button.cartax' ),
                             value: ''
                         },
 
@@ -554,7 +554,7 @@
                         {
                             type: 'textbox',
                             name: 'cartitle',
-                            label: 'Title that goes before',
+                            label: editor.getLang( 'bsc_mce_button.cartit' ),
                             value: ''
                         },
 
@@ -562,13 +562,13 @@
                         {
                             type: 'listbox',
                             name: 'carcol',
-                            label: 'Elements visibles',
+                            label: editor.getLang( 'bsc_mce_button.carel' ),
                             'values': [
-                                {text: '4 columns', value: '4'},
-                                {text: '3 columns', value: '3'},
-                                {text: '2 columns', value: '2'},
-                                {text: '6 columns', value: '6'},
-                                {text: '12 columns', value: '12'}
+                                {text: '4 '.editor.getLang( 'bsc_mce_button.colum' ), value: '4'},
+                                {text: '3 '.editor.getLang( 'bsc_mce_button.colum' ), value: '3'},
+                                {text: '2 '.editor.getLang( 'bsc_mce_button.colum' ), value: '2'},
+                                {text: '6 '.editor.getLang( 'bsc_mce_button.colum' ), value: '6'},
+                                {text: '12 '.editor.getLang( 'bsc_mce_button.colum' ), value: '12'}
                             ]
                         },
 
@@ -576,10 +576,10 @@
                         {
                             type: 'listbox',
                             name: 'cartype',
-                            label: 'Type of entries',
+                            label: editor.getLang( 'bsc_mce_button.cartyp' ),
                             'values': [
-                                {text: 'Post', value: 'post'},
-                                {text: 'Taxonomy', value: 'tax'}
+                                {text: editor.getLang( 'bsc_mce_button.post' ), value: 'post'},
+                                {text: editor.getLang( 'bsc_mce_button.tax' ), value: 'tax'}
                             ]
                         },
 
@@ -587,10 +587,10 @@
                         {
                             type: 'listbox',
                             name: 'cartitlep',
-                            label: 'Show Titles post in carousel',
+                            label: editor.getLang( 'bsc_mce_button.carshow' ),
                             'values': [
-                                {text: 'No', value: 'false'},
-                                {text: 'Yes', value: 'true'}
+                                {text: editor.getLang( 'bsc_mce_button.no' ), value: 'false'},
+                                {text: editor.getLang( 'bsc_mce_button.yes' ), value: 'true'}
                             ]
                         },
 
