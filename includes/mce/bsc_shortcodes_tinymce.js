@@ -447,7 +447,7 @@
                         {
                             type: 'textbox',
                             name: 'gridimagesize',
-                            label: editor.getLang( 'bsc_mce_button.isize' )Image Size (Wordpress name)',
+                            label: editor.getLang( 'bsc_mce_button.isize' ),
                             value: 'thumbnail'
                         },
 

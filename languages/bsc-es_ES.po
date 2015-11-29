@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-25 09:26+0100\n"
-"PO-Revision-Date: 2015-11-25 09:28+0100\n"
+"POT-Creation-Date: 2015-11-30 00:25+0100\n"
+"PO-Revision-Date: 2015-11-30 00:25+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -183,7 +183,7 @@ msgstr "Botón desplegable"
 
 #: includes/mce/translations.php:50
 msgid "Button Split Dropdown"
-msgstr ""
+msgstr "Botón Dividir desplegable"
 
 #: includes/mce/translations.php:51
 msgid "Button Group"
@@ -209,7 +209,7 @@ msgstr "Nombre Tipo Entrada"
 msgid "Include Date"
 msgstr "Incluir fecha"
 
-#: includes/mce/translations.php:57
+#: includes/mce/translations.php:57 includes/mce/translations.php:79
 msgid "Image Size (Wordpress name)"
 msgstr "Tamaño de la imagen (nombre Wordpress)"
 
@@ -268,17 +268,17 @@ msgid "Taxonomy"
 msgstr "Taxonomía"
 
 #: includes/mce/translations.php:71 includes/widgets/button.php:78
-#: includes/widgets/social-icons.php:74
+#: includes/widgets/social-icons.php:84
 msgid "Large"
 msgstr "Grande"
 
 #: includes/mce/translations.php:72 includes/widgets/button.php:88
-#: includes/widgets/social-icons.php:84
+#: includes/widgets/social-icons.php:94
 msgid "Small"
 msgstr "Pequeño"
 
 #: includes/mce/translations.php:73 includes/widgets/button.php:93
-#: includes/widgets/social-icons.php:89
+#: includes/widgets/social-icons.php:99
 msgid "Extra Small"
 msgstr "Muy Pequeño"
 
@@ -318,7 +318,7 @@ msgstr "URL del botón"
 msgid "Button Size"
 msgstr "Tamaño del Botón"
 
-#: includes/widgets/button.php:83 includes/widgets/social-icons.php:79
+#: includes/widgets/button.php:83 includes/widgets/social-icons.php:89
 msgid "Medium"
 msgstr "Mediano"
 
@@ -450,33 +450,33 @@ msgstr "Añade iconos sociales con direcciones URL incluidas en Yoast SEO"
 msgid "Social Icons"
 msgstr "Iconos Redes Sociales"
 
-#: includes/widgets/social-icons.php:58
+#: includes/widgets/social-icons.php:68
 msgid "It uses the URLs defined in Yoast SEO / Social tab."
 msgstr "Utiliza la URL definida en Yoast SEO Social / ficha."
 
-#: includes/widgets/social-icons.php:62
+#: includes/widgets/social-icons.php:72
 msgid "Icon Size"
 msgstr "Tamaño de icono"
 
-#: includes/widgets/social-icons.php:69
+#: includes/widgets/social-icons.php:79
 msgid "Extra Large"
 msgstr "Extra Grande"
 
-#: includes/widgets/social-icons.php:95
+#: includes/widgets/social-icons.php:105
 msgid "Icon Style"
 msgstr "Estilo de ícono"
 
-#: includes/widgets/social-icons.php:101
+#: includes/widgets/social-icons.php:111
 msgid "Simple"
 msgstr "Sencillo"
 
-#: includes/widgets/social-icons.php:106
+#: includes/widgets/social-icons.php:116
 msgid "Square"
 msgstr "Cuadrado"
 
 #. Plugin Name of the plugin/theme
 msgid "Bootstrap Shortcodes for Content"
-msgstr "Plugin Shortcodes Bootstrap para el contenido."
+msgstr "Bootstrap Shortcodes for Content"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/closemarketing/bootstrap-sc-content"

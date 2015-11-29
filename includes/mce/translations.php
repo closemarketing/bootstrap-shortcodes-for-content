@@ -75,7 +75,8 @@ function bsc_mce_button_translation() {
         'self'     => __('Self','bsc'),
         'neww'     => __('New Window','bsc'),
         'bnone'     => __('None','bsc'),
-        'nof'     => __('Nofollow','bsc')
+        'nof'     => __('Nofollow','bsc'),
+        'isize'     => __('Image Size (Wordpress name)','bsc')
     );
 
     $locale = _WP_Editors::$mce_locale;
