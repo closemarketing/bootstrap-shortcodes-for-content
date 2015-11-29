@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-14 11:35+0100\n"
+"POT-Creation-Date: 2015-11-30 00:25+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -88,7 +88,8 @@ msgstr ""
 msgid "Button: Color"
 msgstr ""
 
-#: includes/mce/translations.php:27 includes/widgets/button.php:105
+#: includes/mce/translations.php:27 includes/mce/translations.php:74
+#: includes/widgets/button.php:105
 msgid "Default"
 msgstr ""
 
@@ -172,6 +173,133 @@ msgstr ""
 msgid "Tooltips"
 msgstr ""
 
+#: includes/mce/translations.php:48
+msgid "Extra Class"
+msgstr ""
+
+#: includes/mce/translations.php:49
+msgid "Button Dropdown"
+msgstr ""
+
+#: includes/mce/translations.php:50
+msgid "Button Split Dropdown"
+msgstr ""
+
+#: includes/mce/translations.php:51
+msgid "Button Group"
+msgstr ""
+
+#: includes/mce/translations.php:52
+msgid "Jumbotron"
+msgstr ""
+
+#: includes/mce/translations.php:53
+msgid "Posts for grid"
+msgstr ""
+
+#: includes/mce/translations.php:54
+msgid "Columns Grid"
+msgstr ""
+
+#: includes/mce/translations.php:55
+msgid "Post Type Name"
+msgstr ""
+
+#: includes/mce/translations.php:56
+msgid "Include Date"
+msgstr ""
+
+#: includes/mce/translations.php:57 includes/mce/translations.php:79
+msgid "Image Size (Wordpress name)"
+msgstr ""
+
+#: includes/mce/translations.php:58
+msgid "Include Taxonomy Title"
+msgstr ""
+
+#: includes/mce/translations.php:59
+msgid "Insert Carousel from custom post type"
+msgstr ""
+
+#: includes/mce/translations.php:60
+msgid "Slug Custom Post Type"
+msgstr ""
+
+#: includes/mce/translations.php:61
+msgid "Show Taxonomy that the post in"
+msgstr ""
+
+#: includes/mce/translations.php:62
+msgid "Title that goes before"
+msgstr ""
+
+#: includes/mce/translations.php:63
+msgid "Elements visibles"
+msgstr ""
+
+#: includes/mce/translations.php:64
+msgid "Type of entries"
+msgstr ""
+
+#: includes/mce/translations.php:65
+msgid "Show Titles post in carousel"
+msgstr ""
+
+#: includes/mce/translations.php:66 includes/widgets/recent-posts.php:184
+#: includes/widgets/recent-posts.php:199
+#: includes/widgets/recent-posts.php:208
+msgid "No"
+msgstr ""
+
+#: includes/mce/translations.php:67 includes/widgets/recent-posts.php:183
+#: includes/widgets/recent-posts.php:198
+#: includes/widgets/recent-posts.php:207
+msgid "Yes"
+msgstr ""
+
+#: includes/mce/translations.php:68
+msgid "columns"
+msgstr ""
+
+#: includes/mce/translations.php:69
+msgid "Post"
+msgstr ""
+
+#: includes/mce/translations.php:70
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/mce/translations.php:71 includes/widgets/button.php:78
+#: includes/widgets/social-icons.php:84
+msgid "Large"
+msgstr ""
+
+#: includes/mce/translations.php:72 includes/widgets/button.php:88
+#: includes/widgets/social-icons.php:94
+msgid "Small"
+msgstr ""
+
+#: includes/mce/translations.php:73 includes/widgets/button.php:93
+#: includes/widgets/social-icons.php:99
+msgid "Extra Small"
+msgstr ""
+
+#: includes/mce/translations.php:75
+msgid "Self"
+msgstr ""
+
+#: includes/mce/translations.php:76
+msgid "New Window"
+msgstr ""
+
+#: includes/mce/translations.php:77
+msgid "None"
+msgstr ""
+
+#: includes/mce/translations.php:78
+msgid "Nofollow"
+msgstr ""
+
 #: includes/widgets/button.php:18
 msgid "Add a Button Bootstrap"
 msgstr ""
@@ -192,20 +320,8 @@ msgstr ""
 msgid "Button Size"
 msgstr ""
 
-#: includes/widgets/button.php:78 includes/widgets/social-icons.php:74
-msgid "Large"
-msgstr ""
-
-#: includes/widgets/button.php:83 includes/widgets/social-icons.php:79
+#: includes/widgets/button.php:83 includes/widgets/social-icons.php:89
 msgid "Medium"
-msgstr ""
-
-#: includes/widgets/button.php:88 includes/widgets/social-icons.php:84
-msgid "Small"
-msgstr ""
-
-#: includes/widgets/button.php:93 includes/widgets/social-icons.php:89
-msgid "Extra Small"
 msgstr ""
 
 #: includes/widgets/button.php:99
@@ -274,6 +390,10 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
+#: includes/widgets/recent-posts.php:91 includes/widgets/recent-posts.php:92
+msgid "F jS, Y"
+msgstr ""
+
 #: includes/widgets/recent-posts.php:100
 msgid "0 comments"
 msgstr ""
@@ -283,7 +403,7 @@ msgid "1 comment"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:104
-msgid " comments"
+msgid "comments"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:152
@@ -314,25 +434,15 @@ msgstr ""
 msgid "Show Excerpt"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:183
-#: includes/widgets/recent-posts.php:204
-msgid "Yes"
-msgstr ""
-
-#: includes/widgets/recent-posts.php:184
-#: includes/widgets/recent-posts.php:205
-msgid "No"
-msgstr ""
-
 #: includes/widgets/recent-posts.php:190
 msgid "Excerpt Lenght"
 msgstr ""
 
 #: includes/widgets/recent-posts.php:196
-msgid "More Text"
+msgid "Show Date"
 msgstr ""
 
-#: includes/widgets/recent-posts.php:202
+#: includes/widgets/recent-posts.php:205
 msgid "Show Comments"
 msgstr ""
 
@@ -344,27 +454,27 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: includes/widgets/social-icons.php:58
+#: includes/widgets/social-icons.php:68
 msgid "It uses the URLs defined in Yoast SEO / Social tab."
 msgstr ""
 
-#: includes/widgets/social-icons.php:62
+#: includes/widgets/social-icons.php:72
 msgid "Icon Size"
 msgstr ""
 
-#: includes/widgets/social-icons.php:69
+#: includes/widgets/social-icons.php:79
 msgid "Extra Large"
 msgstr ""
 
-#: includes/widgets/social-icons.php:95
+#: includes/widgets/social-icons.php:105
 msgid "Icon Style"
 msgstr ""
 
-#: includes/widgets/social-icons.php:101
+#: includes/widgets/social-icons.php:111
 msgid "Simple"
 msgstr ""
 
-#: includes/widgets/social-icons.php:106
+#: includes/widgets/social-icons.php:116
 msgid "Square"
 msgstr ""
 
@@ -381,7 +491,7 @@ msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "David Perez"
+msgid "closemarketing"
 msgstr ""
 
 #. Author URI of the plugin/theme
