@@ -490,11 +490,11 @@
                             name: 'gridcol',
                             label: editor.getLang( 'bsc_mce_button.col' ),
                             'values': [
-                                {text: '4 '.editor.getLang( 'bsc_mce_button.colum' ), value: '4'},
-                                {text: '3 '.editor.getLang( 'bsc_mce_button.colum' ), value: '3'},
-                                {text: '2 '.editor.getLang( 'bsc_mce_button.colum' ), value: '2'},
-                                {text: '6 '.editor.getLang( 'bsc_mce_button.colum' ), value: '6'},
-                                {text: '12 '.editor.getLang( 'bsc_mce_button.colum' ), value: '12'}
+								{text: editor.getLang( 'bsc_mce_button.colum4' ), value: '4'},
+                                {text: editor.getLang( 'bsc_mce_button.colum3' ), value: '3'},
+                                {text: editor.getLang( 'bsc_mce_button.colum2' ), value: '2'},
+                                {text: editor.getLang( 'bsc_mce_button.colum6' ), value: '6'},
+                                {text: editor.getLang( 'bsc_mce_button.colum12' ), value: '12'}
                             ]
                         },
 
@@ -564,11 +564,11 @@
                             name: 'carcol',
                             label: editor.getLang( 'bsc_mce_button.carel' ),
                             'values': [
-                                {text: '4 '.editor.getLang( 'bsc_mce_button.colum' ), value: '4'},
-                                {text: '3 '.editor.getLang( 'bsc_mce_button.colum' ), value: '3'},
-                                {text: '2 '.editor.getLang( 'bsc_mce_button.colum' ), value: '2'},
-                                {text: '6 '.editor.getLang( 'bsc_mce_button.colum' ), value: '6'},
-                                {text: '12 '.editor.getLang( 'bsc_mce_button.colum' ), value: '12'}
+                                {text: editor.getLang( 'bsc_mce_button.colum4' ), value: '4'},
+                                {text: editor.getLang( 'bsc_mce_button.colum3' ), value: '3'},
+                                {text: editor.getLang( 'bsc_mce_button.colum2' ), value: '2'},
+                                {text: editor.getLang( 'bsc_mce_button.colum6' ), value: '6'},
+                                {text: editor.getLang( 'bsc_mce_button.colum12' ), value: '12'}
                             ]
                         },
 
