@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-11-30 00:25+0100\n"
-"PO-Revision-Date: 2015-11-30 00:25+0100\n"
+"POT-Creation-Date: 2015-12-28 23:51+0100\n"
+"PO-Revision-Date: 2015-12-28 23:52+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -88,7 +88,7 @@ msgstr "URL del botón:"
 msgid "Button: Color"
 msgstr "Color Botón:"
 
-#: includes/mce/translations.php:27 includes/mce/translations.php:74
+#: includes/mce/translations.php:27 includes/mce/translations.php:79
 #: includes/widgets/button.php:105
 msgid "Default"
 msgstr "Por defecto"
@@ -209,7 +209,7 @@ msgstr "Nombre Tipo Entrada"
 msgid "Include Date"
 msgstr "Incluir fecha"
 
-#: includes/mce/translations.php:57 includes/mce/translations.php:79
+#: includes/mce/translations.php:57 includes/mce/translations.php:84
 msgid "Image Size (Wordpress name)"
 msgstr "Tamaño de la imagen (nombre Wordpress)"
 
@@ -260,41 +260,61 @@ msgid "columns"
 msgstr "columnas"
 
 #: includes/mce/translations.php:69
+msgid "4 columns"
+msgstr "4 columnas"
+
+#: includes/mce/translations.php:70
+msgid "3 columns"
+msgstr "3 columnas"
+
+#: includes/mce/translations.php:71
+msgid "2 columns"
+msgstr "2 columnas"
+
+#: includes/mce/translations.php:72
+msgid "6 columns"
+msgstr "6 columnas"
+
+#: includes/mce/translations.php:73
+msgid "12 columns"
+msgstr "12 columnas"
+
+#: includes/mce/translations.php:74
 msgid "Post"
 msgstr "Entrada"
 
-#: includes/mce/translations.php:70
+#: includes/mce/translations.php:75
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
-#: includes/mce/translations.php:71 includes/widgets/button.php:78
+#: includes/mce/translations.php:76 includes/widgets/button.php:78
 #: includes/widgets/social-icons.php:84
 msgid "Large"
 msgstr "Grande"
 
-#: includes/mce/translations.php:72 includes/widgets/button.php:88
+#: includes/mce/translations.php:77 includes/widgets/button.php:88
 #: includes/widgets/social-icons.php:94
 msgid "Small"
 msgstr "Pequeño"
 
-#: includes/mce/translations.php:73 includes/widgets/button.php:93
+#: includes/mce/translations.php:78 includes/widgets/button.php:93
 #: includes/widgets/social-icons.php:99
 msgid "Extra Small"
 msgstr "Muy Pequeño"
 
-#: includes/mce/translations.php:75
+#: includes/mce/translations.php:80
 msgid "Self"
 msgstr "Misma ventana"
 
-#: includes/mce/translations.php:76
+#: includes/mce/translations.php:81
 msgid "New Window"
 msgstr "Nueva ventana"
 
-#: includes/mce/translations.php:77
+#: includes/mce/translations.php:82
 msgid "None"
 msgstr "Ninguno"
 
-#: includes/mce/translations.php:78
+#: includes/mce/translations.php:83
 msgid "Nofollow"
 msgstr "Nofollow"
 
