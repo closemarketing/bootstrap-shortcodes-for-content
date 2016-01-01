@@ -75,9 +75,14 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
-= 1.0.1 =
+= 1.1.1 =
 *   Solved errors in date option of gridbox shortcode.
 *   Solved JS problems in MCE Button.
+
+= 1.1 =
+* Order added gridbox
+* Fixed classes for XS screens.
+* Added widget social Icons from Yoast source.
 
 = 1.0 =
 *   Translation ready for mce button.
