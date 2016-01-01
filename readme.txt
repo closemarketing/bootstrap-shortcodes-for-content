@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.1
-Version: 1.1
+Stable tag: 1.1.1
+Version: 1.1.1
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -75,8 +75,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
-= 1.1 =
-*   
+= 1.0.1 =
+*   Solved errors in date option of gridbox shortcode.
+*   Solved JS problems in MCE Button.
 
 = 1.0 =
 *   Translation ready for mce button.

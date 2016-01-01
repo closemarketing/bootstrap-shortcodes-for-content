@@ -49,7 +49,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
             $html .= "<div onclick=\"location.href='".get_the_permalink($postsgrid->post->ID)."';\" ";
             $html .= 'style="cursor: pointer;" class="captiongrid caption-hover">';
             $html .= '<h2 class="titlegrid">';
-            if(esc_attr($att['date'])) {
+            if($att['date']=='true') {
                 $html .= '<span class="postdate">';
                 $html .= get_the_date('d/m', $postsgrid->post->ID);
                 $html .= '</span>  ';
@@ -62,7 +62,7 @@ if( !function_exists('btsc_gridbox_shortcode') ) {
         wp_reset_postdata();
         $html .= get_next_posts_link( 'Older Entries', $postsgrid->post->max_num_pages );
         $html .= get_previous_posts_link( 'Next Entries &raquo;' );
-        
+
         endif;
         $html .= '</div>';
 
