@@ -611,6 +611,30 @@
                 }
             }, // Image Post Slider
 
+			/* Image Scroll */
+            {
+                text: editor.getLang( 'bsc_mce_button.imgscroll' ),
+                onclick: function() {
+                    editor.windowManager.open( {
+                        title: editor.getLang( 'bsc_mce_button.imgscroll_desc' ),
+                        body: [
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: editor.getLang( 'bsc_mce_button.isize' ),
+                            value: 'thumbnail'
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[image-scroll size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
+                }
+            }, // End image scroll
+
             /* Links */
             {
                 text: editor.getLang( 'bsc_mce_button.content_links' ),

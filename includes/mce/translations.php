@@ -81,7 +81,8 @@ function bsc_mce_button_translation() {
         'neww'     => __('New Window','bsc'),
         'bnone'     => __('None','bsc'),
         'nof'     => __('Nofollow','bsc'),
-        'isize'     => __('Image Size (Wordpress name)','bsc')
+        'imgscroll'     => __('Image Scroll','bsc'),
+        'imgscroll_desc'     => __('Inserts Images attached to actual entry as Scroll','bsc')
     );
 
     $locale = _WP_Editors::$mce_locale;
