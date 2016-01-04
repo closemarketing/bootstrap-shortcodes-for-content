@@ -19,16 +19,19 @@ if( !function_exists('btsc_imagescroll_shortcode') ) {
             'orderby' => 'title',
         	'order' => 'ASC'
         );
-
         $attachments = get_children( $args );
-        $numattach = count($attachments);
-        $html = '<div class="image-scroll">';
-        foreach ( $attachments as $attachment ) {
 
-            $html .= '<div class="bannerImage">';
-            $html .= wp_get_attachment_image( $attachment->ID, esc_attr($att['size']) );
-            $html .= '</div>';
-        }
+        $html = '<div class="image-scroll">';
+
+        $html .= get_the_post_thumbnail($post->ID, esc_attr($att['size']), array('class' => 'page-thumb img-rounded'));
+        if ($attachments) {
+		    foreach ( $attachments as $attachment ) {
+
+		        $html .= '<div class="bannerImage">';
+		        $html .= wp_get_attachment_image( $attachment->ID, esc_attr($att['size']) );
+		        $html .= '</div>';
+		    }
+		} //if numattach
         $html .= '</div>';
         return $html;
     }
