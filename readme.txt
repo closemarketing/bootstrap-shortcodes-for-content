@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.1.1
-Version: 1.1.1
+Stable tag: 1.2
+Version: 1.2
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -53,6 +53,7 @@ Tabs - Allows you to show a tab panel. Ex:
 [/tab]
 [/tabs]
 
+[imagescroll size="slug-image-size"] - Show all images attached as scroll.
 
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content) . Fork and add make suggestions to the plugin!
 
@@ -75,6 +76,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
+= 1.2 =
+*   Added Shortcode image-scroll.
+
 = 1.1.1 =
 *   Solved errors in date option of gridbox shortcode.
 *   Solved JS problems in MCE Button.

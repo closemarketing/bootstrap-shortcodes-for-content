@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: closemarketing
 Author URI: http://twitter.com/closemarketing
-Version: 1.1.1
+Version: 1.2
 Text Domain: bsc
 Domain Path: /languages
 License: GNU General Public License version 3.0
@@ -32,6 +32,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Inter
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
 require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Latest News
+require_once( dirname(__FILE__) . '/includes/shortcode-imagescroll.php'); // Latest News
 //require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //Widgets
