@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2016-01-04 16:20+0100\n"
-"PO-Revision-Date: 2016-01-04 16:21+0100\n"
+"POT-Creation-Date: 2016-01-14 08:57+0100\n"
+"PO-Revision-Date: 2016-01-14 08:58+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -358,6 +358,31 @@ msgstr "Estilo del botón"
 msgid "Success"
 msgstr "Éxito"
 
+#: includes/widgets/childmenu.php:18
+msgid "It gives you a menu with child pages."
+msgstr "Te ofrece un menú automático para las páginas hijas."
+
+#: includes/widgets/childmenu.php:20
+msgid "Menu Child Pages"
+msgstr "Menú para Páginas hijas"
+
+#: includes/widgets/childmenu.php:77
+msgid "Select the options for this widget."
+msgstr "Seleccione las opciones de este widget."
+
+#: includes/widgets/childmenu.php:81
+msgid "Order Menu"
+msgstr "Orden del Menú"
+
+#: includes/widgets/childmenu.php:88
+msgid "Menu Order"
+msgstr "Orden del Menú"
+
+#: includes/widgets/childmenu.php:93 includes/widgets/latest-tweets.php:47
+#: includes/widgets/recent-posts.php:159
+msgid "Title"
+msgstr "Título"
+
 #: includes/widgets/latest-tweets.php:21
 msgid "Retrieve the last tweets."
 msgstr "Recuperar los últimos tweets."
@@ -365,10 +390,6 @@ msgstr "Recuperar los últimos tweets."
 #: includes/widgets/latest-tweets.php:26 includes/widgets/latest-tweets.php:32
 msgid "Last Tweets"
 msgstr "Últimos Tweets"
-
-#: includes/widgets/latest-tweets.php:47 includes/widgets/recent-posts.php:159
-msgid "Title"
-msgstr "Título"
 
 #: includes/widgets/latest-tweets.php:54
 msgid "Username"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2016-01-04 16:20+0100\n"
+"POT-Creation-Date: 2016-01-14 08:57+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -360,6 +360,31 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
+#: includes/widgets/childmenu.php:18
+msgid "It gives you a menu with child pages."
+msgstr ""
+
+#: includes/widgets/childmenu.php:20
+msgid "Menu Child Pages"
+msgstr ""
+
+#: includes/widgets/childmenu.php:77
+msgid "Select the options for this widget."
+msgstr ""
+
+#: includes/widgets/childmenu.php:81
+msgid "Order Menu"
+msgstr ""
+
+#: includes/widgets/childmenu.php:88
+msgid "Menu Order"
+msgstr ""
+
+#: includes/widgets/childmenu.php:93 includes/widgets/latest-tweets.php:47
+#: includes/widgets/recent-posts.php:159
+msgid "Title"
+msgstr ""
+
 #: includes/widgets/latest-tweets.php:21
 msgid "Retrieve the last tweets."
 msgstr ""
@@ -367,11 +392,6 @@ msgstr ""
 #: includes/widgets/latest-tweets.php:26
 #: includes/widgets/latest-tweets.php:32
 msgid "Last Tweets"
-msgstr ""
-
-#: includes/widgets/latest-tweets.php:47
-#: includes/widgets/recent-posts.php:159
-msgid "Title"
 msgstr ""
 
 #: includes/widgets/latest-tweets.php:54
