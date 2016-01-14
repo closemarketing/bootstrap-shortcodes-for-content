@@ -78,6 +78,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 == Changelog ==
 = 1.2 =
 *   Added Shortcode image-scroll.
+*   Added Widget Child Menu.
 
 = 1.1.1 =
 *   Solved errors in date option of gridbox shortcode.
