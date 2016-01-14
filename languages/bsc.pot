@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-12-28 23:51+0100\n"
+"POT-Creation-Date: 2016-01-04 16:20+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Include Date"
 msgstr ""
 
-#: includes/mce/translations.php:57 includes/mce/translations.php:84
+#: includes/mce/translations.php:57
 msgid "Image Size (Wordpress name)"
 msgstr ""
 
@@ -318,6 +318,14 @@ msgstr ""
 
 #: includes/mce/translations.php:83
 msgid "Nofollow"
+msgstr ""
+
+#: includes/mce/translations.php:84
+msgid "Image Scroll"
+msgstr ""
+
+#: includes/mce/translations.php:85
+msgid "Inserts Images attached to actual entry as Scroll"
 msgstr ""
 
 #: includes/widgets/button.php:18

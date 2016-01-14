@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2015-12-28 23:51+0100\n"
-"PO-Revision-Date: 2015-12-28 23:52+0100\n"
+"POT-Creation-Date: 2016-01-04 16:20+0100\n"
+"PO-Revision-Date: 2016-01-04 16:21+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -209,7 +209,7 @@ msgstr "Nombre Tipo Entrada"
 msgid "Include Date"
 msgstr "Incluir fecha"
 
-#: includes/mce/translations.php:57 includes/mce/translations.php:84
+#: includes/mce/translations.php:57
 msgid "Image Size (Wordpress name)"
 msgstr "Tamaño de la imagen (nombre Wordpress)"
 
@@ -317,6 +317,14 @@ msgstr "Ninguno"
 #: includes/mce/translations.php:83
 msgid "Nofollow"
 msgstr "Nofollow"
+
+#: includes/mce/translations.php:84
+msgid "Image Scroll"
+msgstr "Tira de Imágenes"
+
+#: includes/mce/translations.php:85
+msgid "Inserts Images attached to actual entry as Scroll"
+msgstr "Muestra todas las imágenes incluidas en la entrada como tira"
 
 #: includes/widgets/button.php:18
 msgid "Add a Button Bootstrap"

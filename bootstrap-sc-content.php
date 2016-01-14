@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Twitter Bootstrap 3 shortcodes plugin for Content
 Author: closemarketing
 Author URI: http://twitter.com/closemarketing
-Version: 1.1.1
+Version: 1.2
 Text Domain: bsc
 Domain Path: /languages
 License: GNU General Public License version 3.0
@@ -32,6 +32,7 @@ require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Inter
 require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
 require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
 require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Latest News
+require_once( dirname(__FILE__) . '/includes/shortcode-imagescroll.php'); // Latest News
 //require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
 
 //Widgets
@@ -39,6 +40,7 @@ require_once( dirname(__FILE__) . '/includes/widgets/button.php'); // Call to Ac
 require_once( dirname(__FILE__) . '/includes/widgets/social-icons.php'); // Recent Posts
 require_once( dirname(__FILE__) . '/includes/widgets/latest-tweets.php'); // Latest Tweets
 require_once( dirname(__FILE__) . '/includes/widgets/recent-posts.php'); // Recent Posts
+require_once( dirname(__FILE__) . '/includes/widgets/childmenu.php'); // Recent Posts
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
