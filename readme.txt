@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.2.1
-Version: 1.2.1
+Stable tag: 1.2.2
+Version: 1.2.2
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -76,6 +76,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
+= 1.2.2 =
+*   Added property size in [imagepostslider].
+*   Adde menu icon widget.
+
 = 1.2.1 =
 *   Added property ids and size in [imagepostslider].
 
