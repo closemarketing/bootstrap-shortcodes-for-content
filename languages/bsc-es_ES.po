@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2016-01-14 08:57+0100\n"
-"PO-Revision-Date: 2016-01-14 08:58+0100\n"
+"POT-Creation-Date: 2016-02-16 09:51+0100\n"
+"PO-Revision-Date: 2016-02-16 09:52+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: bootstrap-sc-content.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,6 +19,10 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: bootstrap-sc-content.php:69
+msgid "Icon for Menu widget"
+msgstr "Widget Menú con iconos"
 
 #: includes/general-settings.php:26
 msgid "Phone Number"
@@ -326,6 +330,10 @@ msgstr "Tira de Imágenes"
 msgid "Inserts Images attached to actual entry as Scroll"
 msgstr "Muestra todas las imágenes incluidas en la entrada como tira"
 
+#: includes/mce/translations.php:86
+msgid "Inserts Images attached in a slider"
+msgstr "Muestra todas las imágenes incluidas en la entrada como deslizado"
+
 #: includes/widgets/button.php:18
 msgid "Add a Button Bootstrap"
 msgstr "Añadir un botón Bootstrap"
@@ -358,28 +366,28 @@ msgstr "Estilo del botón"
 msgid "Success"
 msgstr "Éxito"
 
-#: includes/widgets/childmenu.php:18
+#: includes/widgets/childmenu.php:18 includes/widgets/menuico.php:19
 msgid "It gives you a menu with child pages."
 msgstr "Te ofrece un menú automático para las páginas hijas."
 
-#: includes/widgets/childmenu.php:20
+#: includes/widgets/childmenu.php:20 includes/widgets/menuico.php:21
 msgid "Menu Child Pages"
 msgstr "Menú para Páginas hijas"
 
-#: includes/widgets/childmenu.php:77
+#: includes/widgets/childmenu.php:77 includes/widgets/menuico.php:70
 msgid "Select the options for this widget."
 msgstr "Seleccione las opciones de este widget."
 
-#: includes/widgets/childmenu.php:81
+#: includes/widgets/childmenu.php:81 includes/widgets/menuico.php:74
 msgid "Order Menu"
 msgstr "Orden del Menú"
 
-#: includes/widgets/childmenu.php:88
+#: includes/widgets/childmenu.php:88 includes/widgets/menuico.php:81
 msgid "Menu Order"
 msgstr "Orden del Menú"
 
 #: includes/widgets/childmenu.php:93 includes/widgets/latest-tweets.php:47
-#: includes/widgets/recent-posts.php:159
+#: includes/widgets/menuico.php:86 includes/widgets/recent-posts.php:159
 msgid "Title"
 msgstr "Título"
 

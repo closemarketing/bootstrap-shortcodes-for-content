@@ -6,13 +6,14 @@
 if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	function btsc_imagepostslider_shortcode($atts, $content = null) {
 
-        global $post;
         $att = shortcode_atts( array(
-            'ids' => ''
+            'ids' => '',
+			'size' => 'page-thumb'
         ), $atts );
 
+		$idpost = get_the_ID();
 		$ids =  preg_replace( '/[^0-9,]+/', '', $att['ids'] );
-		
+
 		if($ids) { // Ids given
 			$attachments = explode(',', $ids);
 
@@ -25,7 +26,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	            if($i==0) $html .= ' active';
 	            $html .= '">';
 	            $html .= '<div class="bannerImage">';
-	            $html .= wp_get_attachment_image( $attachment, 'page-thumb' );
+	            $html .= wp_get_attachment_image( $attachment, $att['size'] );
 	            $html .= '</div>';
 	            $html .= '</div><!-- /Slide -->' ;
 	            $i++;
@@ -42,7 +43,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
 		} else { //children images from post
 	        $args = array(
 	            'post_mime_type' => 'image',
-	            'post_parent' => $post->ID,
+	            'post_parent' => $idpost,
 	            'post_type' => 'attachment',
 	            'suppress_filters' => 0
 	        );
@@ -50,9 +51,8 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	        $numattach = count($attachments);
 
 			if ( $attachments && $numattach == 1 ) {
-	            $html = get_the_post_thumbnail('page-thumb', array('class' => 'page-thumb img-rounded'));
+	            $html = get_the_post_thumbnail($att['size'], array('class' => 'page-thumb img-rounded'));
 	        } elseif ($attachments) {
-
 	        $html = '<div class="carousel slide" id="myCarousel">';
 	        $html .= '<div class="carousel-inner">';
 
@@ -63,7 +63,7 @@ if( !function_exists('btsc_imagepostslider_shortcode') ) {
 	            if($i==0) $html .= ' active';
 	            $html .= '">';
 	            $html .= '<div class="bannerImage">';
-	            $html .= wp_get_attachment_image( $attachment->ID, 'page-thumb' );
+	            $html .= wp_get_attachment_image( $attachment->ID, $att['size'] );
 	            $html .= '</div>';
 	            $html .= '</div><!-- /Slide -->' ;
 	            $i++;

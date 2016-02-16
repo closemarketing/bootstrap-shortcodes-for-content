@@ -82,7 +82,8 @@ function bsc_mce_button_translation() {
         'bnone'     => __('None','bsc'),
         'nof'     => __('Nofollow','bsc'),
         'imgscroll'     => __('Image Scroll','bsc'),
-        'imgscroll_desc'     => __('Inserts Images attached to actual entry as Scroll','bsc')
+        'imgscroll_desc'     => __('Inserts Images attached to actual entry as Scroll','bsc'),
+        'imgpostslider_desc' => __('Inserts Images attached in a slider','bsc'),
     );
 
     $locale = _WP_Editors::$mce_locale;

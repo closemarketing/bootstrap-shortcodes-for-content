@@ -602,14 +602,29 @@
                 }
             }, // End carousel cpt
 
-
-            /* Image Post Slider */
+			/* Image Post Slider */
             {
                 text: editor.getLang( 'bsc_mce_button.content_imgslider' ),
                 onclick: function() {
-                    editor.insertContent( '[imagepostslider]');
+                    editor.windowManager.open( {
+                        title: editor.getLang( 'bsc_mce_button.imgpostslider_desc' ),
+                        body: [
+
+                        // Image size
+                        {
+                            type: 'textbox',
+                            name: 'gridimagesize',
+                            label: editor.getLang( 'bsc_mce_button.isize' ),
+                            value: 'thumbnail'
+                        },
+
+                     ],
+                        onsubmit: function( e ) {
+                            editor.insertContent( '[imagepostslider size="' + e.data.gridimagesize + '"]');
+                        }
+                    });
                 }
-            }, // Image Post Slider
+            }, // End image scroll
 
 			/* Image Scroll */
             {
