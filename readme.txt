@@ -77,7 +77,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 = 1.2.1 =
-*   Added property ids in [imagepostslider].
+*   Added property ids and size in [imagepostslider].
 
 = 1.2 =
 *   Added Shortcode image-scroll.

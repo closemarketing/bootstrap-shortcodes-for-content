@@ -59,6 +59,16 @@ add_action( 'plugins_loaded', 'bsc_load_textdomain' );
 function bsc_load_textdomain() {
   load_plugin_textdomain( 'bsc', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
+// Example image size added:
+add_image_size( 'menuico', 100, 100, true );
+
+add_filter( 'image_size_names_choose', 'bsc_custom_sizes' );
+
+function bsc_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'menuico' => __('Icon for Menu widget'),
+    ) );
+}
 
 // Intelligently remove extra P and BR tags around shortcodes that WordPress likes to add
 function bsc_fix_shortcodes($content){
