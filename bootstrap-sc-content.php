@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Widgets, Shortcodes and Button in Editor for Twitter Bootstrap 3
 Author: closemarketing
 Author URI: http://twitter.com/closemarketing
-Version: 1.2.2
+Version: 1.2.3
 Text Domain: bsc
 Domain Path: /languages
 License: GNU General Public License version 3.0
