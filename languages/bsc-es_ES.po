@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2016-02-16 09:51+0100\n"
-"PO-Revision-Date: 2016-02-16 09:52+0100\n"
+"POT-Creation-Date: 2016-02-23 13:04+0100\n"
+"PO-Revision-Date: 2016-02-23 13:04+0100\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
 "Language: es_ES\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: bootstrap-sc-content.php:69
+#: bootstrap-sc-content.php:70
 msgid "Icon for Menu widget"
 msgstr "Widget Menú con iconos"
 
@@ -366,30 +366,78 @@ msgstr "Estilo del botón"
 msgid "Success"
 msgstr "Éxito"
 
-#: includes/widgets/childmenu.php:18 includes/widgets/menuico.php:19
+#: includes/widgets/childmenu.php:18 includes/widgets/menuico.php:18
 msgid "It gives you a menu with child pages."
 msgstr "Te ofrece un menú automático para las páginas hijas."
 
-#: includes/widgets/childmenu.php:20 includes/widgets/menuico.php:21
+#: includes/widgets/childmenu.php:20 includes/widgets/menuico.php:20
 msgid "Menu Child Pages"
 msgstr "Menú para Páginas hijas"
 
-#: includes/widgets/childmenu.php:77 includes/widgets/menuico.php:70
+#: includes/widgets/childmenu.php:77 includes/widgets/menuico.php:69
 msgid "Select the options for this widget."
 msgstr "Seleccione las opciones de este widget."
 
-#: includes/widgets/childmenu.php:81 includes/widgets/menuico.php:74
+#: includes/widgets/childmenu.php:81 includes/widgets/menuico.php:73
 msgid "Order Menu"
 msgstr "Orden del Menú"
 
-#: includes/widgets/childmenu.php:88 includes/widgets/menuico.php:81
+#: includes/widgets/childmenu.php:88 includes/widgets/menuico.php:80
 msgid "Menu Order"
 msgstr "Orden del Menú"
 
 #: includes/widgets/childmenu.php:93 includes/widgets/latest-tweets.php:47
-#: includes/widgets/menuico.php:86 includes/widgets/recent-posts.php:159
+#: includes/widgets/menuico.php:85 includes/widgets/recent-posts.php:159
 msgid "Title"
 msgstr "Título"
+
+#: includes/widgets/contact.php:18
+msgid "Adds contact info in a widget."
+msgstr "Añade información de contacto en un widget."
+
+#: includes/widgets/contact.php:20
+msgid "Contact Info"
+msgstr "Información de contacto"
+
+#: includes/widgets/contact.php:55 includes/widgets/contact.php:140
+msgid "Phone"
+msgstr "Teléfono"
+
+#: includes/widgets/contact.php:59
+msgid "E-mail"
+msgstr "Email"
+
+#: includes/widgets/contact.php:110
+msgid "Contact Name"
+msgstr "Nombre del contacto"
+
+#: includes/widgets/contact.php:115
+msgid "Address info 1"
+msgstr "Dirección 1"
+
+#: includes/widgets/contact.php:120
+msgid "Address info 2"
+msgstr "Dirección 2"
+
+#: includes/widgets/contact.php:125
+msgid "ZIP"
+msgstr "Código Postal"
+
+#: includes/widgets/contact.php:130
+msgid "City"
+msgstr "Ciudad"
+
+#: includes/widgets/contact.php:135
+msgid "State"
+msgstr "Provincia"
+
+#: includes/widgets/contact.php:145
+msgid "Email"
+msgstr "Email"
+
+#: includes/widgets/contact.php:150
+msgid "Contact Description"
+msgstr "Descripción contacto"
 
 #: includes/widgets/latest-tweets.php:21
 msgid "Retrieve the last tweets."
@@ -540,8 +588,8 @@ msgid "https://github.com/closemarketing/bootstrap-sc-content"
 msgstr "https://github.com/closemarketing/bootstrap-sc-content"
 
 #. Description of the plugin/theme
-msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
-msgstr "Plugin Shortcodes Bootstrap para el contenido."
+msgid "Widgets, Shortcodes and Button in Editor for Twitter Bootstrap 3"
+msgstr "Widgets, Shortcodes y botón en el Editor para Bootstrap 3."
 
 #. Author of the plugin/theme
 msgid "closemarketing"
@@ -550,6 +598,12 @@ msgstr "closemarketing"
 #. Author URI of the plugin/theme
 msgid "http://twitter.com/closemarketing"
 msgstr "http://twitter.com/closemarketing"
+
+#~ msgid "Company Name"
+#~ msgstr "Nombre de contacto"
+
+#~ msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
+#~ msgstr "Plugin Shortcodes Bootstrap para el contenido."
 
 #~ msgid "More Text"
 #~ msgstr "Más texto"

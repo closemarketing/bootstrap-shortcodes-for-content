@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootstrap Shortcodes for Content\n"
-"POT-Creation-Date: 2016-02-16 09:51+0100\n"
+"POT-Creation-Date: 2016-02-23 13:02+0100\n"
 "PO-Revision-Date: 2015-10-13 14:21+0200\n"
 "Last-Translator: David <david@closemarketing.es>\n"
 "Language-Team: David <david@closemarketing.es>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: bootstrap-sc-content.php:69
+#: bootstrap-sc-content.php:70
 msgid "Icon for Menu widget"
 msgstr ""
 
@@ -368,29 +368,77 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#: includes/widgets/childmenu.php:18 includes/widgets/menuico.php:19
+#: includes/widgets/childmenu.php:18 includes/widgets/menuico.php:18
 msgid "It gives you a menu with child pages."
 msgstr ""
 
-#: includes/widgets/childmenu.php:20 includes/widgets/menuico.php:21
+#: includes/widgets/childmenu.php:20 includes/widgets/menuico.php:20
 msgid "Menu Child Pages"
 msgstr ""
 
-#: includes/widgets/childmenu.php:77 includes/widgets/menuico.php:70
+#: includes/widgets/childmenu.php:77 includes/widgets/menuico.php:69
 msgid "Select the options for this widget."
 msgstr ""
 
-#: includes/widgets/childmenu.php:81 includes/widgets/menuico.php:74
+#: includes/widgets/childmenu.php:81 includes/widgets/menuico.php:73
 msgid "Order Menu"
 msgstr ""
 
-#: includes/widgets/childmenu.php:88 includes/widgets/menuico.php:81
+#: includes/widgets/childmenu.php:88 includes/widgets/menuico.php:80
 msgid "Menu Order"
 msgstr ""
 
 #: includes/widgets/childmenu.php:93 includes/widgets/latest-tweets.php:47
-#: includes/widgets/menuico.php:86 includes/widgets/recent-posts.php:159
+#: includes/widgets/menuico.php:85 includes/widgets/recent-posts.php:159
 msgid "Title"
+msgstr ""
+
+#: includes/widgets/contact.php:18
+msgid "Adds contact info in a widget."
+msgstr ""
+
+#: includes/widgets/contact.php:20
+msgid "Contact Info"
+msgstr ""
+
+#: includes/widgets/contact.php:55 includes/widgets/contact.php:140
+msgid "Phone"
+msgstr ""
+
+#: includes/widgets/contact.php:59
+msgid "E-mail"
+msgstr ""
+
+#: includes/widgets/contact.php:110
+msgid "Company Name"
+msgstr ""
+
+#: includes/widgets/contact.php:115
+msgid "Address info 1"
+msgstr ""
+
+#: includes/widgets/contact.php:120
+msgid "Address info 2"
+msgstr ""
+
+#: includes/widgets/contact.php:125
+msgid "ZIP"
+msgstr ""
+
+#: includes/widgets/contact.php:130
+msgid "City"
+msgstr ""
+
+#: includes/widgets/contact.php:135
+msgid "State"
+msgstr ""
+
+#: includes/widgets/contact.php:145
+msgid "Email"
+msgstr ""
+
+#: includes/widgets/contact.php:150
+msgid "Company Description"
 msgstr ""
 
 #: includes/widgets/latest-tweets.php:21
@@ -543,7 +591,7 @@ msgid "https://github.com/closemarketing/bootstrap-sc-content"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Twitter Bootstrap 3 shortcodes plugin for Content"
+msgid "Widgets, Shortcodes and Button in Editor for Twitter Bootstrap 3"
 msgstr ""
 
 #. Author of the plugin/theme
