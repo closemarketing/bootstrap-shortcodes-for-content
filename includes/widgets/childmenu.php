@@ -23,6 +23,7 @@ class BSC_ChildMenu extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract($args);
 		$ordermenu = apply_filters( 'widget_ordermenu', empty( $instance['ordermenu'] ) ? '' : $instance['ordermenu'], $instance );
+		$titleparent = apply_filters( 'widget_titleparent', empty( $instance['titleparent'] ) ? '' : $instance['titleparent'], $instance );
 
 		echo $before_widget;
 
@@ -41,17 +42,23 @@ class BSC_ChildMenu extends WP_Widget {
              'post_type' => $current_post_type,
              'post_parent' => $post->ID
             );
+			$post_parent_id = $post->ID;
         } else {
             $args = array( 'order' => 'ASC',
              'posts_per_page' => -1,
              'orderby' => $ordermenu,
              'post_type' => $current_post_type,
              'post_parent' => $post_parent );
+
+			$post_parent_id = $post->post_parent;
             }
 
         $myposts = get_posts( $args );
 
         if ($myposts) {
+			if($titleparent=='show-title') {
+			echo '<h2><a href="'.get_the_permalink($post_parent_id).'">'.get_the_title($post_parent_id).'</a></h2>';
+			}
             echo '<ul class="menuchild nav nav-pills">';
             foreach( $myposts as $post ) : setup_postdata($post);
                 echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
@@ -67,12 +74,15 @@ class BSC_ChildMenu extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
         $instance['ordermenu'] =  $new_instance['ordermenu'];
+        $instance['titleparent'] =  $new_instance['titleparent'];
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance,
-                        array( 'ordermenu' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array(
+					'ordermenu' => '',
+					'titleparent' => ''
+					 	) );
     ?>
         <p><?php _e('Select the options for this widget.','bsc');?></p>
 
@@ -91,6 +101,24 @@ class BSC_ChildMenu extends WP_Widget {
                     if($instance['ordermenu'] == "title")
                         echo 'selected="selected"';
                 ?>><?php _e('Title','bsc');?></option>
+            </select>
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'titleparent' ); ?> ">
+                <?php _e('Show Parent Page Title', 'bsc'); ?>:
+            </label>
+            <select id="<?php echo $this->get_field_id( 'titleparent' ); ?>" name="<?php echo $this->get_field_name( 'titleparent' ); ?>">
+
+                <option value="show-title" <?php
+                    if($instance['titleparent'] == "show-title")
+                        echo 'selected="selected"';
+                ?>><?php _e('Show','bsc');?></option>
+
+                <option value="not-show" <?php
+                    if($instance['titleparent'] == "not-show")
+                        echo 'selected="selected"';
+                ?>><?php _e('Not Show','bsc');?></option>
             </select>
         </p>
 		<?php
