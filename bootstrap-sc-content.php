@@ -20,28 +20,11 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
 
-require_once( dirname(__FILE__) . '/includes/general-settings.php'); // Settings in General options
-
 //Include functions shortcodes
-require_once( dirname(__FILE__) . '/includes/shortcode-gallery.php'); // Gallery
-require_once( dirname(__FILE__) . '/includes/shortcode-carousel.php'); // Carousel
-require_once( dirname(__FILE__) . '/includes/shortcode-gridbox.php'); // Gridbox
-require_once( dirname(__FILE__) . '/includes/shortcode-gridtaxbox.php'); // Grid Tax Box
-require_once( dirname(__FILE__) . '/includes/shortcode-imagepost.php'); // Image Post Slider
-require_once( dirname(__FILE__) . '/includes/shortcode-interface.php'); // Interface
-require_once( dirname(__FILE__) . '/includes/shortcode-links.php'); // Links
-require_once( dirname(__FILE__) . '/includes/shortcode-tabs.php'); // Tabs
-require_once( dirname(__FILE__) . '/includes/shortcode-latestnews.php'); // Latest News
-require_once( dirname(__FILE__) . '/includes/shortcode-imagescroll.php'); // Latest News
-//require_once( dirname(__FILE__) . '/includes/shortcode-parallax.php'); // Parallax image
+foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
 
 //Widgets
-require_once( dirname(__FILE__) . '/includes/widgets/button.php'); // Call to Action
-require_once( dirname(__FILE__) . '/includes/widgets/social-icons.php'); // Recent Posts
-require_once( dirname(__FILE__) . '/includes/widgets/latest-tweets.php'); // Latest Tweets
-require_once( dirname(__FILE__) . '/includes/widgets/recent-posts.php'); // Recent Posts
-require_once( dirname(__FILE__) . '/includes/widgets/childmenu.php'); // Child Menu
-require_once( dirname(__FILE__) . '/includes/widgets/contact.php'); // Contact info
+foreach ( glob( dirname( __FILE__ ) . '/includes/widgets/*.php' ) as $file ) { include $file; }
 
 //-------------
 require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); // Add mce buttons to post editor
