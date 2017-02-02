@@ -18,18 +18,18 @@ class last_tweets extends WP_Widget
     function __construct() {
 		$widget_ops = array( 
             'classname' => 'last-tweets', 
-            'description' => __('Retrieve the last tweets.', 'bsc') 
+            'description' => __('Retrieve the last tweets.', 'bootstrap-shortcodes-for-content') 
         );
 
 		$control_ops = array( 'id_base' => 'last-tweets' );
 
-		WP_Widget::__construct( 'last-tweets', __('Last Tweets', 'bsc'), $widget_ops, $control_ops );
+		WP_Widget::__construct( 'last-tweets', __('Last Tweets', 'bootstrap-shortcodes-for-content'), $widget_ops, $control_ops );
 	}
 	
 	function form( $instance ) {
         /* Impostazioni di default del widget */
 		$defaults = array( 
-            'title' => __('Last Tweets', 'bsc'),
+            'title' => __('Last Tweets', 'bootstrap-shortcodes-for-content'),
             'username' => '',
             'consumer_key' => '',
             'consumer_secret' => '',
@@ -44,49 +44,49 @@ class last_tweets extends WP_Widget
 		
 		<p>
 			<label>
-				<?php _e('Title', 'bsc'); ?>:<br />
+				<?php _e('Title', 'bootstrap-shortcodes-for-content'); ?>:<br />
 				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
 			</label>
 		</p>
 
         <p>
             <label>
-                <?php _e('Username', 'bsc'); ?>:<br />
+                <?php _e('Username', 'bootstrap-shortcodes-for-content'); ?>:<br />
                 <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'username' ); ?>" name="<?php echo $this->get_field_name( 'username' ); ?>" value="<?php echo $instance['username']; ?>" />
             </label>
         </p>
 
         <p>
             <label>
-                <?php _e('Consumer key', 'bsc'); ?>:<br />
+                <?php _e('Consumer key', 'bootstrap-shortcodes-for-content'); ?>:<br />
                 <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'consumer_key' ); ?>" name="<?php echo $this->get_field_name( 'consumer_key' ); ?>" value="<?php echo $instance['consumer_key']; ?>" />
             </label>
         </p>
 
         <p>
             <label>
-                <?php _e('Consumer secret', 'bsc'); ?>:<br />
+                <?php _e('Consumer secret', 'bootstrap-shortcodes-for-content'); ?>:<br />
                 <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'consumer_secret' ); ?>" name="<?php echo $this->get_field_name( 'consumer_secret' ); ?>" value="<?php echo $instance['consumer_secret']; ?>" />
             </label>
         </p>
 
         <p>
             <label>
-                <?php _e('Access token', 'bsc'); ?>:<br />
+                <?php _e('Access token', 'bootstrap-shortcodes-for-content'); ?>:<br />
                 <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'access_token' ); ?>" name="<?php echo $this->get_field_name( 'access_token' ); ?>" value="<?php echo $instance['access_token']; ?>" />
             </label>
         </p>
 
         <p>
             <label>
-                <?php _e('Access token secret', 'bsc'); ?>:<br />
+                <?php _e('Access token secret', 'bootstrap-shortcodes-for-content'); ?>:<br />
                 <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'access_token_secret' ); ?>" name="<?php echo $this->get_field_name( 'access_token_secret' ); ?>" value="<?php echo $instance['access_token_secret']; ?>" />
             </label>
         </p>
 		
 		<p>
 			<label>
-				<?php _e('Limit', 'bsc'); ?>:
+				<?php _e('Limit', 'bootstrap-shortcodes-for-content'); ?>:
 				<select id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>">
 					
 					<?php for( $i = 1; $i <= 10; $i++ ) : $selected = ( $instance['limit'] == $i ) ? ' selected="selected"' : '' ?>
@@ -101,7 +101,7 @@ class last_tweets extends WP_Widget
 			<label>
 				<?php $checked = ( $instance['time'] == 'true' ) ? ' checked=""' : '' ?>
 				<input type="checkbox" id="<?php echo $this->get_field_id( 'time' ); ?>" name="<?php echo $this->get_field_name( 'time' ); ?>" value="true"<?php echo $checked ?> />
-				<?php _e('Show Time', 'bsc'); ?>
+				<?php _e('Show Time', 'bootstrap-shortcodes-for-content'); ?>
 			</label>
 		</p>
         
@@ -109,7 +109,7 @@ class last_tweets extends WP_Widget
 			<label>
 				<?php $checked = ( $instance['follow'] == 'true' ) ? ' checked=""' : '' ?>
 				<input type="checkbox" id="<?php echo $this->get_field_id( 'follow' ); ?>" name="<?php echo $this->get_field_name( 'follow' ); ?>" value="true"<?php echo $checked ?> />
-				<?php _e('Show Follow link', 'bsc'); ?>
+				<?php _e('Show Follow link', 'bootstrap-shortcodes-for-content'); ?>
 			</label>
 		</p>
 		<?php
@@ -163,7 +163,7 @@ class last_tweets extends WP_Widget
         echo '</div>';
 
         if( isset($instance['follow']) && $instance['follow'] == 'true' ){
-            echo '<p id="follow-twitter"><a href="https://twitter.com/intent/user?screen_name=' . $username . '" target="_blank">' . apply_filters( 'yit_follow_us_twitter_widget', __( 'Follow us on Twitter &rarr;', 'bsc' ) ) . '</a>';
+            echo '<p id="follow-twitter"><a href="https://twitter.com/intent/user?screen_name=' . $username . '" target="_blank">' . apply_filters( 'yit_follow_us_twitter_widget', __( 'Follow us on Twitter &rarr;', 'bootstrap-shortcodes-for-content' ) ) . '</a>';
         }
 
 		echo $after_widget;

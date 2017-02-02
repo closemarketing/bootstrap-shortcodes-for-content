@@ -4,8 +4,8 @@ Tags: bootstrap, shortcodes, content, ui, bootstrap helper
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.2.3
-Version: 1.2.3
+Stable tag: 1.2.4
+Version: 1.2.4
 
 This WordPress plugin extends shortcodes to use in Bootstrap themes.
 
@@ -79,6 +79,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 = 1.2.4 =
 *   Fixed bugs with PHP7.
+*   New widget Entries by category.
 
 = 1.2.3 =
 *   Added Contact widget.

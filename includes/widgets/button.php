@@ -15,9 +15,9 @@
 class BSC_Button extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_cta', 'description' => __('Add a Button Bootstrap', 'bsc'));
+		$widget_ops = array('classname' => 'widget_cta', 'description' => __('Add a Button Bootstrap', 'bootstrap-shortcodes-for-content'));
 		$control_ops = array('width' => 400, 'height' => 350);
-		parent::__construct('ctatext', __('Button to Action','bsc'), $widget_ops, $control_ops);
+		parent::__construct('ctatext', __('Button to Action','bootstrap-shortcodes-for-content'), $widget_ops, $control_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -59,75 +59,75 @@ class BSC_Button extends WP_Widget {
 		$buttonstyle = esc_textarea($instance['buttonstyle']);
 ?>
 		<p>
-            <label for="<?php echo $this->get_field_id('buttontext'); ?>"><?php _e('Button Text','bsc'); ?>:</label>		        <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo esc_attr($buttontext); ?>" />
+            <label for="<?php echo $this->get_field_id('buttontext'); ?>"><?php _e('Button Text','bootstrap-shortcodes-for-content'); ?>:</label>		        <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo esc_attr($buttontext); ?>" />
         </p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('buttonurl'); ?>"><?php _e('Button URL','bsc'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('buttonurl'); ?>"><?php _e('Button URL','bootstrap-shortcodes-for-content'); ?>:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id('buttonurl'); ?>" name="<?php echo $this->get_field_name('buttonurl'); ?>" type="text" value="<?php echo esc_attr($buttonurl); ?>" />
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'buttonsize' ); ?> ">
-                <?php _e('Button Size', 'bsc'); ?>:
+                <?php _e('Button Size', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'buttonsize' ); ?>" name="<?php echo $this->get_field_name( 'buttonsize' ); ?>">
                 <option value="btn-lg" <?php
                     if($instance['buttonsize'] == "btn-lg")
                         echo 'selected="selected"';
-                ?>><?php _e('Large','bsc');?></option>
+                ?>><?php _e('Large','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-md" <?php
                     if($instance['buttonsize'] == "btn-md")
                         echo 'selected="selected"';
-                ?>><?php _e('Medium','bsc');?></option>
+                ?>><?php _e('Medium','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-sm" <?php
                     if($instance['buttonsize'] == "btn-sm")
                         echo 'selected="selected"';
-                ?>><?php _e('Small','bsc');?></option>
+                ?>><?php _e('Small','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-xs" <?php
                     if($instance['buttonsize'] == "btn-xs")
                         echo 'selected="selected"';
-                ?>><?php _e('Extra Small','bsc');?></option>
+                ?>><?php _e('Extra Small','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'buttonstyle' ); ?> ">
-                <?php _e('Button Style', 'bsc'); ?>:
+                <?php _e('Button Style', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'buttonstyle' ); ?>" name="<?php echo $this->get_field_name( 'buttonstyle' ); ?>">
                 <option value="btn-default" <?php
                     if($instance['buttonstyle'] == "btn-default")
                         echo 'selected="selected"';
-                ?>><?php _e('Default','bsc');?></option>
+                ?>><?php _e('Default','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-primary" <?php
                     if($instance['buttonstyle'] == "btn-primary")
                         echo 'selected="selected"';
-                ?>><?php _e('Primary','bsc');?></option>
+                ?>><?php _e('Primary','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-success" <?php
                     if($instance['buttonstyle'] == "btn-success")
                         echo 'selected="selected"';
-                ?>><?php _e('Success','bsc');?></option>
+                ?>><?php _e('Success','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-info" <?php
                     if($instance['buttonstyle'] == "btn-info")
                         echo 'selected="selected"';
-                ?>><?php _e('Info','bsc');?></option>
+                ?>><?php _e('Info','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-warning" <?php
                     if($instance['buttonstyle'] == "btn-warning")
                         echo 'selected="selected"';
-                ?>><?php _e('Warning','bsc');?></option>
+                ?>><?php _e('Warning','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="btn-danger" <?php
                     if($instance['buttonstyle'] == "btn-danger")
                         echo 'selected="selected"';
-                ?>><?php _e('Danger','bsc');?></option>
+                ?>><?php _e('Danger','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 

@@ -19,12 +19,12 @@ class recent_posts extends WP_Widget {
 		
         $widget_ops = array( 
             'classname' => 'recent-posts', 
-            'description' => __('The latest posts, with a preview thumb.', 'bsc') 
+            'description' => __('The latest posts, with a preview thumb.', 'bootstrap-shortcodes-for-content') 
         );
 
         $control_ops = array( 'id_base' => 'recent-posts' );
 
-        WP_Widget::__construct( 'recent-posts', __('Recent Posts', 'bsc'), $widget_ops, $control_ops );
+        WP_Widget::__construct( 'recent-posts', __('Recent Posts', 'bootstrap-shortcodes-for-content'), $widget_ops, $control_ops );
     }
     
     function widget( $args, $instance ) {
@@ -88,8 +88,8 @@ class recent_posts extends WP_Widget {
             if ( $show_date == 'yes' ) {
                 $html .= '<p class="post-date">';
                 $html .= '<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ';
-                $html .= '<time datetime="'.get_the_time(__('F jS, Y','bsc')).'" pubdate>';
-                $html .= get_the_time(__('F jS, Y','bsc'));
+                $html .= '<time datetime="'.get_the_time(__('F jS, Y','bootstrap-shortcodes-for-content')).'" pubdate>';
+                $html .= get_the_time(__('F jS, Y','bootstrap-shortcodes-for-content'));
                 $html .= '</time></p>';
             }
 
@@ -97,11 +97,11 @@ class recent_posts extends WP_Widget {
                 $html .= '<p class="post-comments">';
                 $number_comments = get_comments_number();
                 if ( $number_comments == 0 ) {
-                    $html .= __('0 comments', 'bsc');
+                    $html .= __('0 comments', 'bootstrap-shortcodes-for-content');
                 } elseif ( $number_comments == 1 ) {
-                    $html .= __('1 comment', 'bsc');
+                    $html .= __('1 comment', 'bootstrap-shortcodes-for-content');
                 } else {
-                    $html .= $number_comments .' '. __('comments', 'bsc');
+                    $html .= $number_comments .' '. __('comments', 'bootstrap-shortcodes-for-content');
                 }
                 $html .= '</p>';
             }
@@ -144,68 +144,68 @@ class recent_posts extends WP_Widget {
     function form( $instance ) {   
         /* Impostazioni di default del widget */
         $defaults = array( 
-            'title' => __('Recent Posts', 'bsc'), 
+            'title' => __('Recent Posts', 'bootstrap-shortcodes-for-content'), 
             'items' => 3,
             'show' => 'thumb',
             'excerpt' => 'no',
             'excerpt_length' => '10',
-            'more_text' => '|| ' . __( 'Read More', 'bsc' ),
+            'more_text' => '|| ' . __( 'Read More', 'bootstrap-shortcodes-for-content' ),
             'show_comments' => 'no'
         );
         
         $instance = wp_parse_args( (array) $instance, $defaults ); ?>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'bootstrap-shortcodes-for-content' ) ?>:
                  <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" class="widefat" />
             </label>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'items' ); ?>"><?php _e( 'Items', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'items' ); ?>"><?php _e( 'Items', 'bootstrap-shortcodes-for-content' ) ?>:
                 <input type="text" id="<?php echo $this->get_field_id( 'items' ); ?>" name="<?php echo $this->get_field_name( 'items' ); ?>" value="<?php echo $instance['items']; ?>" size="3" />
             </label>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'show' ); ?>"><?php _e( 'Show', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'show' ); ?>"><?php _e( 'Show', 'bootstrap-shortcodes-for-content' ) ?>:
                  <select id="<?php echo $this->get_field_id( 'show' ); ?>" name="<?php echo $this->get_field_name( 'show' ); ?>">
-                    <option value="nothing" <?php selected( $instance['show'], 'nothing' ) ?>><?php _e( 'Nothing', 'bsc' ) ?></option>
-                     <option value="thumb" <?php selected( $instance['show'], 'thumb' ) ?>><?php _e( 'Thumbnails', 'bsc' ) ?></option>
-                     <option value="date" <?php selected( $instance['show'], 'date' ) ?>><?php _e( 'Date', 'bsc' ) ?></option>
+                    <option value="nothing" <?php selected( $instance['show'], 'nothing' ) ?>><?php _e( 'Nothing', 'bootstrap-shortcodes-for-content' ) ?></option>
+                     <option value="thumb" <?php selected( $instance['show'], 'thumb' ) ?>><?php _e( 'Thumbnails', 'bootstrap-shortcodes-for-content' ) ?></option>
+                     <option value="date" <?php selected( $instance['show'], 'date' ) ?>><?php _e( 'Date', 'bootstrap-shortcodes-for-content' ) ?></option>
                  </select>
             </label>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'excerpt' ); ?>"><?php _e( 'Show Excerpt', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'excerpt' ); ?>"><?php _e( 'Show Excerpt', 'bootstrap-shortcodes-for-content' ) ?>:
                  <select id="<?php echo $this->get_field_id( 'excerpt' ); ?>" name="<?php echo $this->get_field_name( 'excerpt' ); ?>">
-                    <option value="yes" <?php selected( $instance['excerpt'], 'yes' ) ?>><?php _e( 'Yes', 'bsc' ) ?></option>
-                    <option value="no" <?php selected( $instance['excerpt'], 'no' ) ?>><?php _e( 'No', 'bsc' ) ?></option>
+                    <option value="yes" <?php selected( $instance['excerpt'], 'yes' ) ?>><?php _e( 'Yes', 'bootstrap-shortcodes-for-content' ) ?></option>
+                    <option value="no" <?php selected( $instance['excerpt'], 'no' ) ?>><?php _e( 'No', 'bootstrap-shortcodes-for-content' ) ?></option>
                  </select>
             </label>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'excerpt_length' ); ?>"><?php _e( 'Excerpt Lenght', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'excerpt_length' ); ?>"><?php _e( 'Excerpt Lenght', 'bootstrap-shortcodes-for-content' ) ?>:
                  <input type="text" id="<?php echo $this->get_field_id( 'excerpt_length' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_length' ); ?>" value="<?php echo $instance['excerpt_length']; ?>"  size="3" />
             </label>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Show Date', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Show Date', 'bootstrap-shortcodes-for-content' ) ?>:
                 <select id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>">
-                    <option value="yes" <?php selected( $instance['show_date'], 'yes' ) ?>><?php _e( 'Yes', 'bsc' ) ?></option>
-                    <option value="no" <?php selected( $instance['show_date'], 'no' ) ?>><?php _e( 'No', 'bsc' ) ?></option>
+                    <option value="yes" <?php selected( $instance['show_date'], 'yes' ) ?>><?php _e( 'Yes', 'bootstrap-shortcodes-for-content' ) ?></option>
+                    <option value="no" <?php selected( $instance['show_date'], 'no' ) ?>><?php _e( 'No', 'bootstrap-shortcodes-for-content' ) ?></option>
                 </select>
             </label>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'show_comments' ); ?>"><?php _e( 'Show Comments', 'bsc' ) ?>:
+            <label for="<?php echo $this->get_field_id( 'show_comments' ); ?>"><?php _e( 'Show Comments', 'bootstrap-shortcodes-for-content' ) ?>:
                 <select id="<?php echo $this->get_field_id( 'show_comments' ); ?>" name="<?php echo $this->get_field_name( 'show_comments' ); ?>">
-                    <option value="yes" <?php selected( $instance['show_comments'], 'yes' ) ?>><?php _e( 'Yes', 'bsc' ) ?></option>
-                    <option value="no" <?php selected( $instance['show_comments'], 'no' ) ?>><?php _e( 'No', 'bsc' ) ?></option>
+                    <option value="yes" <?php selected( $instance['show_comments'], 'yes' ) ?>><?php _e( 'Yes', 'bootstrap-shortcodes-for-content' ) ?></option>
+                    <option value="no" <?php selected( $instance['show_comments'], 'no' ) ?>><?php _e( 'No', 'bootstrap-shortcodes-for-content' ) ?></option>
                 </select>
             </label>
         </p>

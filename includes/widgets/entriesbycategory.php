@@ -16,10 +16,10 @@ class widget_entcat extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname' 	=> 'widget_entcat',
-			'description' => __('Entries by category','bsc'),
+			'description' => __('Entries by category','bootstrap-shortcodes-for-content'),
 			'panels_icon' => 'dashicons dashicons-admin-post',
 		);
-		parent::__construct( 'widget_entcat', __( 'Entries by category', 'bsc' ), $widget_ops );
+		parent::__construct( 'widget_entcat', __( 'Entries by category', 'bootstrap-shortcodes-for-content' ), $widget_ops );
 	}
 
 	// CREATE WIDGET FORM (WORDPRESS DASHBOARD)
@@ -32,16 +32,16 @@ class widget_entcat extends WP_Widget {
 
   		?>
         <p>
-			<label for="<?php echo $this->get_field_id( 'widget_title' ); ?>"><?php _e( 'Title for Widget', 'bsc' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'widget_title' ); ?>"><?php _e( 'Title for Widget', 'bootstrap-shortcodes-for-content' ); ?></label>
 			<input name="<?php echo $this->get_field_name( 'widget_title' ); ?>" type="text" value="<?php echo esc_attr( $widget_title );?>" class="widefat"/>
 		</p>
           <p>
               <label for="<?php echo $this->get_field_id( 'widget_cat' ); ?> ">
-                  <?php _e('Departamento de los Profesionales', 'bsc'); ?>:
+                  <?php _e('Departamento de los Profesionales', 'bootstrap-shortcodes-for-content'); ?>:
               </label>
   			<br />
               <select name="<?php echo $this->get_field_name( 'widget_cat' ); ?>">
-                  <option value=""><?php _e('Select a category','bsc');?></option>
+                  <option value=""><?php _e('Select a category','bootstrap-shortcodes-for-content');?></option>
                   <?php
                   $categories = get_terms( 'category', array(
 	              'orderby' => 'name',
@@ -49,7 +49,7 @@ class widget_entcat extends WP_Widget {
 	              ) );
                   foreach ( $categories as $category ) {
                       if($widget_cat == $category->term_ID ) $selected = ' selected="selected"'; else $selected ='';
-                      printf( '<option value="%1$s"'.$selected.'>%2$s (%3$s '.__('entries','bsc').')</option>',
+                      printf( '<option value="%1$s"'.$selected.'>%2$s (%3$s '.__('entries','bootstrap-shortcodes-for-content').')</option>',
                           esc_attr( $category->term_id ),
                           esc_html( $category->name ),
                           esc_html( $category->count )

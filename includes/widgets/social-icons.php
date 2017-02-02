@@ -15,9 +15,9 @@
 class BSC_Social extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_social', 'description' => __('Adds social icons with URLs included in Yoast SEO', 'bsc'));
+		$widget_ops = array('classname' => 'widget_social', 'description' => __('Adds social icons with URLs included in Yoast SEO', 'bootstrap-shortcodes-for-content'));
 		$control_ops = array('width' => 400, 'height' => 350);
-		parent::__construct('socialtext', __('Social Icons','bsc'), $widget_ops, $control_ops);
+		parent::__construct('socialtext', __('Social Icons','bootstrap-shortcodes-for-content'), $widget_ops, $control_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -65,55 +65,55 @@ class BSC_Social extends WP_Widget {
 		$iconsize = esc_textarea($instance['iconsize']);
 		$iconstyle = esc_textarea($instance['iconstyle']);
     ?>
-        <p><?php _e('It uses the URLs defined in Yoast SEO / Social tab.','bsc');?></p>
+        <p><?php _e('It uses the URLs defined in Yoast SEO / Social tab.','bootstrap-shortcodes-for-content');?></p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'iconsize' ); ?> ">
-                <?php _e('Icon Size', 'bsc'); ?>:
+                <?php _e('Icon Size', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'iconsize' ); ?>" name="<?php echo $this->get_field_name( 'iconsize' ); ?>">
 
                 <option value="fa-5x" <?php
                     if($instance['iconsize'] == "fa-5x")
                         echo 'selected="selected"';
-                ?>><?php _e('Extra Large','bsc');?> 5x</option>
+                ?>><?php _e('Extra Large','bootstrap-shortcodes-for-content');?> 5x</option>
 
                 <option value="fa-4x" <?php
                     if($instance['iconsize'] == "fa-4x")
                         echo 'selected="selected"';
-                ?>><?php _e('Large','bsc');?> 4x</option>
+                ?>><?php _e('Large','bootstrap-shortcodes-for-content');?> 4x</option>
 
                 <option value="fa-3x" <?php
                     if($instance['iconsize'] == "fa-3x")
                         echo 'selected="selected"';
-                ?>><?php _e('Medium','bsc');?> 3x</option>
+                ?>><?php _e('Medium','bootstrap-shortcodes-for-content');?> 3x</option>
 
                 <option value="fa-2x" <?php
                     if($instance['iconsize'] == "fa-2x")
                         echo 'selected="selected"';
-                ?>><?php _e('Small','bsc');?> 2x</option>
+                ?>><?php _e('Small','bootstrap-shortcodes-for-content');?> 2x</option>
 
                 <option value="fa-lg" <?php
                     if($instance['iconsize'] == "fa-lg")
                         echo 'selected="selected"';
-                ?>><?php _e('Extra Small','bsc');?> 1x</option>
+                ?>><?php _e('Extra Small','bootstrap-shortcodes-for-content');?> 1x</option>
             </select>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'iconstyle' ); ?> ">
-                <?php _e('Icon Style', 'bsc'); ?>:
+                <?php _e('Icon Style', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'iconstyle' ); ?>" name="<?php echo $this->get_field_name( 'iconstyle' ); ?>">
                 <option value="" <?php
                     if($instance['iconstyle'] == "")
                         echo 'selected="selected"';
-                ?>><?php _e('Simple','bsc');?></option>
+                ?>><?php _e('Simple','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="-square" <?php
                     if($instance['iconstyle'] == "-square")
                         echo 'selected="selected"';
-                ?>><?php _e('Square','bsc');?></option>
+                ?>><?php _e('Square','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 

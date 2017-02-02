@@ -5,9 +5,11 @@ Plugin URI: https://github.com/closemarketing/bootstrap-sc-content
 Description: Widgets, Shortcodes and Button in Editor for Twitter Bootstrap 3
 Author: closemarketing
 Author URI: http://twitter.com/closemarketing
-Version: 1.2.3
-Text Domain: bsc
-Domain Path: /languages
+Version: 1.2.4
+
+Text Domain: bootstrap-shortcodes-for-content
+Domain Path: /languages/
+
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -41,7 +43,7 @@ add_image_size('thumb-col-1', 488, 999, false);
 add_action( 'plugins_loaded', 'bsc_load_textdomain' );
 
 function bsc_load_textdomain() {
-  load_plugin_textdomain( 'bsc', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+  load_plugin_textdomain( 'bootstrap-shortcodes-for-content', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 // Example image size added:
 add_image_size( 'menuico', 100, 100, true );

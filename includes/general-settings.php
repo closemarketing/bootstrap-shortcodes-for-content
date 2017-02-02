@@ -23,7 +23,7 @@ add_filter('admin_init', 'bsc_general_settings_fields');
 function bsc_general_settings_fields()
 {
     register_setting('general', 'bsc_phone', 'esc_attr');
-    add_settings_field('bsc_phone', '<label for="bsc_phone">'.__('Phone Number' , 'bsc' ).':</label>' , 'bsc_general_settings_fields_html', 'general');
+    add_settings_field('bsc_phone', '<label for="bsc_phone">'.__('Phone Number' , 'bootstrap-shortcodes-for-content' ).':</label>' , 'bsc_general_settings_fields_html', 'general');
 }
  
 function bsc_general_settings_fields_html()

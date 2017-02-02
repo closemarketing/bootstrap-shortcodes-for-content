@@ -15,9 +15,9 @@
 class BSC_ChildMenu extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_childmenu', 'description' => __('It gives you a menu with child pages.', 'bsc'));
+		$widget_ops = array('classname' => 'widget_childmenu', 'description' => __('It gives you a menu with child pages.', 'bootstrap-shortcodes-for-content'));
 		$control_ops = array('width' => 400, 'height' => 350);
-		parent::__construct('childmenutext', __('Menu Child Pages','bsc'), $widget_ops, $control_ops);
+		parent::__construct('childmenutext', __('Menu Child Pages','bootstrap-shortcodes-for-content'), $widget_ops, $control_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -84,41 +84,41 @@ class BSC_ChildMenu extends WP_Widget {
 					'titleparent' => ''
 					 	) );
     ?>
-        <p><?php _e('Select the options for this widget.','bsc');?></p>
+        <p><?php _e('Select the options for this widget.','bootstrap-shortcodes-for-content');?></p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'ordermenu' ); ?> ">
-                <?php _e('Order Menu', 'bsc'); ?>:
+                <?php _e('Order Menu', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'ordermenu' ); ?>" name="<?php echo $this->get_field_name( 'ordermenu' ); ?>">
 
                 <option value="menu_order" <?php
                     if($instance['ordermenu'] == "menu_order")
                         echo 'selected="selected"';
-                ?>><?php _e('Menu Order','bsc');?></option>
+                ?>><?php _e('Menu Order','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="title" <?php
                     if($instance['ordermenu'] == "title")
                         echo 'selected="selected"';
-                ?>><?php _e('Title','bsc');?></option>
+                ?>><?php _e('Title','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'titleparent' ); ?> ">
-                <?php _e('Show Parent Page Title', 'bsc'); ?>:
+                <?php _e('Show Parent Page Title', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'titleparent' ); ?>" name="<?php echo $this->get_field_name( 'titleparent' ); ?>">
 
                 <option value="show-title" <?php
                     if($instance['titleparent'] == "show-title")
                         echo 'selected="selected"';
-                ?>><?php _e('Show','bsc');?></option>
+                ?>><?php _e('Show','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="not-show" <?php
                     if($instance['titleparent'] == "not-show")
                         echo 'selected="selected"';
-                ?>><?php _e('Not Show','bsc');?></option>
+                ?>><?php _e('Not Show','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 		<?php

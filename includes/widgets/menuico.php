@@ -15,9 +15,9 @@
 class BSC_MenuIco extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_MenuIco', 'description' => __('It gives you a menu with child pages.', 'bsc'));
+		$widget_ops = array('classname' => 'widget_MenuIco', 'description' => __('It gives you a menu with child pages.', 'bootstrap-shortcodes-for-content'));
 		$control_ops = array('width' => 400, 'height' => 350);
-		parent::__construct('MenuIcotext', __('Menu Child Pages','bsc'), $widget_ops, $control_ops);
+		parent::__construct('MenuIcotext', __('Menu Child Pages','bootstrap-shortcodes-for-content'), $widget_ops, $control_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -66,23 +66,23 @@ class BSC_MenuIco extends WP_Widget {
         	echo $location . ': ' . $description . '<br />';
         }
     ?>
-        <p><?php _e('Select the options for this widget.','bsc');?></p>
+        <p><?php _e('Select the options for this widget.','bootstrap-shortcodes-for-content');?></p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'ordermenu' ); ?> ">
-                <?php _e('Order Menu', 'bsc'); ?>:
+                <?php _e('Order Menu', 'bootstrap-shortcodes-for-content'); ?>:
             </label>
             <select id="<?php echo $this->get_field_id( 'ordermenu' ); ?>" name="<?php echo $this->get_field_name( 'ordermenu' ); ?>">
 
                 <option value="menu_order" <?php
                     if($instance['ordermenu'] == "menu_order")
                         echo 'selected="selected"';
-                ?>><?php _e('Menu Order','bsc');?></option>
+                ?>><?php _e('Menu Order','bootstrap-shortcodes-for-content');?></option>
 
                 <option value="title" <?php
                     if($instance['ordermenu'] == "title")
                         echo 'selected="selected"';
-                ?>><?php _e('Title','bsc');?></option>
+                ?>><?php _e('Title','bootstrap-shortcodes-for-content');?></option>
             </select>
         </p>
 		<?php
