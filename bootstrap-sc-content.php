@@ -34,25 +34,13 @@ require_once( dirname(__FILE__) . '/includes/mce/bsc_shortcodes_tinymce.php'); /
 //Register Image sizes
 add_image_size('thumb-col-3', 390, 999, false);
 add_image_size('thumb-col-1', 488, 999, false);
-
-/**
- * Load plugin textdomain.
- *
- * @since 0.9.3
- */
-add_action( 'plugins_loaded', 'bsc_load_textdomain' );
-
-function bsc_load_textdomain() {
-  load_plugin_textdomain( 'bootstrap-shortcodes-for-content', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-}
-// Example image size added:
 add_image_size( 'menuico', 100, 100, true );
 
 add_filter( 'image_size_names_choose', 'bsc_custom_sizes' );
 
 function bsc_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'menuico' => __('Icon for Menu widget'),
+        'menuico' => __('Icon for Menu widget','bootstrap-shortcodes-for-content'),
     ) );
 }
 
