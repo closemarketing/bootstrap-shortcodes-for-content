@@ -76,6 +76,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
+
+= 1.2.4 =
+*   Fixed bugs with PHP7.
+
 = 1.2.3 =
 *   Added Contact widget.
 *   Minor bugs shortcode imagepostslider.

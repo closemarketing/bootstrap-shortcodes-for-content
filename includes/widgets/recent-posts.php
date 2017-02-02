@@ -14,7 +14,7 @@
 
 if( !class_exists( 'recent_posts' ) ) :
 class recent_posts extends WP_Widget {
-    function recent_posts() {
+    function __construct() {
     	unregister_widget( 'WP_Widget_Recent_Posts' );
 		
         $widget_ops = array( 

@@ -15,7 +15,7 @@
 if( !class_exists( 'last_tweets' ) ) :
 class last_tweets extends WP_Widget
 {
-    function last_tweets() {
+    function __construct() {
 		$widget_ops = array( 
             'classname' => 'last-tweets', 
             'description' => __('Retrieve the last tweets.', 'bsc') 

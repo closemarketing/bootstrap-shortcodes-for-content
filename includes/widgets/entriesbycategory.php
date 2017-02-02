@@ -13,7 +13,7 @@ add_action( 'widgets_init', 'widget_entcat' );
 class widget_entcat extends WP_Widget {
 
 	// CONSTRUCT WIDGET
-	function widget_entcat() {
+	function __construct() {
 		$widget_ops = array(
 			'classname' 	=> 'widget_entcat',
 			'description' => __('Entries by category','bsc'),
